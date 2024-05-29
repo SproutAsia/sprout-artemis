@@ -1,0 +1,4 @@
+"use strict";
+// Response POST /api/customer/{customer_id}/crp
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFJlc3BvbnNlUG9zdENvcnBvcmF0ZUNycC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3NyYy9saWIvYXJ0ZW1pcy90eXBlcy9hcGkvY3VzdG9tZXIve2N1c3RvbWVyX2lkfS9UUmVzcG9uc2VQb3N0Q29ycG9yYXRlQ3JwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxnREFBZ0QifQ==
