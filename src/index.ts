@@ -1,13 +1,7 @@
-import { ArtemisAuthService } from './artemis/api/auth';
-import ArtemisCustomerService from './artemis/api/customer';
-import ArtemisRiskService from './artemis/api/risk';
-import ArtemisToGrof from './lib/artemis/ArtemisToGrof';
-import { TGrofApplication } from './lib/grof/types/TGrofApplication';
-import { sayHelloArtemis } from './lib/sample/sayHello';
+import { ArtemisAuthService } from "./artemis/v2/api/auth";
+import ArtemisCustomerService from "./artemis/v2/api/customer";
+import ArtemisRiskService from "./artemis/v2/api/risk";
 
-export { ArtemisAuthService, ArtemisCustomerService, ArtemisRiskService, ArtemisToGrof, sayHelloArtemis };
 
-export type {
-    TGrofApplication
-};
+export { ArtemisAuthService, ArtemisCustomerService, ArtemisRiskService };
 
