@@ -1,0 +1,4 @@
+"use strict";
+// POST /records/{record_id}/own_name_searches/
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFJlcVBvc3RPd25OYW1lU2VhcmNoLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vc3JjL2FydGVtaXMvdjIvYXBpL3JlY29yZHMve3JlY29yZF9pZH0vb3duX25hbWVfc2VhcmNoZXMvX3Bvc3QvVFJlcVBvc3RPd25OYW1lU2VhcmNoLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSwrQ0FBK0MifQ==

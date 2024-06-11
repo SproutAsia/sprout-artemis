@@ -1,3 +1,6 @@
+/**
+ * this model is removing nium and artemis related field to
+ */
 export interface TGrofApplication {
     _id: Id
     uen: string
@@ -8,8 +11,6 @@ export interface TGrofApplication {
     company: Company
     submittedBy: SubmittedBy
     riskRating: string
-    niumData: NiumDaum[]
-    niumRfiData: any[]
     status: string
     corpSecStatus: string
     paymentStatus: string
@@ -72,19 +73,6 @@ export interface Company {
         doingBusinessAs: string
         primaryIndustry: string
         businessDescription: string
-    }
-    /**
-     * from Application.model
-     */
-    niumExclusive: {
-        niumProductType: ("Send" | "Receive" | "Cards")[],
-        niumProgram: string
-    }
-    /**
-    * from Application.model
-    */
-    artemisExclusive: {
-        artemisDomain: string
     }
     /**
      * from Application.model
@@ -171,7 +159,7 @@ export interface Addresses {
 
 export interface RegisteredAddress {
     addressLine1: string
-    addressLilne2: string
+    addressLine2: string
     city: string
     state: string
     blockHouse: string
@@ -211,6 +199,8 @@ export interface Secondary {
     otherDescription: string
 }
 
+/**
+ */
 export interface RiskProfileAssessment {
     onboardingMode: string
     ownershipStructureLayers: string
@@ -251,7 +241,16 @@ export interface Member {
     isApplicant: boolean
     companyDetails: CompanyDetails
     personDetails: PersonDetails
-    sharesDetails: any[]
+    sharesDetails: {
+        shareAllotted: number,
+        shareType: string,
+        sharePercentage: number,
+        shareCurrency: string,
+        appointmentDate: string,
+        cessationDate: string,
+        status: string,
+        holderType: string,
+    }[]
     corpsecRequirement: {
         guranteedAmount: number
         currency: string
@@ -267,16 +266,13 @@ export interface Member {
         isSales: boolean
         isCorpSec: boolean
     }
-    artemisExclusive: {
-        crpId: string
-    }
     kycStatus: {
         isIdVerificated: boolean
         isBackgroundScreened: boolean
     }
     eKycStatus: string
     eKycLink: string
-    _id: Id3
+    _id: Id
 }
 
 export interface Appointment {
@@ -337,111 +333,60 @@ export interface MemberRiskProfileAssessment {
 }
 
 export interface PersonDetails {
-    personalDetails: PersonalDetails
-    documents: any[]
-    personDetails: {
-        documents: {
-            id: string
-            type: string
-            number: string
-            expiryDate: string
-            issuedDate: string
-            issuedCountry: string
-        }
-        callFirstName: string
-        callLastName: string
-        legalDetails: {
-            legalFirstName: string
-            legalLastName: string
-        }
-        contactDetails: {
-            phoneCountry: string
-            phoneNumber: string
-            email: string
-            outgoingEmail: string
-        }
-        personalDetails: {
-            fullName: string
-            alias: string
-            gender: string
-            nationality: string
-            dateOfBirth: string
-            countryOfBirth: string
-            idDocument: {
-                type: string
-                idNumber: string
-                dateOfIssuance: string
-                dateOfExpiration: string
-            }
-            passportExpiredDate: Date
-            isFinCardholder: boolean
-            finCardNumber: string
-        }
-        address: Address
+    documents: {
+        id: string
+        type: string
+        number: string
+        expiryDate: string
+        issuedDate: string
+        issuedCountry: string
     }
-}
-
-export interface PersonalDetails {
-    alias: any[]
-}
-
-export interface Id3 {
-    $oid: string
+    callFirstName: string
+    callLastName: string
+    legalDetails: {
+        legalFirstName: string
+        legalLastName: string
+    }
+    contactDetails: {
+        phoneCountry: string
+        phoneNumber: string
+        email: string
+        outgoingEmail: string
+    }
+    personalDetails: {
+        fullName: string
+        alias: string
+        gender: string
+        nationality: string
+        dateOfBirth: string
+        countryOfBirth: string
+        idDocument: {
+            type: string
+            idNumber: string
+            dateOfIssuance: string
+            dateOfExpiration: string
+        }
+        passportExpiredDate: Date
+        isFinCardholder: boolean
+        finCardNumber: string
+    }
+    address: Address
+    riskProfileAssessment: {
+        occupation: string,
+        sourceOfIncome: string,
+        sourceOfWealth: string,
+        isPep: string,
+        isShareOnBehalfAnotherPerson: string,
+        shareOnBehalfAnotherPerson: string,
+        isNomineeDirector: string,
+        isAcceptDirectorCriteria: string,
+        isMultipleNationalities: string,
+        nationalities: string[],
+    }
 }
 
 export interface SubmittedBy {
     $oid: string
-}
-
-export interface NiumDaum {
-    payload: Payload
-    result: Result
-    date: Date
-}
-
-export interface Payload {
-    region: string
-    customerHashId: any
-    clientPreference: ClientPreference
-    businessDetails: BusinessDetails
-    riskAssessmentInfo: RiskAssessmentInfo
-    productDetails: ProductDetails
-}
-
-export interface ClientPreference {
-    clientHashId: string
-}
-
-export interface BusinessDetails {
-    businessName: string
-    businessRegistrationNumber: string
-    businessType: string
-    website?: string
-    legalDetails: LegalDetails3
-    tradeName?: string
-    addresses: Addresses2
-    stakeholders: Stakeholder[]
-    applicantDetails: ApplicantDetails
-    additionalInfo: AdditionalInfo
-}
-
-export interface LegalDetails3 {
-    registeredCountry: string
-    registeredDate: string
-}
-
-export interface Addresses2 {
-    registeredAddress: RegisteredAddress2
-    businessAddress: BusinessAddress
-}
-
-export interface RegisteredAddress2 {
-    addressLine1: string
-    addressLine2?: string
-    city: string
-    state: string
-    country: string
-    postcode: string
 }
 
 export interface BusinessAddress {
@@ -464,12 +409,12 @@ export interface StakeholderDetails {
     nationality: string
     dateOfBirth: string
     isResident: string
-    contactDetails: ContactDetails
+    contactDetails: StakeholderContactDetails
     professionalDetails: ProfessionalDetail[]
     address: Address
 }
 
-export interface ContactDetails {
+export interface StakeholderContactDetails {
     contactNo?: string
     email?: string
 }
@@ -497,7 +442,7 @@ export interface ApplicantDetails {
     isResident: string
     professionalDetails: ProfessionalDetail2[]
     address: Address2
-    contactDetails: ContactDetails2
+    contactDetails: ApplicantContactDetails
 }
 
 export interface ProfessionalDetail2 {
@@ -514,7 +459,7 @@ export interface Address2 {
     country: string
 }
 
-export interface ContactDetails2 {
+export interface ApplicantContactDetails {
     countryCode: string
     contactNo: string
     email: string
@@ -534,16 +479,6 @@ export interface RiskAssessmentInfo {
 export interface ProductDetails {
     productType: string[]
     program: string
-}
-
-export interface Result {
-    clientId: string
-    caseId: string
-    status: string
-    remarks: string
-    customerHashId?: string
-    walletHashId?: string
-    redirectUrl: string
 }
 
 export interface Date {

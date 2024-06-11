@@ -1,7 +1,16 @@
-import { ArtemisAuthService } from "./artemis/v2/api/auth";
-import ArtemisCustomerService from "./artemis/v2/api/customer";
-import ArtemisRiskService from "./artemis/v2/api/risk";
+import postLogin from "./artemis/v3/api/authentication/login/_post/postLogin";
+import postCorporateCrpFromGrof from "./grof-artemis/v3/postCorporateCrpFromGrof";
+import postCorporateCustomerFromGrof from "./grof-artemis/v3/postCorporateCustomer.v3";
+import postIndividualCrpFromGrof from "./grof-artemis/v3/postIndividualCrpFromGrof";
+import postIndividualCustomerFromGrof from "./grof-artemis/v3/postIndividualCustomer.v3";
 
+const ArtemisGrofService = {
+    postLogin,
+    postCorporateCrpFromGrof,
+    postIndividualCrpFromGrof,
+    postCorporateCustomerFromGrof,
+    postIndividualCustomerFromGrof
+}
 
-export { ArtemisAuthService, ArtemisCustomerService, ArtemisRiskService };
+export default ArtemisGrofService
 

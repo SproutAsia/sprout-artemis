@@ -1,0 +1,55 @@
+{
+    "type": "CORPORATE",
+    "domainId": [
+        53
+    ],
+    "active": true,
+    "particular": {
+        "incorporated": true,
+        "name": "TEST COMPANY",
+        "alias": [],
+        "formerName": [],
+        "countryOfIncorporation": "SINGAPORE",
+        "countryOfOperation": [
+            "INDONESIA"
+        ],
+        "address": [
+            "Singapore City"
+        ],
+        "incorporateNumber": "1ncorporation number",
+        "phone": [
+            "38723823723"
+        ],
+        "email": [
+            "email@mail.com"
+        ],
+        "dateOfIncorporation": null,
+        "dateOfIncorporationExpiry": "2024-06-08",
+        "imonumber": null
+    },
+    "other": {
+        "entityType": "CHARITY",
+        "corporateWebsite": null,
+        "fatfjurisdiction": "",
+        "industry": "01111 - GROWING OF LEAFY AND FRUIT VEGETABLES",
+        "onBoardingMode": "FACE-TO-FACE",
+        "ownershipStructureLayer": "3 OR MORE",
+        "paymentMode": [
+            "CASH"
+        ],
+        "productServiceComplexity": "SIMPLE",
+        "sourceOfFunds": "LOAN",
+        "bankAccount": [
+            "BCA"
+        ],
+        "additionalInformation": "TEST ADDITIONAL INFORMATION",
+        "natureOfBusinessRelationship": "TEST NATURE OF BUSINESS RELATIONSHIP"
+    },
+    "profileReferenceId": "test1",
+    "referenceId": "TEST CASE ID",
+    "watcherIds": [
+        1691
+    ],
+    "profileId": null,
+    "assigneeId": "1691"
+}

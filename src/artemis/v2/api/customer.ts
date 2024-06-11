@@ -1,4 +1,3 @@
-import { TResponseGetCustomer } from "../../swagger3/types/api/customer/_get/TResponseGetCustomer"
 
 export default class ArtemisCustomerService {
     token: string
@@ -40,7 +39,7 @@ export default class ArtemisCustomerService {
 
         const result = fetch(url.toString(), {
             headers: this.header
-        }).then((res) => res.json() as Promise<TResponseGetCustomer>)
+        }).then((res) => res.json())
 
         return result;
     }

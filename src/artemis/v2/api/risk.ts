@@ -1,4 +1,4 @@
-import { TResponseGetRiskCustomer } from "../../swagger3/types/risk/TResponseGetRiskCustomer"
+import { TResponseGetRiskCustomer } from "../../v3/api/risk/TResponseGetRiskCustomer"
 
 export default class ArtemisRiskService {
     token: string
