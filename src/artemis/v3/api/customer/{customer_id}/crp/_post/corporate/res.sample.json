@@ -1,0 +1,113 @@
+{
+    "id": 5,
+    "createdAt": "2024-06-06T14:59:51.217+00:00",
+    "updatedAt": "2024-06-06T14:59:51.358+00:00",
+    "createdBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "updatedBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "active": null,
+    "parentId": 2,
+    "profileId": 1,
+    "type": "CORPORATE",
+    "referenceId": null,
+    "profileReferenceId": "test1",
+    "particular": {
+        "incorporated": true,
+        "name": "CRP CORP",
+        "alias": [],
+        "formerName": [],
+        "countryOfIncorporation": "SINGAPORE",
+        "countryOfOperation": [
+            "INDONESIA"
+        ],
+        "address": [
+            "Singapore City"
+        ],
+        "incorporateNumber": "1ncorporation number",
+        "phone": [
+            "38723823723"
+        ],
+        "email": [],
+        "dateOfIncorporation": "2024-06-02",
+        "dateOfIncorporationExpiry": "2024-06-05",
+        "imonumber": "5124235"
+    },
+    "other": {
+        "entityType": "CHARITY",
+        "variableCapitalCompany": null,
+        "ownershipStructureLayer": "1",
+        "ownershipPercentage": 0.0,
+        "dateOfIncorporation": null,
+        "dateOfIncorporationExpiry": null,
+        "sourceOfFunds": "LOAN",
+        "additionalInformation": "TEST ADDITIONAL INFORMATION",
+        "status": "CURRENT",
+        "bankAccountNumber": [
+            "bri"
+        ],
+        "undischargedBankrupt": false,
+        "documentList": null,
+        "businessCessationDate": "2024-06-07",
+        "corporateWebsite": "grof.co"
+    },
+    "notes": null,
+    "vendorName": null,
+    "vendorEntityGuid": null,
+    "lastRiskAssessment": null,
+    "roles": [
+        {
+            "id": 2,
+            "createdAt": "2024-06-06T14:59:51.223+00:00",
+            "updatedAt": "2024-06-06T14:59:51.223+00:00",
+            "createdBy": {
+                "id": 1691,
+                "firstName": "RICO",
+                "lastName": "Arisandy",
+                "email": "arisandy.rico@grof.co",
+                "fullName": "RICO Arisandy",
+                "rawFirstName": "RICO",
+                "rawLastName": "Arisandy",
+                "deleted": 0,
+                "role": "USER"
+            },
+            "updatedBy": {
+                "id": 1691,
+                "firstName": "RICO",
+                "lastName": "Arisandy",
+                "email": "arisandy.rico@grof.co",
+                "fullName": "RICO Arisandy",
+                "rawFirstName": "RICO",
+                "rawLastName": "Arisandy",
+                "deleted": 0,
+                "role": "USER"
+            },
+            "role": "DIRECTOR (ALTERNATE)",
+            "appointedDate": "2024-06-03",
+            "resignedDate": "2024-06-08"
+        }
+    ],
+    "assignees": [],
+    "watchers": [],
+    "listRoleAsText": [
+        "DIRECTOR (ALTERNATE)"
+    ]
+}

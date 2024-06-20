@@ -1,13 +1,22 @@
-import { ArtemisAuthService } from './artemis/api/auth';
-import ArtemisCustomerService from './artemis/api/customer';
-import ArtemisRiskService from './artemis/api/risk';
-import ArtemisToGrof from './lib/artemis/ArtemisToGrof';
-import { TGrofApplication } from './lib/grof/types/TGrofApplication';
-import { sayHelloArtemis } from './lib/sample/sayHello';
+import postLogin from "./artemis/v3/api/authentication/login/_post/postLogin";
+import getCustomer from "./artemis/v3/api/customer/_get/getCustomer";
+import getCrp from "./artemis/v3/api/customer/{customer_id}/crp/_get/getCrp";
+import checkEnv from "./grof-artemis/v3/checkEnv";
+import postCorporateCrpFromGrof from "./grof-artemis/v3/postCorporateCrpFromGrof";
+import postCorporateCustomerFromGrof from "./grof-artemis/v3/postCorporateCustomer.v3";
+import postIndividualCrpFromGrof from "./grof-artemis/v3/postIndividualCrpFromGrof";
+import postIndividualCustomerFromGrof from "./grof-artemis/v3/postIndividualCustomer.v3";
 
-export { ArtemisAuthService, ArtemisCustomerService, ArtemisRiskService, ArtemisToGrof, sayHelloArtemis };
+const ArtemisGrofService = {
+    postLogin,
+    postCorporateCrpFromGrof,
+    postIndividualCrpFromGrof,
+    postCorporateCustomerFromGrof,
+    postIndividualCustomerFromGrof,
+    getCustomer,
+    getCrp,
+    checkEnv
+}
 
-export type {
-    TGrofApplication
-};
+export default ArtemisGrofService
 

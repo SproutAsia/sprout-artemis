@@ -1,0 +1,49 @@
+{
+    "profileReferenceId": "customer rico",
+    "other": {
+        "additionalInformation": "hello rico add additional information here",
+        "ownershipPercentage": 30,
+        "sourceOfFunds": "SALARY",
+        "status": "CURRENT",
+        "undischargedBankrupt": true,
+        "bankAccount": [
+            "MANDIRI"
+        ]
+    },
+    "particular": {
+        "salutation": "MR",
+        "name": "TEST INDIVIDUAL CRP",
+        "alias": [
+            "COCO"
+        ],
+        "formerName": [
+            "RICO AW"
+        ],
+        "gender": "MALE",
+        "nationality": [
+            "INDONESIA"
+        ],
+        "countryOfResidence": "SINGAPORE",
+        "identityDocumentType": "INTERNATIONAL PASSPORT",
+        "identityNumber": "",
+        "identityIssuedDate": "2024-06-03",
+        "identityExpiryDate": "2024-06-05",
+        "countryOfBirth": "",
+        "dateOfBirth": "2004-06-01",
+        "address": [],
+        "phone": [
+            "123123123"
+        ],
+        "email": []
+    },
+    "type": "INDIVIDUAL",
+    "active": false,
+    "roles": [
+        {
+            "appointedDate": "2024-06-06",
+            "resignedDate": "2024-06-07",
+            "role": "DIRECTOR",
+            "id": "1"
+        }
+    ]
+}

@@ -3,15 +3,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sayHelloArtemis = exports.ArtemisToGrof = exports.ArtemisRiskService = exports.ArtemisCustomerService = exports.ArtemisAuthService = void 0;
-const auth_1 = require("./artemis/api/auth");
-Object.defineProperty(exports, "ArtemisAuthService", { enumerable: true, get: function () { return auth_1.ArtemisAuthService; } });
-const customer_1 = __importDefault(require("./artemis/api/customer"));
-exports.ArtemisCustomerService = customer_1.default;
-const risk_1 = __importDefault(require("./artemis/api/risk"));
-exports.ArtemisRiskService = risk_1.default;
-const ArtemisToGrof_1 = __importDefault(require("./lib/artemis/ArtemisToGrof"));
-exports.ArtemisToGrof = ArtemisToGrof_1.default;
-const sayHello_1 = require("./lib/sample/sayHello");
-Object.defineProperty(exports, "sayHelloArtemis", { enumerable: true, get: function () { return sayHello_1.sayHelloArtemis; } });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsNkNBQXdEO0FBTy9DLG1HQVBBLHlCQUFrQixPQU9BO0FBTjNCLHNFQUE0RDtBQU0vQixpQ0FOdEIsa0JBQXNCLENBTXNCO0FBTG5ELDhEQUFvRDtBQUtDLDZCQUw5QyxjQUFrQixDQUs4QztBQUp2RSxnRkFBd0Q7QUFJaUIsd0JBSmxFLHVCQUFhLENBSWtFO0FBRnRGLG9EQUF3RDtBQUVnQyxnR0FGL0UsMEJBQWUsT0FFK0UifQ==
+const postLogin_1 = __importDefault(require("./artemis/v3/api/authentication/login/_post/postLogin"));
+const getCustomer_1 = __importDefault(require("./artemis/v3/api/customer/_get/getCustomer"));
+const getCrp_1 = __importDefault(require("./artemis/v3/api/customer/{customer_id}/crp/_get/getCrp"));
+const checkEnv_1 = __importDefault(require("./grof-artemis/v3/checkEnv"));
+const postCorporateCrpFromGrof_1 = __importDefault(require("./grof-artemis/v3/postCorporateCrpFromGrof"));
+const postCorporateCustomer_v3_1 = __importDefault(require("./grof-artemis/v3/postCorporateCustomer.v3"));
+const postIndividualCrpFromGrof_1 = __importDefault(require("./grof-artemis/v3/postIndividualCrpFromGrof"));
+const postIndividualCustomer_v3_1 = __importDefault(require("./grof-artemis/v3/postIndividualCustomer.v3"));
+const ArtemisGrofService = {
+    postLogin: postLogin_1.default,
+    postCorporateCrpFromGrof: postCorporateCrpFromGrof_1.default,
+    postIndividualCrpFromGrof: postIndividualCrpFromGrof_1.default,
+    postCorporateCustomerFromGrof: postCorporateCustomer_v3_1.default,
+    postIndividualCustomerFromGrof: postIndividualCustomer_v3_1.default,
+    getCustomer: getCustomer_1.default,
+    getCrp: getCrp_1.default,
+    checkEnv: checkEnv_1.default
+};
+exports.default = ArtemisGrofService;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQSxzR0FBOEU7QUFDOUUsNkZBQXFFO0FBQ3JFLHFHQUE2RTtBQUM3RSwwRUFBa0Q7QUFDbEQsMEdBQWtGO0FBQ2xGLDBHQUF1RjtBQUN2Riw0R0FBb0Y7QUFDcEYsNEdBQXlGO0FBRXpGLE1BQU0sa0JBQWtCLEdBQUc7SUFDdkIsU0FBUyxFQUFULG1CQUFTO0lBQ1Qsd0JBQXdCLEVBQXhCLGtDQUF3QjtJQUN4Qix5QkFBeUIsRUFBekIsbUNBQXlCO0lBQ3pCLDZCQUE2QixFQUE3QixrQ0FBNkI7SUFDN0IsOEJBQThCLEVBQTlCLG1DQUE4QjtJQUM5QixXQUFXLEVBQVgscUJBQVc7SUFDWCxNQUFNLEVBQU4sZ0JBQU07SUFDTixRQUFRLEVBQVIsa0JBQVE7Q0FDWCxDQUFBO0FBRUQsa0JBQWUsa0JBQWtCLENBQUEifQ==

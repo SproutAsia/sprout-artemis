@@ -1,0 +1,111 @@
+{
+    "id": 4,
+    "createdAt": "2024-06-06T14:55:10.926+00:00",
+    "updatedAt": "2024-06-06T14:55:10.937+00:00",
+    "createdBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "updatedBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "active": null,
+    "parentId": 2,
+    "profileId": 4,
+    "type": "INDIVIDUAL",
+    "referenceId": null,
+    "profileReferenceId": "customer rico",
+    "particular": {
+        "salutation": "MR",
+        "name": "TEST INDIVIDUAL CRP",
+        "alias": [
+            "COCO"
+        ],
+        "formerName": [
+            "RICO AW"
+        ],
+        "gender": "MALE",
+        "countryOfResidence": "SINGAPORE",
+        "nationality": [
+            "INDONESIA"
+        ],
+        "countryOfBirth": "",
+        "dateOfBirth": "2004-06-01",
+        "address": [],
+        "phone": [
+            "123123123"
+        ],
+        "email": [],
+        "identityDocumentType": "INTERNATIONAL PASSPORT",
+        "identityNumber": "",
+        "identityIssuedDate": "2024-06-03",
+        "identityExpiryDate": "2024-06-05"
+    },
+    "other": {
+        "status": "CURRENT",
+        "sourceOfFunds": "SALARY",
+        "additionalInformation": "hello rico add additional information here",
+        "bankAccountNumber": [
+            "MANDIRI"
+        ],
+        "undischargedBankrupt": true,
+        "documentList": null,
+        "ownershipPercentage": 30.0
+    },
+    "notes": null,
+    "vendorName": null,
+    "vendorEntityGuid": null,
+    "lastRiskAssessment": null,
+    "roles": [
+        {
+            "id": 1,
+            "createdAt": "2024-06-06T14:55:10.930+00:00",
+            "updatedAt": "2024-06-06T14:55:10.930+00:00",
+            "createdBy": {
+                "id": 1691,
+                "firstName": "RICO",
+                "lastName": "Arisandy",
+                "email": "arisandy.rico@grof.co",
+                "fullName": "RICO Arisandy",
+                "rawFirstName": "RICO",
+                "rawLastName": "Arisandy",
+                "deleted": 0,
+                "role": "USER"
+            },
+            "updatedBy": {
+                "id": 1691,
+                "firstName": "RICO",
+                "lastName": "Arisandy",
+                "email": "arisandy.rico@grof.co",
+                "fullName": "RICO Arisandy",
+                "rawFirstName": "RICO",
+                "rawLastName": "Arisandy",
+                "deleted": 0,
+                "role": "USER"
+            },
+            "role": "DIRECTOR",
+            "appointedDate": "2024-06-06",
+            "resignedDate": "2024-06-07"
+        }
+    ],
+    "assignees": [],
+    "watchers": [],
+    "listRoleAsText": [
+        "DIRECTOR"
+    ]
+}

@@ -1,0 +1,4 @@
+"use strict";
+// Response POST /api/customer CORPORATE
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFJlc1Bvc3RDdXN0b21lckNvcnBvcmF0ZS52My5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3NyYy9hcnRlbWlzL3YzL2FwaS9jdXN0b21lci9fcG9zdC9jb3Jwb3JhdGUvVFJlc1Bvc3RDdXN0b21lckNvcnBvcmF0ZS52My50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsd0NBQXdDIn0=

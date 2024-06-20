@@ -1,0 +1,4 @@
+"use strict";
+// GET /records/{record_id}/internet_searches/
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFJlc0dldFJlY29yZEludGVybmV0U2VhcmNoLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vLi4vc3JjL2FydGVtaXMvdjIvYXBpL3JlY29yZHMve3JlY29yZF9pZH0vaW50ZXJuZXRfc2VhcmNoZXMvX2dldC9UUmVzR2V0UmVjb3JkSW50ZXJuZXRTZWFyY2gudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLDhDQUE4QyJ9

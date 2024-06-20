@@ -1,0 +1,58 @@
+{
+    "profileReferenceId": "test1",
+    "other": {
+        "additionalInformation": "TEST ADDITIONAL INFORMATION",
+        "sourceOfFunds": "LOAN",
+        "entityType": "CHARITY",
+        "status": "CURRENT",
+        "ownershipStructureLayer": "1",
+        "undischargedBankrupt": false,
+        "corporateWebsite": "grof.co",
+        "bankAccount": [
+            "bri"
+        ],
+        "businessCessationDate": "2024-06-07T17:00:00.000Z",
+        "industry": "01111 - GROWING OF LEAFY AND FRUIT VEGETABLES",
+        "paymentMode": [
+            "CASH"
+        ],
+        "documentList": null,
+        "onBoardingMode": "FACE-TO-FACE",
+        "fatfjurisdiction": false,
+        "variableCapitalCompany": null,
+        "productServiceComplexity": "SIMPLE",
+        "natureOfBusinessRelationship": "TEST NATURE OF BUSINESS RELATIONSHIP"
+    },
+    "particular": {
+        "incorporated": true,
+        "name": "CRP CORP",
+        "alias": [],
+        "formerName": [],
+        "countryOfIncorporation": "SINGAPORE",
+        "countryOfOperation": [
+            "INDONESIA"
+        ],
+        "dateOfIncorporation": "2024-06-02",
+        "dateOfIncorporationExpiry": "2024-06-05",
+        "email": [],
+        "address": [
+            "Singapore City"
+        ],
+        "imonumber": "5124235",
+        "incorporateNumber": "1ncorporation number",
+        "phone": [
+            "38723823723"
+        ]
+    },
+    "type": "CORPORATE",
+    "roles": [
+        {
+            "appointedDate": "2024-06-03",
+            "resignedDate": "2024-06-08",
+            "role": "DIRECTOR (ALTERNATE)",
+            "id": "2"
+        }
+    ],
+    "active": true,
+    "profileId": 1
+}
