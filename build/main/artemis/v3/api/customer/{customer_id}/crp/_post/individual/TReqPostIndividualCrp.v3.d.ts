@@ -45,11 +45,21 @@ export interface Particular {
 }
 export interface Other {
     /**
+     * @requires
      * @example "CURRENT"
+     * @description TSR - locked to "CURRENT"
      */
-    status: "CURRENT" | "";
+    status: "CURRENT" | "RESIGNED";
     sourceOfFunds: string;
-    bankAccountNumber: any[];
+    /**
+     * @description TSR - empty
+     */
+    bankAccount: string[];
     undischargedBankrupt: boolean;
     ownershipPercentage: number;
+    /**
+     * @description - if source of fund is "OTHERS"
+     */
+    otherSourceOfFunds?: string;
+    additionalInformation?: string;
 }

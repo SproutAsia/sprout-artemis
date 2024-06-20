@@ -9,4 +9,7 @@ export default function postIndividualCrp(args: {
         token: string;
     };
     req: TReqPostIndividualCrp;
+    path: {
+        customerId: string;
+    };
 }): Promise<any>;

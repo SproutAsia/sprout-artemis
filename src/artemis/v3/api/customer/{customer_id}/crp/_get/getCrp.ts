@@ -1,4 +1,6 @@
 
+import ArtemisHeader from "../../../../../shared/ArtemisHeader"
+
 import { TResGetCrp } from "./TResGetCrp"
 
 /**
@@ -6,7 +8,7 @@ import { TResGetCrp } from "./TResGetCrp"
  * @description Individual Workflow - STEP 1 : create customer
  * @description Corporate Workflow - STEP 1 : create customer
  */
-export default async function postCorporateCrp(args: {
+export default async function getCrp(args: {
     auth: {
         token: string
     }
@@ -14,7 +16,7 @@ export default async function postCorporateCrp(args: {
         customerId: string
     }
 }) {
-    const headers = new Headers()
+    const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customers/" + args.path.customerId)
 

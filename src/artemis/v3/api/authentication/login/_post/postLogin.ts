@@ -1,9 +1,7 @@
+import ArtemisHeader from "../../../../shared/ArtemisHeader"
 
-import { TReqLogin } from "../TReqLogin"
-import { TResLogin } from "../TResLogin"
-
-
-
+import { TReqLogin } from "./TReqLogin"
+import { TResLogin } from "./TResLogin"
 
 /**
  * post customer
@@ -12,8 +10,8 @@ import { TResLogin } from "../TResLogin"
  */
 export default async function postLogin(args: {
     req: TReqLogin
-}) {
-    const headers = new Headers()
+}): Promise<TResLogin> {
+    const headers = ArtemisHeader()
     const url = new URL(process.env.ARTEMIS_API + "/authentication/login")
 
     try {
@@ -22,7 +20,7 @@ export default async function postLogin(args: {
             body: JSON.stringify(args.req),
             headers
         }).then((res) => res.json())
-        return result as TResLogin
+        return result as Promise<TResLogin>
     } catch (e) {
         return e
     }

@@ -2,11 +2,12 @@
 export interface TReqPostCustomerCorporate {
     /**
      * @requires
+     * @description TSR - active (true)
      */
-    active: boolean
+    active: true
     /**
      * @requires
-     * @description it's customer reference id in artemis form. it's `free text`
+     * @description it's customer reference id in artemis form. it's `free text`. TSR - company name
      */
     profileReferenceId: string
     /**
@@ -33,7 +34,7 @@ export interface TReqPostCustomerCorporate {
      */
     assigneeId: string
     /**
-     * @description - it's CASE ID in artemis. it must be `unique`. it's `free text`
+     * @description - it's CASE ID in artemis. it must be `unique`. it's `free text`. TSR - uen if transfer in , if incorp leave blank
      */
     referenceId?: string
 }
@@ -47,11 +48,14 @@ export interface Other {
      */
     entityType: string
     /**
-     * @requires
      * @example "grof.co"
      * @grof Application.company.businessDetails.businessWebsite
+     * @description TSR - leave empty
      */
     corporateWebsite: any
+    /**
+     * @description TSR - leave empty
+     */
     fatfjurisdiction?: string
     /**
      * @requires
@@ -82,12 +86,21 @@ export interface Other {
      * @example "SIMPLE"
      */
     productServiceComplexity: string
+    /**
+     * @description TSR - empty
+     */
     sourceOfFunds?: string
+    /**
+     * @description TSR - empty
+     */
     natureOfBusinessRelationship?: string
     /**
-     * @description it is free text
+     * @description it is free text. TSR - empty
      */
     bankAccount: string[]
+    /**
+     * @description TSR - empty. if agent, put payment need to come from agent. !double remarks.
+     */
     additionalInformation?: string
 }
 
@@ -101,11 +114,18 @@ export interface Particular {
      * @example: "Corporate Primary Customer"
      */
     name: string
+    /**
+     * @description TSR - company.legalDetails.entityName
+     */
     alias?: string[]
+    /**
+     * @description TSR - we don't need this
+     */
     formerName?: string[]
     /**
      * @requires
      * @example: "SINGAPORE"
+     * @description TSR - locked to "SG"
      */
     countryOfIncorporation: string
     /**
@@ -114,8 +134,17 @@ export interface Particular {
      */
     countryOfOperation: string[]
     address?: string[]
+    /**
+     * @description TSR - uen (if new incorp, leave blank)
+     */
     incorporateNumber?: string
+    /**
+     * @description TSR - leave empty
+     */
     phone?: string[]
+    /**
+     * @description TSR - leave empty
+     */
     email?: string[]
     dateOfIncorporation?: any
     dateOfIncorporationExpiry?: any

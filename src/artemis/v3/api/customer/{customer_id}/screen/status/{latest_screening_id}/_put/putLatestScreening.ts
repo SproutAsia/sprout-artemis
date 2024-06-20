@@ -1,3 +1,5 @@
+import ArtemisHeader from "../../../../../../../shared/ArtemisHeader"
+
 import { TResPutLatestScreening } from "./TResPutLatestScreening"
 
 
@@ -19,7 +21,7 @@ export default async function getScreenSummary(args: {
         conclusions: string[]
     }
 }) {
-    const headers = new Headers()
+    const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customers/" + args.path.customerId + "/screen/" + args.path.latestScreeningId)
 

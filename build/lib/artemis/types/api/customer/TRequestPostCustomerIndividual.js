@@ -1,4 +1,0 @@
-"use strict";
-// POST api/customer swagger UI A3
-Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFJlcXVlc3RQb3N0Q3VzdG9tZXJJbmRpdmlkdWFsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vc3JjL2xpYi9hcnRlbWlzL3R5cGVzL2FwaS9jdXN0b21lci9UUmVxdWVzdFBvc3RDdXN0b21lckluZGl2aWR1YWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLGtDQUFrQyJ9

@@ -1,4 +1,6 @@
 
+import ArtemisHeader from "../../../shared/ArtemisHeader"
+
 import { TResGetCustomer } from "./TResGetCustomer"
 
 
@@ -11,16 +13,16 @@ export default async function getCustomer(args: {
     auth: {
         token: string
     }
-}) {
-    const headers = new Headers()
-    headers.append("authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customers")
+}): Promise<TResGetCustomer> {
+    const headers = ArtemisHeader()
+    headers.append("Authorization", "Bearer " + args.auth.token)
+    const url = new URL(process.env.ARTEMIS_API + "/customer")
 
     try {
         const result = await fetch(url.toString(), {
             headers
-        }).then((res) => res.json())
-        return result as TResGetCustomer
+        }).then((res) => res.json()) as Promise<TResGetCustomer>
+        return result
     } catch (e) {
         return e
     }

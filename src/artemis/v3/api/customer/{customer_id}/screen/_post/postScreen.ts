@@ -1,3 +1,4 @@
+import ArtemisHeader from "../../../../../shared/ArtemisHeader"
 
 
 
@@ -18,7 +19,7 @@ export default async function postScreen(args: {
         customerId: string
     }
 }) {
-    const headers = new Headers()
+    const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customers/" + args.path.customerId + "/screen")
     if (args.query.includeCrp) url.searchParams.append('includeCrp', args.query.includeCrp ? "true" : "")

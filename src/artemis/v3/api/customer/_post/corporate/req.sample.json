@@ -6,7 +6,7 @@
     "active": true,
     "particular": {
         "incorporated": true,
-        "name": "TEST COMPANY",
+        "name": "PT COCO",
         "alias": [],
         "formerName": [],
         "countryOfIncorporation": "SINGAPORE",
@@ -45,7 +45,7 @@
         "additionalInformation": "TEST ADDITIONAL INFORMATION",
         "natureOfBusinessRelationship": "TEST NATURE OF BUSINESS RELATIONSHIP"
     },
-    "profileReferenceId": "test1",
+    "profileReferenceId": "customer id",
     "referenceId": "TEST CASE ID",
     "watcherIds": [
         1691

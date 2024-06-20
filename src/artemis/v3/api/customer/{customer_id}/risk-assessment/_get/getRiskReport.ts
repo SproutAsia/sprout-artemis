@@ -1,4 +1,6 @@
 
+import ArtemisHeader from "../../../../../shared/ArtemisHeader"
+
 import { TResGetRiskReport } from "./TResGetRiskReport"
 
 
@@ -15,7 +17,7 @@ export default async function getRiskReport(args: {
         customerId: string
     }
 }) {
-    const headers = new Headers()
+    const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customers/" + args.path.customerId + "/risk-assessment")
 

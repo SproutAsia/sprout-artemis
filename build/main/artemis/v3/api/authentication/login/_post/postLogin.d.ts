@@ -1,4 +1,5 @@
-import { TReqLogin } from "../TReqLogin";
+import { TReqLogin } from "./TReqLogin";
+import { TResLogin } from "./TResLogin";
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer
@@ -6,4 +7,4 @@ import { TReqLogin } from "../TReqLogin";
  */
 export default function postLogin(args: {
     req: TReqLogin;
-}): Promise<any>;
+}): Promise<TResLogin>;

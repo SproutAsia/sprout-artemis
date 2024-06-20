@@ -1,3 +1,5 @@
+import ArtemisHeader from "../../../../shared/ArtemisHeader"
+
 import { TReqPostCustomerIndividual } from "./TReqPostCustomerIndividual.v3"
 import { TResPostCustomerIndividual } from "./TResPostCustomerIndividual.v3"
 
@@ -13,7 +15,7 @@ export default async function postIndividualCustomer(args: {
     }
     req: TReqPostCustomerIndividual
 }) {
-    const headers = new Headers()
+    const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customers")
 

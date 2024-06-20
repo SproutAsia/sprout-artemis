@@ -13,4 +13,7 @@ export default function postCorporateCrpFromGrof(args: {
             };
         };
     };
+    path: {
+        customerId: string;
+    };
 }): Promise<any>;

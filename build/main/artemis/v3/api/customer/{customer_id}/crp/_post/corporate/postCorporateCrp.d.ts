@@ -9,4 +9,7 @@ export default function postCorporateCrp(args: {
         token: string;
     };
     req: TReqPostCorporateCrp;
+    path: {
+        customerId: string;
+    };
 }): Promise<any>;

@@ -10,26 +10,30 @@ export interface TReqPostCorporateCrp {
 export interface Other {
     entityType: string;
     otherEntityType: string;
-    corporateWebsite: any;
+    corporateWebsite: string;
     status: string;
     sourceOfFunds: string;
-    bankAccountNumber: any[];
+    bankAccountNumber: string[];
     undischargedBankrupt: string;
     ownershipStructureLayer: string;
     variableCapitalCompany: string;
-    businessCessationDate: any;
+    businessCessationDate: string;
+    additionalInformation: string;
 }
 export interface Particular {
+    /**
+     * @requires
+     */
     name: string;
-    alias: any[];
-    formerName: any[];
+    alias: string[];
+    formerName: string[];
     countryOfIncorporation: string;
     countryOfOperation: string[];
-    dateOfIncorporation: any;
-    email: any[];
-    address: any[];
-    imonumber: any;
+    dateOfIncorporation: string;
+    email: string[];
+    address: string[];
+    imonumber: string;
     incorporateNumber: string;
-    incorporated: string;
-    phone: any[];
+    incorporated: boolean;
+    phone: string[];
 }

@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { TResponseGetRiskCustomer } from "../../v3/api/risk/TResponseGetRiskCustomer";
+import { TResponseGetRiskCustomer } from "./TResponseGetRiskCustomer";
 export default class ArtemisRiskService {
     token: string;
     url: string;

@@ -1,6 +1,9 @@
 
+import ArtemisHeader from "../../../../shared/ArtemisHeader"
+
 import { TReqPostCustomerCorporate } from "./TReqPostCustomerCorporate.v3"
 import { TResPostCustomerCorporate } from "./TResPostCustomerCorporate.v3"
+
 
 
 /**
@@ -14,16 +17,18 @@ export default async function postCorporateCustomer(args: {
     }
     req: TReqPostCustomerCorporate
 }) {
-    const headers = new Headers()
+    const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customers")
+    const url = new URL(process.env.ARTEMIS_API + "/customer")
 
     try {
         const result = await fetch(url.toString(), {
             method: "POST",
             body: JSON.stringify(args.req),
             headers
-        }).then((res) => res.json())
+        }).then(async (res) => {
+            return res.json()
+        })
         return result as TResPostCustomerCorporate
     } catch (e) {
         return e
