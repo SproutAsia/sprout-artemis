@@ -1,7 +1,8 @@
+import ArtemisHeader from "../../../../shared/ArtemisHeader"
 
-import ArtemisHeader from "../../../shared/ArtemisHeader"
+import { TResGetMe } from "./TResGetMe"
 
-import { TResGetCustomer } from "./TResGetCustomer"
+
 
 
 /**
@@ -20,7 +21,7 @@ export default async function getCustomer(args: {
         riskRating?: string
         searchString?: string
     }
-}): Promise<TResGetCustomer> {
+}) {
     const headers = ArtemisHeader()
     headers.append("Authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customer")
@@ -30,8 +31,10 @@ export default async function getCustomer(args: {
     if (args.filter.riskRating) url.searchParams.append("riskRatingList", args.filter.riskRating)
     if (args.filter.searchString) url.searchParams.append("searchString", args.filter.searchString)
 
+
     const result = await fetch(url.toString(), {
         headers
-    }).then((res) => res.json()) as Promise<TResGetCustomer>
-    return result
+    })
+    if (result.status === 401) throw new Error("Unauthorized")
+    else return result.json() as Promise<TResGetMe>
 }
