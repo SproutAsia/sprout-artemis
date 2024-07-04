@@ -8,7 +8,6 @@ declare const ConvertToRequest: {
         additional?: {
             referenceId?: string;
             additionalInformation?: string;
-            formerName?: string[];
         };
     }): TReqPostCustomerCorporate;
     toSingleIndividualCrp(args: {

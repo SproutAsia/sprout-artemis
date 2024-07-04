@@ -1,6 +1,21 @@
 import { ArtemisEnum } from "./ArtemisEnum";
 
 const ConvertToArtemisEnum = {
+    appointmentToRole: (appointments: any[]) => {
+        const roles = appointments.reduce((a, b) => {
+            try {
+                const position = ConvertToArtemisEnum.role(b.position)
+                return [...a, {
+                    role: position,
+                    appointedDate: b.appointmentDate,
+                    resignedDate: b.resignedDate
+                }]
+            } catch (e) {
+                return a
+            }
+        }, [])
+        return roles
+    },
     documentType: (type: string) => {
         switch (type) {
             case "Passport": return "INTERNATIONAL PASSPORT";
@@ -35,28 +50,16 @@ const ConvertToArtemisEnum = {
     role: (memberRole: string) => {
         switch (memberRole) {
             case "Director":
-            case "Chief Executive Officer":
-            case "Public Accountant Employee":
-            case "Auditor":
-            case "Officer":
-            case "Manager":
-            case "Managing Director":
-            case "Agent":
-            case "Secretary":
                 return "DIRECTOR";
-            case "Alternate Director":
-                return "DIRECTOR (ALTERNATE)";
             case "Nominee Director":
-            case "Employee":
                 return "DIRECTOR (NOMINEE)";
-            case "Director under Section 17(3)(d) of the Accountants Act":
             case "Member":
                 return "SHAREHOLDER";
-            case "Beneficial Owner":
-            case "Authorized Person":
-                return "ULTIMATE BENEFICIAL OWNER";
             case "Nominator":
                 return "NOMINEE/TRUSTEE";
+            case "Corporate Representative":
+                // it should be other, and "other" in artemis can add free text role
+                return memberRole;
             default: {
                 throw new Error("Role is unknown")
             }
@@ -64,9 +67,13 @@ const ConvertToArtemisEnum = {
     },
     entityType: (entityType: string, country: string) => {
         if (country !== "SG") return "FOREIGN ENTITY NOT REGISTERED WITH ACRA"
+        // "UNKNOWN" is from Artemis Enum
         if (!ArtemisEnum.entityType.includes(entityType)) return "UNKNOWN"
         return entityType
     },
+    /**
+     * @deprecated we should use enum from system variable instead
+     */
     shortCountry: (country: string) => {
         switch (country) {
             case "SG": return "SINGAPORE";

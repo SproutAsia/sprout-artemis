@@ -3,7 +3,7 @@
  * @description Individual Workflow - STEP 1 : create customer
  * @description Corporate Workflow - STEP 1 : create customer
  */
-export default function getScreenSummary(args: {
+export default function putLatestScreening(args: {
     auth: {
         token: string;
     };

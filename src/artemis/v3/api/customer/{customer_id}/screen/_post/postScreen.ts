@@ -21,7 +21,7 @@ export default async function postScreen(args: {
 }) {
     const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customers/" + args.path.customerId + "/screen")
+    const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/screen")
     if (args.query.includeCrp) url.searchParams.append('includeCrp', args.query.includeCrp ? "true" : "")
     if (args.query.onlyUpdated) url.searchParams.append('onlyUpdated', args.query.onlyUpdated ? "true" : "")
 

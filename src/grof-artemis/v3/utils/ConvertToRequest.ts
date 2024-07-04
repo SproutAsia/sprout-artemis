@@ -5,6 +5,7 @@ import { TReqPostIndividualCrp } from "../../../artemis/v3/api/customer/{custome
 import { TGrofApplication } from "../../../grof/types/TGrofApplication"
 
 import ConvertToArtemisEnum from "./ConvertEnum"
+import ErrorForConvert, { ErrorForConvertToCorporate, ErrorForConvertToIndividual } from "./ErrorForConvert.enum"
 import Formatter from "./Formatter"
 
 
@@ -14,9 +15,18 @@ const ConvertToRequest = {
         additional?: {
             referenceId?: string
             additionalInformation?: string
-            formerName?: string[]
         }
     }) {
+        // handle missing mandatory
+        if (!args.application.company.riskProfileAssessment.countryOfOperations) throw new Error(ErrorForConvert.enum["Country of operations cannot be empty"])
+        if (!args.application.company.companyName) throw new Error(ErrorForConvert.enum["Company name cannot be empty"])
+        if (!args.application.company.legalDetails.entityType) throw new Error(ErrorForConvert.enum["Entity type cannot be empty"])
+        if (!args.application.company.ssic.primary.code) throw new Error(ErrorForConvert.enum["Industry code cannot be empty"])
+        if (!args.application.company.riskProfileAssessment.onboardingMode) throw new Error(ErrorForConvert.enum["Onboarding mode cannot be empty"])
+        if (!args.application.company.riskProfileAssessment.ownershipStructureLayers) throw new Error(ErrorForConvert.enum["Ownership structure layer cannot be empty"])
+        if (!args.application.company.riskProfileAssessment.paymentModes) throw new Error(ErrorForConvert.enum["Payment mode cannot be empty"])
+        if (!args.application.company.riskProfileAssessment.productServiceComplexity) throw new Error(ErrorForConvert.enum["Product service complexity cannot be empty"])
+
         // new if no service
         const isNewIncorp = Boolean(args.application.services.incorporation)
         // transferIn service is 
@@ -25,9 +35,6 @@ const ConvertToRequest = {
         // convert country of operations
         const countryOfOperations = args.application.company.riskProfileAssessment.countryOfOperations.map((c) => c.toUpperCase())
 
-        const referenceId = isTransferIn ? args.application.company.legalDetails.uen : args.additional.referenceId
-        if (!referenceId) throw new Error("Reference ID cannot be null")
-
         return {
             type: "CORPORATE",
             assigneeId: process.env.ARTEMIS_USER_ID,
@@ -35,7 +42,7 @@ const ConvertToRequest = {
                 process.env.ARTEMIS_DOMAIN_ID
             ],
             other: {
-                entityType: ConvertToArtemisEnum.entityType(args.application.company.legalDetails.entityType, args.application.company.addresses.registeredAddress.country,),
+                entityType: ConvertToArtemisEnum.entityType(args.application.company.legalDetails.entityType, args.application.company.addresses.registeredAddress.country),
                 corporateWebsite: "",
                 fatfjurisdiction: "",
                 industry: args.application.company.ssic.primary.code + " - " + args.application.company.ssic.primary.description,
@@ -52,7 +59,7 @@ const ConvertToRequest = {
                 incorporated: args.application.company.isIncorporated,
                 name: args.application.company.companyName,
                 alias: [args.application.company.legalDetails.entityName],
-                formerName: args.additional?.formerName || [],
+                formerName: args.application.company.legalDetails.historyName ? [args.application.company.legalDetails.historyName] : [],
                 countryOfIncorporation: ConvertToArtemisEnum.shortCountry(args.application.company.addresses.registeredAddress.country),
                 countryOfOperation: countryOfOperations,
                 address: Formatter.toGrofAddress({
@@ -72,7 +79,7 @@ const ConvertToRequest = {
                 incorporateNumber: isNewIncorp ? "" : args.application.company.legalDetails.uen
             },
             profileReferenceId: args.application.company.companyName,
-            referenceId: isTransferIn ? args.application.company.legalDetails.uen : args.additional.referenceId,
+            referenceId: args.application.company.companyName,
             active: true
         } as TReqPostCustomerCorporate
     },
@@ -86,20 +93,17 @@ const ConvertToRequest = {
     }) {
         const member = args.member
 
-        // null check
-        if (!member.companyDetails.companyName) throw new Error("Company name cannot be blank.")
+        // handle missing mandatory
+        if (!member.personDetails.personalDetails.fullName) throw new Error(ErrorForConvertToIndividual.enum['Name cannot be empty'])
+        if (!member.personDetails.personalDetails.nationality) throw new Error(ErrorForConvertToIndividual.enum['Nationality cannot be empty'])
+        if (!member.personDetails.address.country) throw new Error(ErrorForConvertToIndividual.enum['Country of residence cannot be empty'])
 
         // pre-parse
         const documentType = ConvertToArtemisEnum.documentType(member.personDetails.personalDetails.idDocument.type)
 
         // roles
-        const roles = member.appointments.map((a) => {
-            return {
-                role: ConvertToArtemisEnum.role(a.position),
-                appointedDate: a.appointmentDate,
-                resignedDate: a.resignedDate
-            } as TReqPostCorporateCrp['roles'][0]
-        })
+        const roles = ConvertToArtemisEnum.appointmentToRole(member.appointments)
+        if (!roles.length) throw new Error(ErrorForConvertToIndividual.enum['Role cannot be empty'])
 
         const req = {
             type: "INDIVIDUAL",
@@ -117,7 +121,7 @@ const ConvertToRequest = {
                 address: Formatter.toGrofAddress({
                     blockHouse: member.personDetails.address.blockHouse,
                     buildingName: member.personDetails.address.buildingName,
-                    country: ConvertToArtemisEnum.shortCountry(member.personDetails.address.country),
+                    country: member.personDetails.address.country,
                     level: member.personDetails.address.level,
                     postalCode: member.personDetails.address.postalCode,
                     streetName: member.personDetails.address.streetName,
@@ -170,6 +174,12 @@ const ConvertToRequest = {
             } as TReqPostCorporateCrp['roles'][0]
         })
 
+        // handle empty mandatory field
+        if (!member.companyDetails.legalDetails.countryOfRegisteredBusiness) throw new Error(ErrorForConvertToCorporate.enum['Country of incorporation cannot be empty'])
+        if (!member.companyDetails.riskProfileAssessment.countryOfOperations) throw new Error(ErrorForConvertToCorporate.enum['Country of operation cannot be empty'])
+        if (!member.companyDetails.legalDetails.entityType) throw new Error(ErrorForConvertToCorporate.enum['Entity type cannot be empty'])
+        if (!member.companyDetails.companyName) throw new Error(ErrorForConvertToCorporate.enum['Company name cannot be empty'])
+
         return {
             type: "CORPORATE",
             roles: roles,
@@ -188,7 +198,7 @@ const ConvertToRequest = {
                     postalCode: member.companyDetails.addresses.registeredAddress.postalCode,
                     streetName: member.companyDetails.addresses.registeredAddress.streetName,
                     unit: member.companyDetails.addresses.registeredAddress.unit,
-                    country: ConvertToArtemisEnum.shortCountry(member.companyDetails.addresses.registeredAddress.country),
+                    country: member.companyDetails.addresses.registeredAddress.country,
                     addressLine1: member.companyDetails.addresses.registeredAddress.addressLine1,
                     addressLine2: member.companyDetails.addresses.registeredAddress.addressLine2
                 }),
