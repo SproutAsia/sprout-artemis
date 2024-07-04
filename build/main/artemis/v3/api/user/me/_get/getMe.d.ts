@@ -1,10 +1,8 @@
 import { TResGetMe } from "./TResGetMe";
 /**
- * post customer
- * @description Individual Workflow - STEP 1 : create customer
- * @description Corporate Workflow - STEP 1 : create customer
+ * to check token
  */
-export default function getCustomer(args: {
+export default function getMe(args: {
     auth: {
         token: string;
     };

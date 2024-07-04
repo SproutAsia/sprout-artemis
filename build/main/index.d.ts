@@ -8,6 +8,8 @@ import getScreenSummary from "./artemis/v3/api/customer/{customer_id}/screen/sum
 import postScreen from "./artemis/v3/api/customer/{customer_id}/screen/_post/postScreen";
 import getHit from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/hit/_get/getHit";
 import putRemoveHit from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/hit/_put/putRemoveHit";
+import checkToken from "./artemis/v3/api/user/me/_get/checkToken";
+import getMe from "./artemis/v3/api/user/me/_get/getMe";
 import checkEnv from "./grof-artemis/v3/checkEnv";
 import postCorporateCrpFromGrof from "./grof-artemis/v3/postCorporateCrpFromGrof";
 import postCorporateCustomerFromGrof from "./grof-artemis/v3/postCorporateCustomer.v3";
@@ -29,5 +31,7 @@ declare const ArtemisGrofService: {
     removeHit: typeof putRemoveHit;
     getRiskReport: typeof getRiskReport;
     postApproval: typeof postApproval;
+    getMe: typeof getMe;
+    checkToken: typeof checkToken;
 };
 export default ArtemisGrofService;
