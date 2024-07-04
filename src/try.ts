@@ -8,18 +8,15 @@ import ArtemisGrofService from "."
 dotenv.config()
 
 const sample = (SampleCorporateMember as unknown) as Member
-ArtemisGrofService.postCorporateCrpFromGrof({
+ArtemisGrofService.getCrpProfile({
     auth: {
         token: process.env.ARTEMIS_TOKEN,
     },
-    grof: {
-        application: {
-            company: {
-                member: sample
-            }
-        }
-    },
-    path: {
-        customerId: "13"
+    filter: {
+        customerType: "INDIVIDUAL",
+        customerId: "18",
+        searchString: "kim"
     }
+}).then((res) => {
+    console.log(">>> RES", JSON.stringify(res, null, 2))
 })

@@ -1,0 +1,489 @@
+{
+    "content": [
+        {
+            "customer": {
+                "id": 8,
+                "createdAt": "2024-06-19T07:07:45.393+00:00",
+                "updatedAt": "2024-07-03T05:41:38.932+00:00",
+                "createdBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "updatedBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "active": true,
+                "parentId": null,
+                "profileId": 7,
+                "type": "CORPORATE",
+                "referenceId": "TEST CASE ID 2",
+                "profileReferenceId": "customer id",
+                "particular": {
+                    "name": "PT COCOLATOZ",
+                    "alias": [],
+                    "email": [
+                        "email@mail.com"
+                    ],
+                    "phone": [
+                        "38723823723"
+                    ],
+                    "address": [
+                        "Singapore City"
+                    ],
+                    "imonumber": null,
+                    "formerName": [],
+                    "incorporated": true,
+                    "incorporateNumber": "1ncorporation number",
+                    "countryOfOperation": [
+                        "INDONESIA"
+                    ],
+                    "dateOfIncorporation": null,
+                    "countryOfIncorporation": "SINGAPORE",
+                    "dateOfIncorporationExpiry": "2024-06-08"
+                },
+                "other": {
+                    "industry": "01111 - GROWING OF LEAFY AND FRUIT VEGETABLES",
+                    "entityType": "CHARITY",
+                    "bankAccount": [
+                        "BCA"
+                    ],
+                    "paymentMode": [
+                        "CASH"
+                    ],
+                    "documentList": null,
+                    "sourceOfFunds": "LOAN",
+                    "onBoardingMode": "FACE-TO-FACE",
+                    "corporateWebsite": null,
+                    "fatfjurisdiction": false,
+                    "additionalInformation": "TEST ADDITIONAL INFORMATION",
+                    "variableCapitalCompany": null,
+                    "ownershipStructureLayer": "3 OR MORE",
+                    "productServiceComplexity": "SIMPLE",
+                    "natureOfBusinessRelationship": "TEST NATURE OF BUSINESS RELATIONSHIP"
+                },
+                "notes": null,
+                "vendorName": null,
+                "vendorEntityGuid": null,
+                "lastRiskAssessment": null,
+                "status": "PENDING",
+                "riskRating": "UNKNOWN",
+                "roles": [],
+                "assignees": [
+                    {
+                        "id": 1691,
+                        "firstName": "RICO",
+                        "lastName": "Arisandy",
+                        "email": "arisandy.rico@grof.co",
+                        "fullName": "RICO Arisandy",
+                        "rawFirstName": "RICO",
+                        "rawLastName": "Arisandy",
+                        "deleted": 0,
+                        "role": "USER"
+                    }
+                ],
+                "watchers": [
+                    {
+                        "id": 1691,
+                        "firstName": "RICO",
+                        "lastName": "Arisandy",
+                        "email": "arisandy.rico@grof.co",
+                        "fullName": "RICO Arisandy",
+                        "rawFirstName": "RICO",
+                        "rawLastName": "Arisandy",
+                        "deleted": 0,
+                        "role": "USER"
+                    }
+                ],
+                "listRoleAsText": []
+            },
+            "parentCustomer": null,
+            "screening": null,
+            "oddScreening": null,
+            "screeningStatus": "PENDING",
+            "remarks": []
+        },
+        {
+            "customer": {
+                "id": 26,
+                "createdAt": "2024-07-03T05:41:29.004+00:00",
+                "updatedAt": "2024-07-03T05:41:29.194+00:00",
+                "createdBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "updatedBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "active": null,
+                "parentId": 8,
+                "profileId": 20,
+                "type": "INDIVIDUAL",
+                "referenceId": null,
+                "profileReferenceId": "Customer Kim",
+                "particular": {
+                    "name": "KIM JONG UN",
+                    "alias": [],
+                    "email": [],
+                    "phone": [],
+                    "gender": "UNKNOWN",
+                    "address": [],
+                    "formerName": [],
+                    "salutation": "MR",
+                    "dateOfBirth": null,
+                    "nationality": [
+                        "NORTH KOREA"
+                    ],
+                    "countryOfBirth": "",
+                    "identityNumber": "",
+                    "countryOfResidence": "NORTH KOREA",
+                    "identityExpiryDate": null,
+                    "identityIssuedDate": null,
+                    "identityDocumentType": ""
+                },
+                "other": {
+                    "status": "CURRENT",
+                    "documentList": null,
+                    "sourceOfFunds": "",
+                    "bankAccountNumber": [],
+                    "ownershipPercentage": 0.0,
+                    "undischargedBankrupt": false,
+                    "additionalInformation": ""
+                },
+                "notes": null,
+                "vendorName": null,
+                "vendorEntityGuid": null,
+                "lastRiskAssessment": null,
+                "roles": [
+                    {
+                        "id": 15,
+                        "createdAt": "2024-07-03T05:41:29.009+00:00",
+                        "updatedAt": "2024-07-03T05:41:29.009+00:00",
+                        "createdBy": {
+                            "id": 1691,
+                            "firstName": "RICO",
+                            "lastName": "Arisandy",
+                            "email": "arisandy.rico@grof.co",
+                            "fullName": "RICO Arisandy",
+                            "rawFirstName": "RICO",
+                            "rawLastName": "Arisandy",
+                            "deleted": 0,
+                            "role": "USER"
+                        },
+                        "updatedBy": {
+                            "id": 1691,
+                            "firstName": "RICO",
+                            "lastName": "Arisandy",
+                            "email": "arisandy.rico@grof.co",
+                            "fullName": "RICO Arisandy",
+                            "rawFirstName": "RICO",
+                            "rawLastName": "Arisandy",
+                            "deleted": 0,
+                            "role": "USER"
+                        },
+                        "role": "DIRECTOR",
+                        "appointedDate": "2024-07-03",
+                        "resignedDate": null
+                    }
+                ],
+                "assignees": [],
+                "watchers": [],
+                "listRoleAsText": [
+                    "DIRECTOR"
+                ]
+            },
+            "parentCustomer": {
+                "id": 8,
+                "createdAt": "2024-06-19T07:07:45.393+00:00",
+                "updatedAt": "2024-07-03T05:41:38.932+00:00",
+                "createdBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "updatedBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "active": true,
+                "parentId": null,
+                "profileId": 7,
+                "type": "CORPORATE",
+                "referenceId": "TEST CASE ID 2",
+                "profileReferenceId": "customer id",
+                "particular": {
+                    "name": "PT COCOLATOZ",
+                    "alias": [],
+                    "email": [
+                        "email@mail.com"
+                    ],
+                    "phone": [
+                        "38723823723"
+                    ],
+                    "address": [
+                        "Singapore City"
+                    ],
+                    "imonumber": null,
+                    "formerName": [],
+                    "incorporated": true,
+                    "incorporateNumber": "1ncorporation number",
+                    "countryOfOperation": [
+                        "INDONESIA"
+                    ],
+                    "dateOfIncorporation": null,
+                    "countryOfIncorporation": "SINGAPORE",
+                    "dateOfIncorporationExpiry": "2024-06-08"
+                },
+                "other": {
+                    "industry": "01111 - GROWING OF LEAFY AND FRUIT VEGETABLES",
+                    "entityType": "CHARITY",
+                    "bankAccount": [
+                        "BCA"
+                    ],
+                    "paymentMode": [
+                        "CASH"
+                    ],
+                    "documentList": null,
+                    "sourceOfFunds": "LOAN",
+                    "onBoardingMode": "FACE-TO-FACE",
+                    "corporateWebsite": null,
+                    "fatfjurisdiction": false,
+                    "additionalInformation": "TEST ADDITIONAL INFORMATION",
+                    "variableCapitalCompany": null,
+                    "ownershipStructureLayer": "3 OR MORE",
+                    "productServiceComplexity": "SIMPLE",
+                    "natureOfBusinessRelationship": "TEST NATURE OF BUSINESS RELATIONSHIP"
+                },
+                "notes": null,
+                "vendorName": null,
+                "vendorEntityGuid": null,
+                "lastRiskAssessment": null,
+                "status": "PENDING",
+                "riskRating": "UNKNOWN",
+                "roles": [],
+                "assignees": [
+                    {
+                        "id": 1691,
+                        "firstName": "RICO",
+                        "lastName": "Arisandy",
+                        "email": "arisandy.rico@grof.co",
+                        "fullName": "RICO Arisandy",
+                        "rawFirstName": "RICO",
+                        "rawLastName": "Arisandy",
+                        "deleted": 0,
+                        "role": "USER"
+                    }
+                ],
+                "watchers": [
+                    {
+                        "id": 1691,
+                        "firstName": "RICO",
+                        "lastName": "Arisandy",
+                        "email": "arisandy.rico@grof.co",
+                        "fullName": "RICO Arisandy",
+                        "rawFirstName": "RICO",
+                        "rawLastName": "Arisandy",
+                        "deleted": 0,
+                        "role": "USER"
+                    }
+                ],
+                "listRoleAsText": []
+            },
+            "screening": {
+                "id": 7,
+                "createdAt": "2024-06-21T10:22:15.530+00:00",
+                "updatedAt": "2024-06-21T10:22:44.927+00:00",
+                "createdBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "updatedBy": {
+                    "id": 1691,
+                    "firstName": "RICO",
+                    "lastName": "Arisandy",
+                    "email": "arisandy.rico@grof.co",
+                    "fullName": "RICO Arisandy",
+                    "rawFirstName": "RICO",
+                    "rawLastName": "Arisandy",
+                    "deleted": 0,
+                    "role": "USER"
+                },
+                "profileId": 20,
+                "finalStatus": "DONE",
+                "screeningSessionId": null,
+                "screeningSessionDate": null,
+                "screeningSessionType": null,
+                "isPeriodic": false,
+                "hasHit": true,
+                "status": {
+                    "id": 7,
+                    "createdAt": "2024-06-21T10:22:15.533+00:00",
+                    "updatedAt": "2024-06-21T10:22:44.898+00:00",
+                    "createdBy": {
+                        "id": 1691,
+                        "firstName": "RICO",
+                        "lastName": "Arisandy",
+                        "email": "arisandy.rico@grof.co",
+                        "fullName": "RICO Arisandy",
+                        "rawFirstName": "RICO",
+                        "rawLastName": "Arisandy",
+                        "deleted": 0,
+                        "role": "USER"
+                    },
+                    "updatedBy": {
+                        "id": 1691,
+                        "firstName": "RICO",
+                        "lastName": "Arisandy",
+                        "email": "arisandy.rico@grof.co",
+                        "fullName": "RICO Arisandy",
+                        "rawFirstName": "RICO",
+                        "rawLastName": "Arisandy",
+                        "deleted": 0,
+                        "role": "USER"
+                    },
+                    "screeningId": 7,
+                    "profileId": 20,
+                    "status": {
+                        "ARTEMISCAN": {
+                            "status": "DONE",
+                            "screeningSessionId": 26,
+                            "message": ""
+                        },
+                        "INTERNET_SEARCH": {
+                            "status": "DONE",
+                            "screeningSessionId": 27,
+                            "message": ""
+                        },
+                        "TR": {
+                            "status": "DONE",
+                            "screeningSessionId": 25,
+                            "message": ""
+                        },
+                        "OWN_RESTRICTED_LIST": {
+                            "status": "DONE",
+                            "screeningSessionId": 28,
+                            "message": ""
+                        }
+                    }
+                },
+                "oddStatus": null,
+                "screenedWith": [
+                    "TR",
+                    "ARTEMISCAN",
+                    "INTERNET_SEARCH",
+                    "OWN_RESTRICTED_LIST"
+                ],
+                "screeningConclusion": [],
+                "ocrConclusion": null,
+                "faceCompareConclusion": null,
+                "valid": true,
+                "ocrValid": true,
+                "facValid": true,
+                "remarks": null,
+                "quickscanName": null,
+                "quickscanType": null,
+                "additionalInformation": {
+                    "djMonitoringCaseId": null,
+                    "djMonitoringTxId": null,
+                    "trCaseId": "5jb71qu9fw6x1irz7727ghi75",
+                    "faceCompareDocumentId": null,
+                    "faceCompareSelfieId": null,
+                    "ocrDocumentId": null
+                },
+                "ocrInformation": {
+                    "ocrDocumentId": null,
+                    "ocrDocuments": null
+                },
+                "facInformation": {
+                    "faceCompareDocumentId": null,
+                    "faceCompareSelfieId": null,
+                    "faceCompareDocuments": null
+                },
+                "description": null
+            },
+            "oddScreening": null,
+            "screeningStatus": "DONE",
+            "remarks": [
+                "NORTH KOREA is jurisdiction(s) that is reported with sanctioned individual/entities originating/residing in it based on UK Her Majesty Treasury Financial Sanction Targets List",
+                "NORTH KOREA is jurisdiction(s) that is reported with sanctioned regime based on United Nations Sanctions List",
+                "NORTH KOREA is jurisdiction(s) that is reported with sanctioned regime based on US OFAC Sanctions List",
+                "NORTH KOREA is jurisdiction(s) that is considered high risk and monitored by Financial Action Task Force (FATF)",
+                "NORTH KOREA is jurisdiction(s) that is reported with weak Anti-Money Laundering and Terrorist Financing regimes based on EU High Risk Third Countries List"
+            ]
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 20,
+        "paged": true,
+        "unpaged": false
+    },
+    "totalElements": 2,
+    "totalPages": 1,
+    "last": true,
+    "size": 20,
+    "number": 0,
+    "sort": {
+        "sorted": true,
+        "unsorted": false,
+        "empty": false
+    },
+    "numberOfElements": 2,
+    "first": true,
+    "empty": false
+}

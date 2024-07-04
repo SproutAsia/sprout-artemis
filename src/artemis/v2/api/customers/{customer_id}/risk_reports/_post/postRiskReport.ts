@@ -21,7 +21,7 @@ export default async function postRiskReport(args: {
 }) {
     const headers = new Headers()
     headers.append("authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customers/" + args.path.customerId + "/risk_reports")
+    const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/risk_reports")
 
     try {
         const result = await fetch(url.toString(), {

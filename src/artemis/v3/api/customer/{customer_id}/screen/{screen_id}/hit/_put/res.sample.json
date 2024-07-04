@@ -1,0 +1,63 @@
+[
+    {
+        "id": 73,
+        "createdAt": "2024-06-21T10:22:16.504+00:00",
+        "updatedAt": "2024-06-21T10:22:16.504+00:00",
+        "createdBy": {
+            "id": 1691,
+            "firstName": "RICO",
+            "lastName": "Arisandy",
+            "email": "arisandy.rico@grof.co",
+            "fullName": "RICO Arisandy",
+            "rawFirstName": "RICO",
+            "rawLastName": "Arisandy",
+            "deleted": 0,
+            "role": "USER"
+        },
+        "updatedBy": {
+            "id": 1691,
+            "firstName": "RICO",
+            "lastName": "Arisandy",
+            "email": "arisandy.rico@grof.co",
+            "fullName": "RICO Arisandy",
+            "rawFirstName": "RICO",
+            "rawLastName": "Arisandy",
+            "deleted": 0,
+            "role": "USER"
+        },
+        "screeningId": 7,
+        "screeningType": "ARTEMISCAN",
+        "externalId": "1f7afec846601f5800eefe1fc82e8589",
+        "diff": null,
+        "body": {
+            "GRT": null,
+            "dob": "08 Jan 1984",
+            "list": "OFAC SDN and consolidated sanction list",
+            "parse": "NAME: Jong Un KIM  |  TYPE: Individual  |  PROGRAM: DPRK3  |  REMARKS: -  |  *ON_SDN: YES, U.S. persons are prohibited from dealing with SDNs wherever they are located and all SDN assets are blocked.",
+            "title": "Chairman of the Workers' Party of Korea",
+            "gender": "UNKNOWN",
+            "on_SDN": true,
+            "ent_num": "20157",
+            "hash_id": "1f7afec846601f5800eefe1fc82e8589",
+            "program": "DPRK3",
+            "remarks": null,
+            "tonnage": null,
+            "SDN_name": "Jong Un KIM",
+            "SDN_type": "Individual",
+            "call_sign": null,
+            "concat_al": null,
+            "vess_flag": null,
+            "vess_type": null,
+            "vess_owner": null,
+            "nationality": "UNKNOWN",
+            "record_type": "individual",
+            "formatted_name": "Jong Un KIM"
+        },
+        "matched": "NO_ACTION",
+        "newMatch": true,
+        "profileId": 20,
+        "commentCount": 0,
+        "comment": null,
+        "screeningSessionId": 26
+    }
+]

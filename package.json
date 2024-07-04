@@ -1,6 +1,6 @@
 {
   "name": "sprout-artemis",
-  "version": "1.240620.956",
+  "version": "1.240704.741",
   "description": "help sprout asia connect with artemis API",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -13,9 +13,6 @@
     "test:offline": "TEST_ENV=offline jest --coverage",
     "build": "tsc -p tsconfig.prod.json",
     "start": "ts-node src/try.ts"
-  },
-  "engines": {
-    "node": ">=10"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.7",

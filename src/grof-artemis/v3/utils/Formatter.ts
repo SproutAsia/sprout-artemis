@@ -1,3 +1,5 @@
+import ConvertToArtemisEnum from "./ConvertEnum"
+
 const Formatter = {
     toGrofAddress(args: {
         country?: string
@@ -12,7 +14,7 @@ const Formatter = {
     }) {
         if (args.country === "SG") {
             const formattedAddress = [
-                args.country,
+                ConvertToArtemisEnum.shortCountry(args.country),
                 args.blockHouse,
                 args.streetName,
                 args.buildingName,

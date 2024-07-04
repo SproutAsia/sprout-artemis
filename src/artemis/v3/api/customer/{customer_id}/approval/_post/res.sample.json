@@ -1,0 +1,72 @@
+{
+    "id": 1,
+    "createdAt": "2024-06-18T09:33:04.781+00:00",
+    "updatedAt": "2024-07-03T04:36:21.273+00:00",
+    "createdBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "updatedBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "risk": {
+        "message": null,
+        "comments": {
+            "3": [
+                "11110 - LEGISLATOR is a high risk occupation."
+            ]
+        },
+        "risk_score": 75.683334,
+        "risk_rating": "HIGH",
+        "component_score": {
+            "cpi": 5.1000000000000005,
+            "fsi": 1.6666666666666667,
+            "fatf": 12.25,
+            "oecd": 10.0,
+            "fatca": 0.0,
+            "industry": 5.0,
+            "screening": 30.0,
+            "occupation": 0.0,
+            "payment_modes": 1.6666666666666667,
+            "premium_amount": 0.0,
+            "onboarding_mode": 5.0,
+            "source_of_funds": 0.0,
+            "product_complexity": 5.0
+        },
+        "weight_settings": {
+            "cpi": 15,
+            "fsi": 2.5,
+            "fatf": 15,
+            "oecd": 10,
+            "fatca": 2.5,
+            "industry": 5,
+            "screening": 30,
+            "occupation": 5,
+            "payment_modes": 5,
+            "primary_weight": 50,
+            "onboarding_mode": 5,
+            "product_complexity": 5
+        }
+    },
+    "riskRating": "HIGH",
+    "overrideRiskRating": "LOW",
+    "riskScore": 75.68,
+    "approvalStatus": "REQUEST_CHANGES",
+    "customerId": 3,
+    "message": null
+}
