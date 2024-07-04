@@ -6,6 +6,7 @@ import postApproval from "./artemis/v3/api/customer/{customer_id}/approval/_post
 import getCrp from "./artemis/v3/api/customer/{customer_id}/crp/_get/getCrp";
 import getRiskReport from "./artemis/v3/api/customer/{customer_id}/risk-assessment/_get/getRiskReport";
 import getScreenSummary from "./artemis/v3/api/customer/{customer_id}/screen/summary/_get/getScreenSummary";
+import postScreen from "./artemis/v3/api/customer/{customer_id}/screen/_post/postScreen";
 import getHit from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/hit/_get/getHit";
 import putRemoveHit from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/hit/_put/putRemoveHit";
 import checkEnv from "./grof-artemis/v3/checkEnv";
@@ -21,6 +22,7 @@ const ArtemisGrofService = {
     postIndividualCrpFromGrof,
     postCorporateCustomerFromGrof,
     postIndividualCustomerFromGrof,
+    postScreen,
     getCustomer,
     getCrp,
     getHit,

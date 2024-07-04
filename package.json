@@ -14,9 +14,6 @@
     "build": "tsc -p tsconfig.prod.json",
     "start": "ts-node src/try.ts"
   },
-  "engines": {
-    "node": ">=10"
-  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.7",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
