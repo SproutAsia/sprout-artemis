@@ -18,4 +18,4 @@ export default function postIndividualCrpFromGrof(args: {
         customerId: string;
     };
     additional?: Parameters<typeof ConvertToRequest.toSingleIndividualCrp>['0']['additional'];
-}): Promise<any>;
+}): Promise<import("../../artemis/v3/api/customer/{customer_id}/crp/_post/individual/TResPostIndividualCrp.v3").TResPostIndividualCrp>;

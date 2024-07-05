@@ -11,4 +11,4 @@ export default function postCorporateCustomerFromGrof(args: {
         application: TGrofApplication;
     };
     additional?: Parameters<typeof convertToRequest.toCorporateCustomer>[0]['additional'];
-}): Promise<any>;
+}): Promise<import("../../artemis/v3/api/customer/_post/corporate/TResPostCustomerCorporate.v3").TResPostCustomerCorporate>;

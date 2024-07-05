@@ -6,12 +6,14 @@ import putCustomer from "./artemis/v3/api/customer/_put/putCustomer";
 import postApproval from "./artemis/v3/api/customer/{customer_id}/approval/_post/postApproval";
 import getCrp from "./artemis/v3/api/customer/{customer_id}/crp/_get/getCrp";
 import putCrp from "./artemis/v3/api/customer/{customer_id}/crp/_put/putCrp";
+import getCrpById from "./artemis/v3/api/customer/{customer_id}/crp/{crp_id}/_get/getCrpById";
 import getRiskReport from "./artemis/v3/api/customer/{customer_id}/risk-assessment/_get/getRiskReport";
 import getScreenSummary from "./artemis/v3/api/customer/{customer_id}/screen/summary/_get/getScreenSummary";
 import postScreen from "./artemis/v3/api/customer/{customer_id}/screen/_post/postScreen";
 import getHit from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/hit/_get/getHit";
 import putRemoveHit from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/hit/_put/putRemoveHit";
 import putScreenConclusion from "./artemis/v3/api/customer/{customer_id}/screen/{screen_id}/_put/putScreenConclusion";
+import getCustomerById from "./artemis/v3/api/customer/{customer_id}/_get/getCustomerById";
 import checkToken from "./artemis/v3/api/user/me/_get/checkToken";
 import getMe from "./artemis/v3/api/user/me/_get/getMe";
 import checkEnv from "./grof-artemis/v3/checkEnv";
@@ -27,8 +29,10 @@ const ArtemisGrofService = {
     postCorporateCustomerFromGrof,
     postScreen,
     getCustomer,
+    getCustomerById,
     putCustomer,
     getCrp,
+    getCrpById,
     putCrp,
     getHit,
     getScreenSummary,

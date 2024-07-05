@@ -1,3 +1,4 @@
+import { TResRemoveHit } from "./TResRemoveHit";
 /**
  * remove hit
  */
@@ -16,4 +17,4 @@ export default function putRemoveHit(args: {
         match: "TRUE_HIT" | "NO_ACTION" | "FALSE_POSITIVE";
         screeningHitIds: string[];
     };
-}): Promise<any>;
+}): Promise<TResRemoveHit>;

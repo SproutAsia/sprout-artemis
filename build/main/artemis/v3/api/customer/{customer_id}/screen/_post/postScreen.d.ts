@@ -12,4 +12,4 @@ export default function postScreen(args: {
     path: {
         customerId: string;
     };
-}): Promise<any>;
+}): Promise<boolean>;

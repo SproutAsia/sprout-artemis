@@ -1,16 +1,15 @@
-import { TReqApproval } from "./TReqApproval";
-import { TResApproval } from "./TResApproval";
+import { TResGetCrpById } from "./TResGetCrpById";
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer
  * @description Corporate Workflow - STEP 1 : create customer
  */
-export default function postApproval(args: {
+export default function getCrpById(args: {
     auth: {
         token: string;
     };
     path: {
         customerId: string;
+        crpId: string;
     };
-    body: TReqApproval;
-}): Promise<TResApproval>;
+}): Promise<TResGetCrpById>;

@@ -1,3 +1,4 @@
+import { TResGetScreenSummary } from "./TResGetScreenSummary";
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer
@@ -10,4 +11,4 @@ export default function getScreenSummary(args: {
     path: {
         customerId: string;
     };
-}): Promise<any>;
+}): Promise<TResGetScreenSummary>;

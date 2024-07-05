@@ -1,3 +1,4 @@
+import { TResGetRiskReport } from "./TResGetRiskReport";
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer
@@ -10,4 +11,4 @@ export default function getRiskReport(args: {
     path: {
         customerId: string;
     };
-}): Promise<any>;
+}): Promise<TResGetRiskReport>;

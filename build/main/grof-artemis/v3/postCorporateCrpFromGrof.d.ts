@@ -16,4 +16,4 @@ export default function postCorporateCrpFromGrof(args: {
     path: {
         customerId: string;
     };
-}): Promise<any>;
+}): Promise<import("../../artemis/v3/api/customer/_post/corporate/TResPostCustomerCorporate.v3").TResPostCustomerCorporate>;
