@@ -2,8 +2,9 @@ import ArtemisHeader from "../../../../../shared/ArtemisHeader"
 
 
 
+
 /**
- * post customer
+ * trigger start screening
  */
 export default async function postScreen(args: {
     auth: {
@@ -23,13 +24,9 @@ export default async function postScreen(args: {
     if (args.query.includeCrp) url.searchParams.append('includeCrp', args.query.includeCrp ? "true" : "")
     if (args.query.onlyUpdated) url.searchParams.append('onlyUpdated', args.query.onlyUpdated ? "true" : "")
 
-    try {
-        const result = await fetch(url.toString(), {
-            method: "POST",
-            headers
-        }).then((res) => res.text())
-        return result
-    } catch (e) {
-        return e
-    }
+    const result = await fetch(url.toString(), {
+        method: "POST",
+        headers
+    })
+    return result.status === 200
 }

@@ -1,5 +1,5 @@
 /**
- * post customer
+ * trigger start screening
  */
 export default function postScreen(args: {
     auth: {

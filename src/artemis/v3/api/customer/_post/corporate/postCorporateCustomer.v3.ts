@@ -21,16 +21,12 @@ export default async function postCorporateCustomer(args: {
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customer")
 
-    try {
-        const result = await fetch(url.toString(), {
-            method: "POST",
-            body: JSON.stringify(args.req),
-            headers
-        }).then(async (res) => {
-            return res.json()
-        })
-        return result as TResPostCustomerCorporate
-    } catch (e) {
-        return e
-    }
+    const result = await fetch(url.toString(), {
+        method: "POST",
+        body: JSON.stringify(args.req),
+        headers
+    }).then(async (res) => {
+        return res.json()
+    })
+    return result as TResPostCustomerCorporate
 }

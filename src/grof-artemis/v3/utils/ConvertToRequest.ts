@@ -15,6 +15,9 @@ const ConvertToRequest = {
         additional?: {
             referenceId?: string
             additionalInformation?: string
+        },
+        customFn?: {
+            parseCountry?: (country: string) => string
         }
     }) {
         // handle missing mandatory
@@ -29,8 +32,6 @@ const ConvertToRequest = {
 
         // new if no service
         const isNewIncorp = Boolean(args.application.services.incorporation)
-        // transferIn service is 
-        const isTransferIn = Boolean(args.application.services.corpSec)
 
         // convert country of operations
         const countryOfOperations = args.application.company.riskProfileAssessment.countryOfOperations.map((c) => c.toUpperCase())
@@ -60,7 +61,7 @@ const ConvertToRequest = {
                 name: args.application.company.companyName,
                 alias: [args.application.company.legalDetails.entityName],
                 formerName: args.application.company.legalDetails.historyName ? [args.application.company.legalDetails.historyName] : [],
-                countryOfIncorporation: ConvertToArtemisEnum.shortCountry(args.application.company.addresses.registeredAddress.country),
+                countryOfIncorporation: args.customFn?.parseCountry?.(args.application.company.addresses.registeredAddress.country) || ConvertToArtemisEnum.shortCountry(args.application.company.addresses.registeredAddress.country),
                 countryOfOperation: countryOfOperations,
                 address: Formatter.toGrofAddress({
                     country: args.application.company.addresses.registeredAddress.country,
@@ -89,6 +90,9 @@ const ConvertToRequest = {
             additionalInformation?: string
             otherSourceOfFunds?: string
             formerName?: string[]
+        },
+        customFn?: {
+            parseCountry?: (country: string) => string
         }
     }) {
         const member = args.member
@@ -137,7 +141,7 @@ const ConvertToRequest = {
                 formerName: args.additional?.formerName || [],
                 name: member.personDetails.personalDetails.fullName,
                 dateOfBirth: member.personDetails.personalDetails.dateOfBirth,
-                countryOfBirth: ConvertToArtemisEnum.shortCountry(member.personDetails.personalDetails.countryOfBirth),
+                countryOfBirth: args.customFn?.parseCountry?.(member.personDetails.personalDetails.countryOfBirth) || ConvertToArtemisEnum.shortCountry(member.personDetails.personalDetails.countryOfBirth),
                 gender: member.personDetails.personalDetails.gender.toUpperCase(),
                 identityDocumentType: documentType,
                 // it should be fill or not listed in field. undefined when being parsed will gone.
@@ -145,9 +149,9 @@ const ConvertToRequest = {
                 identityIssuedDate: member.personDetails.personalDetails.idDocument.dateOfIssuance,
                 identityNumber: member.personDetails.personalDetails.idDocument.idNumber,
                 nationality: [
-                    ConvertToArtemisEnum.shortCountry(member.personDetails.personalDetails.nationality)
+                    args.customFn?.parseCountry?.(member.personDetails.personalDetails.nationality) || ConvertToArtemisEnum.shortCountry(member.personDetails.personalDetails.nationality)
                 ],
-                countryOfResidence: ConvertToArtemisEnum.shortCountry(member.personDetails.address.country),
+                countryOfResidence: args.customFn?.parseCountry?.(member.personDetails.address.country) || ConvertToArtemisEnum.shortCountry(member.personDetails.address.country),
                 salutation: "",
             },
             profileReferenceId: member.companyDetails.companyName,
@@ -162,6 +166,9 @@ const ConvertToRequest = {
             additionalInformation?: string
             formerName?: string[]
             otherSourceOfFunds?: string
+        },
+        customFn?: {
+            parseCountry?: (country: string) => string
         }
     }) {
         const member = args.member
@@ -205,7 +212,7 @@ const ConvertToRequest = {
                 alias: [
                     member.companyDetails.companyName
                 ],
-                countryOfIncorporation: ConvertToArtemisEnum.shortCountry(member.companyDetails.legalDetails.countryOfRegisteredBusiness),
+                countryOfIncorporation: args.customFn?.parseCountry?.(member.companyDetails.legalDetails.countryOfRegisteredBusiness) || ConvertToArtemisEnum.shortCountry(member.companyDetails.legalDetails.countryOfRegisteredBusiness),
                 countryOfOperation: member.companyDetails.riskProfileAssessment.countryOfOperations.map((c) => c.toUpperCase()),
                 dateOfIncorporation: member.companyDetails.legalDetails.registrationDate,
                 email: [],

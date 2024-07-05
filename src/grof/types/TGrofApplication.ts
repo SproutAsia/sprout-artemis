@@ -110,7 +110,7 @@ export interface Documents {
 
 export interface LegalDetails {
     uen: string
-    entityName: string
+    entityName?: string
     entityStatus?: string
     registrationDate?: TMongoDate
     businessConstitution?: string
@@ -294,7 +294,7 @@ export interface CompanyDetails {
         issuedDate?: string
         issuanceCountry?: string
     }[]
-    companyName: string
+    companyName?: string
     legalDetails: MemberLegalDetails
     riskProfileAssessment?: MemberRiskProfileAssessment
     addresses: {

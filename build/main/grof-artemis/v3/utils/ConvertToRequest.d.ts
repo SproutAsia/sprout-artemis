@@ -9,6 +9,9 @@ declare const ConvertToRequest: {
             referenceId?: string;
             additionalInformation?: string;
         };
+        customFn?: {
+            parseCountry?: (country: string) => string;
+        };
     }): TReqPostCustomerCorporate;
     toSingleIndividualCrp(args: {
         member: TGrofApplication['company']['members'][0];
@@ -17,6 +20,9 @@ declare const ConvertToRequest: {
             otherSourceOfFunds?: string;
             formerName?: string[];
         };
+        customFn?: {
+            parseCountry?: (country: string) => string;
+        };
     }): TReqPostIndividualCrp;
     toSingleCorporateCrp(args: {
         member: TGrofApplication['company']['members'][0];
@@ -24,6 +30,9 @@ declare const ConvertToRequest: {
             additionalInformation?: string;
             formerName?: string[];
             otherSourceOfFunds?: string;
+        };
+        customFn?: {
+            parseCountry?: (country: string) => string;
         };
     }): TReqPostCorporateCrp;
 };

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ArtemisHeader_1 = __importDefault(require("../../../../../shared/ArtemisHeader"));
 /**
- * post customer
+ * trigger start screening
  */
 async function postScreen(args) {
     const headers = (0, ArtemisHeader_1.default)();

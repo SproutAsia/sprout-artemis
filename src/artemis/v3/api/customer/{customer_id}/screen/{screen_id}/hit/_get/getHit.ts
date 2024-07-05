@@ -33,12 +33,8 @@ export default async function getHit(args: {
     url.searchParams.append("customerId", args.path.customerId)
     url.searchParams.append("screeningSessionId", args.query.screeningSessionId)
 
-    try {
-        const result = await fetch(url.toString(), {
-            headers
-        }).then((res) => res.json())
-        return result as TResHit
-    } catch (e) {
-        return e
-    }
+    const result = await fetch(url.toString(), {
+        headers
+    }).then((res) => res.json())
+    return result as TResHit
 }

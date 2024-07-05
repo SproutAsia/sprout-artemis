@@ -17,6 +17,7 @@ export default async function putRemoveHit(args: {
         screenId: string
     }
     body: {
+        match: "TRUE_HIT" | "NO_ACTION" | "FALSE_POSITIVE"
         screeningHitIds: string[]
     }
 }) {
@@ -24,17 +25,13 @@ export default async function putRemoveHit(args: {
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/screen/" + args.path.screenId + "/hit")
 
-    try {
-        const result = await fetch(url.toString(), {
-            headers,
-            method: "PUT",
-            body: JSON.stringify({
-                match: "NO_ACTION",
-                screeningHitIds: args.body.screeningHitIds
-            })
-        }).then((res) => res.json())
-        return result as TResRemoveHit
-    } catch (e) {
-        return e
-    }
+    const result = await fetch(url.toString(), {
+        headers,
+        method: "PUT",
+        body: JSON.stringify({
+            match: args.body.match,
+            screeningHitIds: args.body.screeningHitIds
+        })
+    }).then((res) => res.json())
+    return result as TResRemoveHit
 }

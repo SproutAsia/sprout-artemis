@@ -1,17 +1,33 @@
 import dotenv from 'dotenv'
 
-import { Member } from "./grof/types/TGrofApplication"
-import { SampleCorporateMember } from "./test/sample"
 
-import ArtemisGrofService from "."
+import ConvertToRequest from './grof-artemis/v3/utils/ConvertToRequest'
+import { SampleFullApp } from './sample'
+
+import ArtemisGrofService from '.'
 
 dotenv.config()
 
-const sample = (SampleCorporateMember as unknown) as Member
-ArtemisGrofService.checkToken({
+try {
+    const corporate = SampleFullApp.data.members.find((m) => m.category === "CORPORATE")
+    console.log(">>> FOUND CORP", corporate)
+    const convertResult = ConvertToRequest.toSingleCorporateCrp({
+        member: corporate as any
+    })
+    console.log(">>> RESULT", JSON.stringify(convertResult))
+} catch (e) {
+    console.log(">>> Error", e)
+}
+
+ArtemisGrofService.putScreenConclusion({
     auth: {
-        token: process.env.ARTEMIS_TOKEN,
+        token: ""
+    },
+    path: {
+        customerId: "",
+        screenId: ""
+    },
+    body: {
+        conclusions: ["ADVERSE_MEDIA", "NO_HIT"]
     }
-}).then((res) => {
-    console.log(">>> RES", res.isActive)
 })
