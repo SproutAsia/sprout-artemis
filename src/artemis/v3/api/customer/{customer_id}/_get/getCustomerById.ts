@@ -19,7 +19,7 @@ export default async function getCustomerById(args: {
 }) {
     const headers = ArtemisHeader()
     headers.append("Authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customer" + args.path.customerId)
+    const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId)
 
     const result = await fetch(url.toString(), {
         headers
