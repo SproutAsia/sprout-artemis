@@ -15,4 +15,8 @@ export default function getCustomer(args: {
         riskRating?: string;
         searchString?: string;
     };
+    pagination?: {
+        size: number;
+        page: number;
+    };
 }): Promise<TResGetCustomer>;

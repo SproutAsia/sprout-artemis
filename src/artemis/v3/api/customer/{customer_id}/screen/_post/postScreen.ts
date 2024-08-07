@@ -1,8 +1,5 @@
 import ArtemisHeader from "../../../../../shared/ArtemisHeader"
 
-
-
-
 /**
  * trigger start screening
  */

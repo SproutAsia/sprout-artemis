@@ -1,15 +1,37 @@
-import { ArtemisEnum } from "./ArtemisEnum";
+import { ArtemisSsic } from "../../../artemis/v3/shared/ArtemisSsic"
 
 const ConvertToArtemisEnum = {
+    ssic: (code: string) => {
+        return ArtemisSsic.find((ssic) => ssic.includes(code))
+    },
+    country: (country: string) => {
+        if (country === "UNITED STATES") return "UNITED STATES OF AMERICA"
+        return country
+    },
+    onboarding: (args: string) => {
+        if (args === "FACE TO FACE") return "FACE-TO-FACE"
+        return args
+    },
     appointmentToRole: (appointments: any[]) => {
+        const allowedPosition = [
+            'Director',
+            'Nominee Director',
+            'Member',
+            'Corporate Representative',
+            'Nominator',
+        ];
         const roles = appointments.reduce((a, b) => {
             try {
-                const position = ConvertToArtemisEnum.role(b.position)
-                return [...a, {
-                    role: position,
-                    appointedDate: b.appointmentDate,
-                    resignedDate: b.resignedDate
-                }]
+                if (allowedPosition.includes(b.position)) {
+                    const position = ConvertToArtemisEnum.role(b.position)
+                    return [...a, {
+                        role: position,
+                        appointedDate: b.appointmentDate,
+                        resignedDate: b.resignedDate
+                    }]
+                } else {
+                    return a
+                }
             } catch (e) {
                 return a
             }
@@ -65,10 +87,12 @@ const ConvertToArtemisEnum = {
             }
         }
     },
+    /**
+     * 
+     * @param entityType - is companyType in grof
+     */
     entityType: (entityType: string, country: string) => {
         if (country !== "SG") return "FOREIGN ENTITY NOT REGISTERED WITH ACRA"
-        // "UNKNOWN" is from Artemis Enum
-        if (!ArtemisEnum.entityType.includes(entityType)) return "UNKNOWN"
         return entityType
     },
     /**

@@ -23,6 +23,9 @@ export default async function getScreenSummary(args: {
 
     const result = await fetch(url.toString(), {
         headers
-    }).then((res) => res.json())
+    }).then((res) => res.ok ? res.json() : res.text())
+    if (typeof result === "string" && result === "") {
+        throw new Error("Screening summary not found")
+    }
     return result as TResGetScreenSummary
 }

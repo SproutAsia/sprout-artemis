@@ -1,5 +1,9 @@
+/* eslint-disable import/order */
 import ArtemisHeader from "../../../../shared/ArtemisHeader"
+import CheckMock from "../../../../shared/CheckMock"
 
+
+import { ResMockLogin } from "./res.mock"
 import { TReqLogin } from "./TReqLogin"
 import { TResLogin } from "./TResLogin"
 
@@ -11,6 +15,8 @@ import { TResLogin } from "./TResLogin"
 export default async function postLogin(args: {
     req: TReqLogin
 }): Promise<TResLogin> {
+    if (CheckMock()) return ResMockLogin
+
     const headers = ArtemisHeader()
     const url = new URL(process.env.ARTEMIS_API + "/authentication/login")
 

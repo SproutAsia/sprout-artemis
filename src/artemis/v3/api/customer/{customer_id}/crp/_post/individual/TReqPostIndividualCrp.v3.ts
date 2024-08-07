@@ -13,6 +13,11 @@ export interface TReqPostIndividualCrp {
      * @example "18001181212C"
      */
     profileReferenceId: string
+    /**
+     * we will use this for matching
+     * @example
+     */
+    referenceId: string
     other: Other
 }
 
@@ -27,7 +32,7 @@ export interface Particular {
     /**
      * @example "MALE"
      */
-    gender: string
+    gender?: string
     /**
      * @example ["MALAYSIA"]
      */

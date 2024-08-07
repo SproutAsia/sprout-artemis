@@ -24,7 +24,6 @@ export default async function putCrp(args: {
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/crp/" + args.path.crpId)
 
-    console.log(">>> URL", url.toString())
     const result = await fetch(url.toString(), {
         headers,
         method: "PUST",

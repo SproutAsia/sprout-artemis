@@ -1,33 +1,25 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 
-import ConvertToRequest from './grof-artemis/v3/utils/ConvertToRequest'
-import { SampleFullApp } from './sample'
 
-import ArtemisGrofService from '.'
+import ArtemisGrofService from '.';
 
-dotenv.config()
+dotenv.config();
 
-try {
-    const corporate = SampleFullApp.data.members.find((m) => m.category === "CORPORATE")
-    console.log(">>> FOUND CORP", corporate)
-    const convertResult = ConvertToRequest.toSingleCorporateCrp({
-        member: corporate as any
-    })
-    console.log(">>> RESULT", JSON.stringify(convertResult))
-} catch (e) {
-    console.log(">>> Error", e)
-}
-
-ArtemisGrofService.putScreenConclusion({
-    auth: {
-        token: ""
-    },
-    path: {
-        customerId: "",
-        screenId: ""
-    },
-    body: {
-        conclusions: ["ADVERSE_MEDIA", "NO_HIT"]
+(async () => {
+    try {
+        const res = await ArtemisGrofService.getCustomer({
+            auth: { token: process.env.ARTEMIS_TOKEN },
+            filter: {
+                referenceId: '202209234'
+            },
+            pagination: {
+                page: 0,
+                size: 5
+            }
+        })
+        console.log(">>> RES", res)
+    } catch (e) {
+        console.log(">>> Error", e)
     }
-})
+})()

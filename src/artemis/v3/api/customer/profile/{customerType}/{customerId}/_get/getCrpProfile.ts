@@ -3,9 +3,7 @@ import ArtemisHeader from "../../../../../../shared/ArtemisHeader"
 import { TResGetCrpProfile } from "./TResGetCrpProfile"
 
 /**
- * post customer
- * @description Individual Workflow - STEP 1 : create customer
- * @description Corporate Workflow - STEP 1 : create customer
+ * GET crp profile
  */
 export default async function getCrpProfile(args: {
     auth: {
@@ -19,10 +17,11 @@ export default async function getCrpProfile(args: {
 }): Promise<TResGetCrpProfile> {
     const headers = ArtemisHeader()
     headers.append("Authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customer/profile/" + args.filter.customerType + "/" + args.filter.customerId)
-    if (args.filter.customerId) url.searchParams.append("customerTypeList", args.filter.customerId)
-    if (args.filter.customerType) url.searchParams.append("customerTypeList", args.filter.customerType)
-    if (args.filter.searchString) url.searchParams.append("searchString", args.filter.searchString)
+    const url = new URL(process.env.ARTEMIS_API + "/customer/profile/" + args.filter.customerType + `/${args.filter.customerId}`)
+
+    if (args.filter.customerType) url.searchParams.append("type", args.filter.customerType)
+    url.searchParams.append("searchString", args.filter.searchString || "")
+    // url.searchParams.append("mainCustomerId", args.filter.customerId)
 
     try {
         const result = await fetch(url.toString(), {
