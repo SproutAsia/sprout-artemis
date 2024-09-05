@@ -51,12 +51,13 @@ const ConvertToArtemisEnum = {
         if (!source) return null;
 
         switch (source) {
-            case "Salary":
-            case "Employment Income":
-                return "SALARY";
-            case "Business income": return "BUSINESS REVENUE";
-            case "Investment income": return "INVESTMENT GAIN";
-            default: return "OTHERS"
+            case "Salary": return "SALARY";
+            case "Investment Revenue": return "INVESTMENT REVENUE";
+            case "Business Revenue": return "BUSINESS REVENUE";
+            case "Investment Gain": return "INVESTMENT GAIN";
+            case "Loan": return "LOAN";
+            case "Others, please specify": return "OTHERS";
+            default: return null
         }
     },
     companySourceOfFund: (source: string) => {
@@ -78,10 +79,13 @@ const ConvertToArtemisEnum = {
             case "Member":
                 return "SHAREHOLDER";
             case "Nominator":
-                return "NOMINEE/TRUSTEE";
+                return "NOMINEE/TRUSTEE"
+            case "Beneficial Owner":
+                return "ULTIMATE BENEFICIAL OWNER"
             case "Corporate Representative":
+            case "Authorized Person":
                 // it should be other, and "other" in artemis can add free text role
-                return memberRole;
+                return memberRole
             default: {
                 throw new Error("Role is unknown")
             }
@@ -105,7 +109,22 @@ const ConvertToArtemisEnum = {
             case "ID": return "INDONESIA";
             default: return country
         }
-    }
+    },
+    /**
+     * Converts an address to Singapore address format
+     * @param address - The address object to convert
+     * @returns The formatted Singapore address string
+     */
+    toSingaporeAddress: (address: {
+        blockHouse?: string;
+        streetName?: string;
+        buildingName?: string;
+        level?: string;
+        unit?: string;
+        postalCode?: string;
+    }) => {
+        return `${address.blockHouse} ${address.streetName}${address.buildingName ? (`, ${address.buildingName}`) : ''} #${address.level}-${address.unit} ${address.postalCode || ""} Singapore`
+    },
 }
 
 export default ConvertToArtemisEnum

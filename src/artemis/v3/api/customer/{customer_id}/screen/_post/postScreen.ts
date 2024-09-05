@@ -25,5 +25,9 @@ export default async function postScreen(args: {
         method: "POST",
         headers
     })
-    return result.status === 200
+    if (result.status !== 200) {
+        const errorBody = await result.text();
+        throw new Error(`Error response body: ${errorBody}`);
+    }
+    return true
 }

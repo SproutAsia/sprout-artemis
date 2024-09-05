@@ -42,8 +42,13 @@ export default async function getCustomer(args: {
     if (args.pagination.size) url.searchParams.append("size", args.pagination?.size.toString())
     if (args.pagination.page) url.searchParams.append("page", args.pagination?.page.toString())
 
-    const result = await fetch(url.toString(), {
-        headers
-    }).then((res) => res.json()) as Promise<TResGetCustomer>
-    return result
+
+    const response = await fetch(url.toString(), { headers });
+    if (!response.ok) {
+        console.error(`HTTP error! status: ${response.status}`);
+        const text = await response.text();
+        console.error(`Response body: ${text}`);
+    }
+    const result = await response.json();
+    return result as Promise<TResGetCustomer>
 }

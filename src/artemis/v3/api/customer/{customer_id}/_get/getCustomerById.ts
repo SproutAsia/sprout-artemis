@@ -1,6 +1,5 @@
 import ArtemisHeader from "../../../../shared/ArtemisHeader"
 
-import { TResGetCustomerById } from "./TResGetCustomerById"
 
 
 
@@ -23,6 +22,8 @@ export default async function getCustomerById(args: {
 
     const result = await fetch(url.toString(), {
         headers
-    }).then((res) => res.json()) as Promise<TResGetCustomerById>
+    }).then((res) => {
+        return res.json()
+    })
     return result
 }

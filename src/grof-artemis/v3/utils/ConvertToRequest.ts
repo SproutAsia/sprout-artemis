@@ -114,7 +114,7 @@ const ConvertToRequest = {
             other: {
                 ownershipPercentage: member.sharesDetails.reduce((cur, next) => cur + next.sharePercentage, 0),
                 bankAccount: [],
-                sourceOfFunds: ConvertToArtemisEnum.sourceOfFund(member.personDetails.riskProfileAssessment?.sourceOfIncome),
+                sourceOfFunds: ConvertToArtemisEnum.sourceOfFund(member.personDetails.riskProfileAssessment?.sourceOfFunds),
                 status: "CURRENT",
                 undischargedBankrupt: false,
                 otherSourceOfFunds: args.additional?.otherSourceOfFunds,
@@ -195,7 +195,8 @@ const ConvertToRequest = {
                 bankAccountNumber: [],
                 ownershipStructureLayer: member.companyDetails.riskProfileAssessment.ownershipStructureLayers,
                 status: "CURRENT",
-                additionalInformation: args.additional?.additionalInformation || ""
+                additionalInformation: args.additional?.additionalInformation || "",
+                ownershipPercentage: member.sharesDetails?.reduce((cur, next) => cur + next.sharePercentage, 0),
             },
             particular: {
                 address: Formatter.toGrofAddress({

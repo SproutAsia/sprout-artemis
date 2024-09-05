@@ -4,9 +4,9 @@ declare const ConvertToArtemisEnum: {
     onboarding: (args: string) => string;
     appointmentToRole: (appointments: any[]) => any;
     documentType: (type: string) => "INTERNATIONAL PASSPORT" | "NATIONAL ID";
-    sourceOfFund: (source?: string) => "SALARY" | "BUSINESS REVENUE" | "INVESTMENT GAIN" | "OTHERS";
-    companySourceOfFund: (source: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "OTHERS" | "LOAN";
-    role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "NOMINEE/TRUSTEE" | "Corporate Representative";
+    sourceOfFund: (source?: string) => "SALARY" | "INVESTMENT REVENUE" | "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
+    companySourceOfFund: (source: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
+    role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "NOMINEE/TRUSTEE" | "ULTIMATE BENEFICIAL OWNER" | "Corporate Representative" | "Authorized Person";
     /**
      *
      * @param entityType - is companyType in grof
@@ -16,5 +16,18 @@ declare const ConvertToArtemisEnum: {
      * @deprecated we should use enum from system variable instead
      */
     shortCountry: (country: string) => string;
+    /**
+     * Converts an address to Singapore address format
+     * @param address - The address object to convert
+     * @returns The formatted Singapore address string
+     */
+    toSingaporeAddress: (address: {
+        blockHouse?: string;
+        streetName?: string;
+        buildingName?: string;
+        level?: string;
+        unit?: string;
+        postalCode?: string;
+    }) => string;
 };
 export default ConvertToArtemisEnum;

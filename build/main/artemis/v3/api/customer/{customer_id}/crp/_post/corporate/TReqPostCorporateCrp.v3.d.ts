@@ -19,6 +19,7 @@ export interface Other {
     variableCapitalCompany: string;
     businessCessationDate: string;
     additionalInformation: string;
+    ownershipPercentage: number;
 }
 export interface Particular {
     /**

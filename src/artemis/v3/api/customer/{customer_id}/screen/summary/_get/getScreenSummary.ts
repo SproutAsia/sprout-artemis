@@ -3,12 +3,6 @@ import ArtemisHeader from "../../../../../../shared/ArtemisHeader"
 
 import { TResGetScreenSummary } from "./TResGetScreenSummary"
 
-
-/**
- * post customer
- * @description Individual Workflow - STEP 1 : create customer
- * @description Corporate Workflow - STEP 1 : create customer
- */
 export default async function getScreenSummary(args: {
     auth: {
         token: string

@@ -381,6 +381,8 @@ export interface PersonDetails {
         isAcceptDirectorCriteria?: string,
         isMultipleNationalities?: string,
         nationalities?: string[],
+        sourceOfFunds?: string,
+        otherSourceOfFunds?: string,
     }
 }
 
