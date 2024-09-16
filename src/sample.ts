@@ -709,7 +709,7 @@ export const SampleFullApp = {
     "message": "Get Application by Id"
 }
 
-export const SampleApp1650 = { "_id": "65c1a4bbadabcdf3d736da2e", "members": [{ "category": "INDIVIDUAL", "appointments": [{ "position": "Director", "appointmentDate": "2023-01-05", "status": "Active", "_id": "65cada7105b5cbf097e2f66e" }], "documents": [], "isApplicant": true, "companyDetails": { "documents": [], "riskProfileAssessment": { "countryOfOperations": [] } }, "personDetails": { "documents": [{ "id": "65c1a4edadabcdf3d736db17", "type": "NRIC" }], "callFirstName": "Joko", "callLastName": "Anwar", "legalDetails": { "legalFirstName": "NATALIE", "legalLastName": "ISKANDAR" }, "contactDetails": { "phoneCountry": "ID", "phoneNumber": "81396173134", "email": "testin9needs4@gmail.com" }, "personalDetails": { "fullName": "NATALIE ISKANDAR", "alias": [], "nationality": "SG", "dateOfBirth": "1990-02-27", "idDocument": { "idNumber": "S8363700E" } }, "address": { "country": "SG", "postalCode": "509383", "blockHouse": "69A", "streetName": "JALAN LOYANG BESAR" } }, "riskAssessment": { "documents": [] }, "sharesDetails": [{ "shareAllotted": 10000, "shareType": "Ordinary", "shareCurrency": "SGD", "_id": "65cada7105b5cbf097e2f66f" }], "isOutgoing": false, "_id": "65cada7105b5cbf097e2f66d" }, { "category": "INDIVIDUAL", "appointments": [{ "position": "Secretary", "appointmentDate": "2023-01-05", "status": "Active", "_id": "65cada7105b5cbf097e2f671" }], "documents": [], "isApplicant": false, "companyDetails": { "documents": [], "riskProfileAssessment": { "countryOfOperations": [] } }, "personDetails": { "documents": [{ "id": "65c1a4edadabcdf3d736db19", "type": "NRIC" }], "legalDetails": { "legalFirstName": "LEE", "legalLastName": "HONG KEN" }, "personalDetails": { "fullName": "LEE HONG KEN", "alias": [], "nationality": "SG", "dateOfBirth": "1990-02-14", "idDocument": { "type": "NRIC", "idNumber": "S7174159A" } }, "address": { "country": "SG", "postalCode": "098632", "blockHouse": "1", "streetName": "HARBOURFRONT AVENUE", "buildingName": "KEPPEL BAY TOWER", "level": "04", "unit": "09" } }, "riskAssessment": { "documents": [] }, "sharesDetails": [{ "shareAllotted": 1500, "shareType": "ORDINARY", "shareCurrency": "SGD", "_id": "65cada7105b5cbf097e2f672" }, { "shareAllotted": 500, "shareType": "PREFERENCE", "shareCurrency": "SGD", "_id": "65cada7105b5cbf097e2f673" }, { "shareAllotted": 800, "shareType": "PREFERENCE", "shareCurrency": "SGD", "_id": "65cada7105b5cbf097e2f674" }], "isOutgoing": false, "_id": "65cada7105b5cbf097e2f670" }], "organization": { "_id": "65c1a4bbadabcdf3d736da24", "companyName": "AUSTRALASIA APAC PTE. LTD.", "status": { "artemisStatus": "Approved", "applicationStatus": "COMPLETED", "baCreationStatus": "COMPLETED", "niumComplianceStatus": "COMPLETED", "accessLevelStatus": "PREMIUM", "organizationStatus": "ACTIVE", "corpSecStatus": "Completed" }, "niumCaseId": "1e2938c5-9daa-4edd-8f31-379d5e2907f6", "niumClientId": "NIM1707189587718", "niumCustomerId": "f104449a-fb78-4139-a4f7-3a528d50bcaf", "companyId": "65c2ff52adabcdf3d737bc83" }, "submittedBy": { "_id": "65c1a461adabcdf3d736d919", "phoneNumber": "881396173134", "emailAddresses": ["jokotestin9needs4@gmail.com"], "callFirstName": "Joko", "callLastName": "Anwar", "dialCode": "+62" }, "organizationId": "65c1a4bbadabcdf3d736da24", "createdBy": null, "niumRfiData": [], "status": "COMPLETED", "createdAt": "2024-02-06T03:17:15.741Z", "updatedAt": "2024-07-29T08:11:12.976Z", "company": { "legalDetails": { "countryOfRegisteredBusiness": "SG", "uen": "202300698H", "entityName": "AUSTRALASIA APAC PTE. LTD.", "registrationDate": "2023-01-05T00:00:00.000Z", "entityType": "COM", "companyType": "EXEMPT PRIVATE COMPANY LIMITED BY SHARES", "businessConstitution": "Attached Customized Constitution", "entityStatus": "Live Company" }, "addresses": { "registeredAddress": { "postalCode": "098632", "country": "SG", "blockHouse": "1", "streetName": "HARBOURFRONT AVENUE", "buildingName": "KEPPEL BAY TOWER", "level": "04", "unit": "09" } }, "ssic": { "primary": { "code": "46900", "description": "46900 - Wholesale trade of a variety of goods without a dominant product" }, "secondary": {} }, "businessDetails": { "primaryIndustry": "IS134" }, "riskProfileAssessment": { "countryOfOperations": ["Singapore"], "annualTurnover": "SG008", "totalEmployees": "EM007", "onboardingMode": "FACE TO FACE", "paymentModes": ["CREDIT CARD"], "productServiceComplexity": "HIGH RISK", "ownershipStructureLayers": "UNKNOWN" }, "niumExclusive": { "niumProductType": ["Send", "Receive", "Cards"], "niumProgram": "SME" }, "artemisExclusive": {}, "companyName": "AUSTRALASIA APAC PTE. LTD.", "documents": [], "sharesDetails": [{ "issuedShareCapital": 10000, "paidUpShareCapital": 10000, "shareAllotted": 10000, "currency": "SGD", "shareType": "Ordinary" }], "members": [{ "_id": "65c1a530adabcdf3d736dc3a", "category": "INDIVIDUAL", "appointments": [{ "position": "Director", "appointmentDate": "2023-01-05", "status": "Active", "_id": "65c1a530adabcdf3d736dc3b" }], "isApplicant": true, "sharesDetails": [{ "_id": "65c2ff52adabcdf3d737bc85", "shareType": "Ordinary", "shareCurrency": "SGD" }], "personDetails": { "_id": "65c2ff52adabcdf3d737bc87", "documents": [{ "id": "65c1a4edadabcdf3d736db17", "type": "NRIC" }], "callFirstName": "Joko", "callLastName": "Anwar", "legalDetails": { "legalFirstName": "NATALIE", "legalLastName": "ISKANDAR" }, "contactDetails": { "phoneCountry": "ID", "phoneNumber": "81396173134", "email": "testin9needs4@gmail.com" }, "personalDetails": { "fullName": "NATALIE ISKANDAR", "alias": [], "nationality": "SG", "dateOfBirth": "1990-02-27", "idDocument": { "idNumber": "S8363700E" } }, "address": { "country": "SG", "blockHouse": "69A", "streetName": "JALAN LOYANG BESAR" }, "isMatchWithUser": [], "createdAt": "2024-02-07T03:56:02.315Z", "updatedAt": "2024-02-07T03:56:02.315Z", "__v": 0 } }, { "_id": "65c1a530adabcdf3d736dc3d", "category": "INDIVIDUAL", "appointments": [{ "position": "Secretary", "appointmentDate": "2023-01-05", "status": "Active", "_id": "65c1a530adabcdf3d736dc3e" }], "isApplicant": false, "sharesDetails": [], "personDetails": { "_id": "65c2ff52adabcdf3d737bc8c", "documents": [{ "id": "65c1a4edadabcdf3d736db19" }], "personalDetails": { "fullName": "LEE HONG KEN", "alias": [], "idDocument": { "type": "NRIC", "idNumber": "S7174159A" } }, "address": { "country": "SG", "blockHouse": "1", "streetName": "HARBOURFRONT AVENUE", "buildingName": "KEPPEL BAY TOWER", "level": "04", "unit": "09" }, "isMatchWithUser": [], "createdAt": "2024-02-07T03:56:02.339Z", "updatedAt": "2024-02-07T03:56:02.339Z", "__v": 0 } }], "riskRating": "LOW" }, "services": { "finance": true }, "uen": "202300698H", "kybSubmittedDate": null, "serviceCreationDate": { "finance": "2024-02-06T03:17:15.661Z" }, "corpSecStatus": "Completed", "paymentStatus": "Paid", "recommendingOfficerStatus": null, "approvingOfficerStatus": null, "recommendingOfficerEmail": null, "approvingOfficerEmail": null, "recommendingOfficerName": null, "approvingOfficerName": null, "approvingOfficerAt": null, "recommendingOfficerAt": null, "isManualFill": null, "currentStep": null, "kybSubmittedBy": null, "artemisExclusive": null, "artemisCustomerId": null }
+export const SampleApplication = { "company": { "legalDetails": { "fyeDate": "31/08/2025", "countryOfRegisteredBusiness": "SG", "companyType": "EXEMPT PRIVATE COMPANY LIMITED BY SHARES", "nextFyeYear": 2026 }, "addresses": { "registeredAddress": { "blockHouse": "153", "postalCode": "11850", "streetName": "Kp Duri Semanan RT 3 RW 1 No. 153 Kalideres", "country": "SG" }, "principalPlaceOfBusiness": { "country": "SG" }, "isUseGrofRegisteredAddress": false, "isSameBusinessAddress": true }, "ssic": { "primary": { "code": "10101", "description": "Slaughtering of livestock and poultry", "otherDescription": "" }, "secondary": { "code": "", "otherDescription": "" } }, "businessDetails": { "primaryIndustry": "IS134" }, "riskProfileAssessment": { "inflowExpectedTransactions": { "numberOfTransactionMonthly": "Above 100", "transactionsValueMonthly": "Above $200,000", "natureOfInflow": "Inflow" }, "outflowExpectedTransactions": { "numberOfTransactionMonthly": "1-20", "transactionsValueMonthly": "$0-$30,000", "natureOfOutflow": "Outflow" }, "countryOfOperations": ["Singapore"], "paymentModes": ["TELEGRAPHIC TRANSFER"], "transactionCountries": ["SG"], "primaryBanks": [], "otherPrimaryBanks": [], "annualTurnover": "SG009", "totalEmployees": "EM009", "intendedUseOfAccount": "IU002", "onboardingMode": "FACE-TO-FACE", "productServiceComplexity": "COMPLEX", "ownershipStructureLayers": "2" }, "niumExclusive": { "niumProductType": ["Send", "Receive", "Cards"], "niumProgram": "SME" }, "artemisExclusive": { "screeningStatus": "NOT STARTED", "screeningResult": [], "riskAssessmentResult": [] }, "riskAssessment": { "documents": [] }, "companyNameIssue": { "keyword": "" }, "documents": [], "sharesDetails": [{ "issuedShareCapital": 0, "paidUpShareCapital": 1000000000, "shareAllotted": 1000000000, "currency": "IDR", "shareType": "PREFERENCE" }], "members": [{ "artemisExclusive": { "screeningResult": [] }, "companyDetails": { "riskProfileAssessment": { "countryOfOperations": [] }, "documents": [] }, "personDetails": { "legalDetails": { "legalFirstName": "Test Grof", "legalLastName": "Account 3" }, "contactDetails": { "email": "testgrofaccount3@yopmail.com" }, "personalDetails": { "fullName": "Test Grof Account 3", "alias": [] }, "riskProfileAssessment": { "nationalities": [] }, "documents": [] }, "riskAssessment": { "documents": [] }, "category": "INDIVIDUAL", "appointments": [{ "position": "Authorized Person", "status": "Active", "isOutgoing": false, "isCreatedByAdmin": false, "_id": "66e02573687e7f2e2cda64d7" }], "documents": [], "isApplicant": true, "personId": "66d68c9c8b61aeea2167d960", "onfidoApplicantId": "3c63bddf-8c06-4557-ad9e-9f5eff6da3df", "onfidoWorkflowRunId": "af07b85f-d827-492f-ac01-a02789847afb", "eKycStatus": "Pending", "eKycLink": "https://staging.app.grof.co/onboarding/account-creation?id=66e02573687e7f2e2cda64d6&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6IjY2ZTAyNTczNjg3ZTdmMmUyY2RhNjRkNiIsIm9yZ2FuaXphdGlvbklkIjoiNjZlMDI0YmU2ODdlN2YyZTJjZGE2MjI4IiwiYXBwbGljYXRpb25JZCI6IjY2ZTAyNGJlNjg3ZTdmMmUyY2RhNjIyYiIsImlhdCI6MTcyNTk2NTY4NCwiZXhwIjoxNzI2NTcwNDg0fQ.5gcAs_PTJ1-HzO_S7wwM97FGslSjh0fDRpzRsnO47Ck", "urlExpiredDate": "2024-09-17T10:54:44.445Z", "sharesDetails": [], "isOnfidoGeoRestricted": false, "_id": "66e02573687e7f2e2cda64d6" }, { "artemisExclusive": { "screeningResult": [] }, "companyDetails": { "riskProfileAssessment": { "countryOfOperations": [] }, "documents": [] }, "personDetails": { "contactDetails": { "email": "agusxlciti@gmail.com" }, "personalDetails": { "fullName": "Rahmat Agus", "alias": [] }, "riskProfileAssessment": { "nationalities": [] }, "documents": [] }, "riskAssessment": { "documents": [] }, "category": "INDIVIDUAL", "appointments": [{ "position": "Director", "status": "Active", "isOutgoing": false, "isCreatedByAdmin": false, "_id": "66e02568687e7f2e2cda64b1" }, { "position": "Member", "status": "Active", "isOutgoing": false, "isCreatedByAdmin": false, "_id": "66e02568687e7f2e2cda64b2" }], "documents": [], "isApplicant": false, "personId": "66e02576687e7f2e2cda64ee", "onfidoApplicantId": "c7554283-1e2d-4993-a553-1e12596a92d7", "onfidoWorkflowRunId": "a91b4644-a619-43a3-a721-489dab7406f9", "eKycStatus": "Pending", "eKycLink": "https://staging.app.grof.co/onboarding/account-creation?id=66e02554d1114e3e38181691&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6IjY2ZTAyNTU0ZDExMTRlM2UzODE4MTY5MSIsIm9yZ2FuaXphdGlvbklkIjoiNjZlMDI0YmU2ODdlN2YyZTJjZGE2MjI4IiwiYXBwbGljYXRpb25JZCI6IjY2ZTAyNGJlNjg3ZTdmMmUyY2RhNjIyYiIsImlhdCI6MTcyNTk2NTY4NiwiZXhwIjoxNzI2NTcwNDg2fQ.Zaqke36KDRvSO-TzqYdw3O15sFTGgmQBpzsF1mizD5Y", "urlExpiredDate": "2024-09-17T10:54:46.207Z", "sharesDetails": [{ "shareAllotted": 1000000000, "shareType": "Preference", "shareCurrency": "IDR", "issuedShareCapital": 0, "paidUpShareCapital": 1000000000, "_id": "66e02568687e7f2e2cda64b3" }], "isOnfidoGeoRestricted": false, "_id": "66e02554d1114e3e38181691" }], "rfi": [], "companyName": "BABA TECH", "isSubmitCompanyNameAppeal": false, "acraTransactionId": "", "uenSimilarCompany": "", "isAppointGrofND": false, "chargeBeeSubscriptionId": "", "isIncorporated": false, "isActiveCustomer": false }, "services": { "corpSec": false, "finance": true, "incorporation": true }, "serviceCreationDate": { "corpSec": "2024-09-10T10:51:42.030Z", "finance": "2024-09-10T10:54:43.583Z" }, "_id": "66e024be687e7f2e2cda622b", "submittedBy": { "_id": "66be0567864d11350e268b4c", "phoneNumber": "82216220803", "emailAddresses": ["testgrofaccount3@yopmail.com"], "callFirstName": "Test Grof", "callLastName": "Account 3", "dialCode": "+62" }, "niumData": [], "niumRfiData": [], "status": "NEW", "corpSecStatus": "New", "paymentStatus": "Paid", "recommendingOfficerStatus": "PENDING", "approvingOfficerStatus": "PENDING", "userReadList": ["285141af-56e7-4030-a9a4-775a779432da", "beec8248-dd68-4c3e-91a5-ab5c59451b40"], "currentStep": 6, "isManualFill": true, "createdAt": "2024-09-10T10:51:42.053Z", "updatedAt": "2024-09-12T02:23:25.617Z", "__v": 0, "kybSubmittedBy": "66be0567864d11350e268b4c", "kybSubmittedDate": "2024-09-10T10:54:43.583Z", "organization": { "status": { "corpSecStatus": "New", "applicationStatus": "NEW", "organizationStatus": "ACTIVE", "accessLevelStatus": "FREEMIUM", "baCreationStatus": "NEW" }, "_id": "66e024be687e7f2e2cda6228", "companyName": "BABA TECH" } }
 
 export const SampleApp31071459 = {
     "_id": "669e1d4abf0956b3f0abaa05",
@@ -1490,4 +1490,94 @@ export const SampleApp31071459 = {
     "kybSubmittedBy": "640ff0eb4867e63cbabe7863",
     "artemisExclusive": null,
     "artemisCustomerId": null
+}
+
+export const SampleMember04091309 = {
+    "category": "CORPORATE",
+    "appointments": [
+        {
+            "position": "Member",
+            "appointmentDate": "2023-09-29",
+            "status": "Active",
+            "isOutgoing": false,
+            "isCreatedByAdmin": false,
+            "_id": "66dacfef8636d51c06e89ba4"
+        },
+        {
+            "position": "Beneficial Owner",
+            "appointmentDate": "2023-09-29",
+            "status": "Active",
+            "isOutgoing": false,
+            "isCreatedByAdmin": false,
+            "_id": "66dacfef8636d51c06e89ba5"
+        }
+    ],
+    "documents": [],
+    "corporateRepresentativeOf": "66dacfef8636d51c06e89b9f",
+    "isApplicant": false,
+    "artemisExclusive": {
+        "screeningResult": []
+    },
+    "companyDetails": {
+        "documents": [
+            {
+                "id": "66dad0628636d51c06e89d29"
+            }
+        ],
+        "companyName": "AUMENT CAPITAL PARTNERS PTE. LTD.",
+        "legalDetails": {
+            "businessRegistrationNumber": "202214937E",
+            "entityType": "COM",
+            "companyType": "EXEMPT PRIVATE COMPANY LIMITED BY SHARES",
+            "countryOfRegisteredBusiness": "SG",
+            "registrationDate": "1970-01-01",
+            "businessEntityType": "Shareholder"
+        },
+        "riskProfileAssessment": {
+            "countryOfOperations": [],
+            "ownershipStructureLayers": "1",
+            "sourceOfFunds": "",
+            "otherSourceOfFunds": ""
+        },
+        "addresses": {
+            "registeredAddress": {
+                "postalCode": "118523",
+                "country": "SG",
+                "blockHouse": "100G",
+                "streetName": "PASIR PANJANG ROAD",
+                "buildingName": "",
+                "level": "07",
+                "unit": "14"
+            },
+            "principalPlaceOfBusiness": {
+                "isUseRegisteredAddress": true
+            }
+        }
+    },
+    "personDetails": {
+        "documents": [],
+        "personalDetails": {
+            "alias": []
+        },
+        "riskProfileAssessment": {
+            "nationalities": []
+        }
+    },
+    "riskAssessment": {
+        "documents": []
+    },
+    "sharesDetails": [
+        {
+            "shareAllotted": 1,
+            "shareType": "Ordinary",
+            "sharePercentage": 100,
+            "shareCurrency": "SGD",
+            "appointmentDate": "2023-09-29",
+            "status": "Active",
+            "_id": "66dacfef8636d51c06e89ba6"
+        }
+    ],
+    "isOnfidoGeoRestricted": false,
+    "_id": "66dacfef8636d51c06e89ba3",
+    "nameStakeholder": "AUMENT CAPITAL PARTNERS PTE. LTD."
 }

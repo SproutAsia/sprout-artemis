@@ -19,7 +19,6 @@ export default async function getComment(args: {
   url.searchParams.append('sort', 'createdAt')
   url.searchParams.append('direction', 'desc')
 
-  console.log(">>> URL", url.toString())
   const result = await fetch(url.toString(), {
     headers
   }).then((res) => res.json()) as Promise<TResGetComment>

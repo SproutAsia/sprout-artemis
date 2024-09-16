@@ -3,10 +3,10 @@ declare const ConvertToArtemisEnum: {
     country: (country: string) => string;
     onboarding: (args: string) => string;
     appointmentToRole: (appointments: any[]) => any;
-    documentType: (type: string) => "INTERNATIONAL PASSPORT" | "NATIONAL ID";
-    sourceOfFund: (source?: string) => "SALARY" | "INVESTMENT REVENUE" | "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
+    documentType: (type: string) => "NATIONAL ID" | "INTERNATIONAL PASSPORT";
+    sourceOfFund: (source?: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "SALARY" | "OTHERS" | "INVESTMENT REVENUE";
     companySourceOfFund: (source: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
-    role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "NOMINEE/TRUSTEE" | "ULTIMATE BENEFICIAL OWNER" | "Corporate Representative" | "Authorized Person";
+    role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "ULTIMATE BENEFICIAL OWNER" | "NOMINEE/TRUSTEE" | "AUTHORIZED PERSON";
     /**
      *
      * @param entityType - is companyType in grof

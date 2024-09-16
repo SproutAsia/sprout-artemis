@@ -11,6 +11,7 @@ declare const ConvertToRequest: {
         };
         customFn?: {
             parseCountry?: (country: string) => string;
+            customerId?: (customerId: string) => string;
         };
     }): TReqPostCustomerCorporate;
     toSingleIndividualCrp(args: {
@@ -22,6 +23,7 @@ declare const ConvertToRequest: {
         };
         customFn?: {
             parseCountry?: (country: string) => string;
+            customerId?: (customerId: string) => string;
         };
     }): TReqPostIndividualCrp;
     toSingleCorporateCrp(args: {
@@ -33,6 +35,7 @@ declare const ConvertToRequest: {
         };
         customFn?: {
             parseCountry?: (country: string) => string;
+            customerId?: (customerId: string) => string;
         };
     }): TReqPostCorporateCrp;
 };

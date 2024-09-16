@@ -16,13 +16,15 @@ const ConvertToRequest = {
             additionalInformation?: string
         },
         customFn?: {
-            parseCountry?: (country: string) => string
+            parseCountry?: (country: string) => string,
+            customerId?: (customerId: string) => string
         }
     }) {
         // handle missing mandatory
         if (!args.application.company.riskProfileAssessment.countryOfOperations) throw new Error(ErrorForConvert.enum["Country of operations cannot be empty"])
         if (!args.application.company.companyName) throw new Error(ErrorForConvert.enum["Company name cannot be empty"])
-        if (!args.application.company.legalDetails.entityType) throw new Error(ErrorForConvert.enum["Entity type cannot be empty"])
+        if (!args.application.company.legalDetails.companyType) throw new Error(ErrorForConvert.enum["Entity type cannot be empty"])
+        // artemis use full name of industry code instead of just code so that's why we use description
         if (!args.application.company.ssic.primary.description) throw new Error(ErrorForConvert.enum["Industry code cannot be empty"])
         if (!args.application.company.riskProfileAssessment.onboardingMode) throw new Error(ErrorForConvert.enum["Onboarding mode cannot be empty"])
         if (!args.application.company.riskProfileAssessment.ownershipStructureLayers) throw new Error(ErrorForConvert.enum["Ownership structure layer cannot be empty"])
@@ -58,7 +60,7 @@ const ConvertToRequest = {
             particular: {
                 incorporated: true,
                 name: args.application.company.companyName,
-                alias: [args.application.company.legalDetails.entityName],
+                alias: args.application.company.legalDetails.entityName ? [args.application.company.legalDetails.entityName] : undefined,
                 formerName: args.application.company.legalDetails.historyName ? [args.application.company.legalDetails.historyName] : [],
                 countryOfIncorporation: args.customFn?.parseCountry?.(args.application.company.addresses.registeredAddress.country) || ConvertToArtemisEnum.shortCountry(args.application.company.addresses.registeredAddress.country),
                 countryOfOperation: countryOfOperations,
@@ -73,12 +75,12 @@ const ConvertToRequest = {
                     addressLine1: args.application.company.addresses.registeredAddress.addressLine1,
                     addressLine2: args.application.company.addresses.registeredAddress.addressLine2,
                 }),
-                dateOfIncorporation: isNewIncorp || args.application.company.legalDetails.registrationDate,
+                dateOfIncorporation: isNewIncorp ? undefined : args.application.company.legalDetails.registrationDate,
                 email: [],
                 imonumber: "",
                 incorporateNumber: isNewIncorp ? "" : args.application.company.legalDetails.uen
             },
-            profileReferenceId: args.application.company.companyName,
+            profileReferenceId: args.customFn?.customerId?.(args.application.company.companyName) || args.application.company.companyName,
             referenceId: args.application.company.legalDetails.uen,
             active: true
         } as TReqPostCustomerCorporate
@@ -91,7 +93,8 @@ const ConvertToRequest = {
             formerName?: string[]
         },
         customFn?: {
-            parseCountry?: (country: string) => string
+            parseCountry?: (country: string) => string,
+            customerId?: (customerId: string) => string
         }
     }) {
         const member = args.member
@@ -149,7 +152,7 @@ const ConvertToRequest = {
                 countryOfResidence: args.customFn?.parseCountry?.(member.personDetails.address.country) || ConvertToArtemisEnum.shortCountry(member.personDetails.address.country),
                 salutation: "",
             },
-            profileReferenceId: member.personDetails.personalDetails.idDocument.idNumber,
+            profileReferenceId: args.customFn?.customerId?.(member.personDetails.personalDetails.idDocument.idNumber) || member.personDetails.personalDetails.idDocument.idNumber,
             active: true,
         } as TReqPostIndividualCrp
 
@@ -168,7 +171,8 @@ const ConvertToRequest = {
             otherSourceOfFunds?: string
         },
         customFn?: {
-            parseCountry?: (country: string) => string
+            parseCountry?: (country: string) => string,
+            customerId?: (customerId: string) => string
         }
     }) {
         const member = args.member
@@ -224,7 +228,7 @@ const ConvertToRequest = {
                 incorporateNumber: member.companyDetails.legalDetails.businessRegistrationNumber,
                 name: member.companyDetails.companyName,
             },
-            profileReferenceId: member.companyDetails.companyName,
+            profileReferenceId: args.customFn?.customerId?.(member.companyDetails.companyName) || member.companyDetails.companyName,
             active: true
         } as TReqPostCorporateCrp
 

@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 
 
+import { SampleApplication } from './sample';
 
 import ArtemisGrofService from '.';
 
@@ -8,14 +9,12 @@ dotenv.config();
 
 (async () => {
     try {
-        const res = await ArtemisGrofService.getCustomer({
-            auth: { token: process.env.ARTEMIS_TOKEN },
-            filter: {
-                referenceId: '202209234'
+        const res = await ArtemisGrofService.postCorporateCustomerFromGrof({
+            auth: {
+                token: process.env.ARTEMIS_TOKEN || ""
             },
-            pagination: {
-                page: 0,
-                size: 5
+            grof: {
+                application: SampleApplication as any
             }
         })
         console.log(">>> RES", res)

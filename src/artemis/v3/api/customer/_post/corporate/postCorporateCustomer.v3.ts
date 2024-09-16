@@ -7,8 +7,6 @@ import { ResPostCustomerMock } from "./res.mock"
 import { TReqPostCustomerCorporate } from "./TReqPostCustomerCorporate.v3"
 import { TResPostCustomerCorporate } from "./TResPostCustomerCorporate.v3"
 
-
-
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer

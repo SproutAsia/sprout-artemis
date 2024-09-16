@@ -110,7 +110,10 @@ export interface LegalDetails {
     businessConstitution?: string;
     companyType?: string;
     countryOfRegisteredBusiness?: string;
-    entityType: string;
+    /**
+     * @deprecated we should use companyType instead
+     */
+    entityType?: string;
     historyName?: string;
     listedExchange?: string;
     fyeDate?: string;

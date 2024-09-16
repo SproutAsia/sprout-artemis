@@ -61,6 +61,7 @@ declare const ArtemisGrofService: {
             };
             customFn?: {
                 parseCountry?: (country: string) => string;
+                customerId?: (customerId: string) => string;
             };
         }): import("./artemis/v3/api/customer/_post/corporate/TReqPostCustomerCorporate.v3").TReqPostCustomerCorporate;
         toSingleIndividualCrp(args: {
@@ -72,6 +73,7 @@ declare const ArtemisGrofService: {
             };
             customFn?: {
                 parseCountry?: (country: string) => string;
+                customerId?: (customerId: string) => string;
             };
         }): import("./artemis/v3/api/customer/{customer_id}/crp/_post/individual/TReqPostIndividualCrp.v3").TReqPostIndividualCrp;
         toSingleCorporateCrp(args: {
@@ -83,6 +85,7 @@ declare const ArtemisGrofService: {
             };
             customFn?: {
                 parseCountry?: (country: string) => string;
+                customerId?: (customerId: string) => string;
             };
         }): import("./artemis/v3/api/customer/{customer_id}/crp/_post/corporate/TReqPostCorporateCrp.v3").TReqPostCorporateCrp;
     };
@@ -94,7 +97,7 @@ declare const ArtemisGrofService: {
         documentType: (type: string) => "INTERNATIONAL PASSPORT" | "NATIONAL ID";
         sourceOfFund: (source?: string) => "SALARY" | "INVESTMENT REVENUE" | "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
         companySourceOfFund: (source: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
-        role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "NOMINEE/TRUSTEE" | "ULTIMATE BENEFICIAL OWNER" | "Corporate Representative" | "Authorized Person";
+        role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "NOMINEE/TRUSTEE" | "ULTIMATE BENEFICIAL OWNER" | "AUTHORIZED PERSON";
         entityType: (entityType: string, country: string) => string;
         shortCountry: (country: string) => string;
         toSingaporeAddress: (address: {

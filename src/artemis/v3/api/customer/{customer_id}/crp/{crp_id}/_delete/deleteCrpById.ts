@@ -1,5 +1,4 @@
 import ArtemisHeader from "../../../../../../shared/ArtemisHeader"
-import { TResGetCrpById } from "../_get/TResGetCrpById"
 
 /**
  * delete crp by id
@@ -17,9 +16,14 @@ export default async function deleteCrpById(args: {
   headers.append("Authorization", "Bearer " + args.auth.token)
   const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/crp/" + args.path.crpId)
 
-  const result = await fetch(url.toString(), {
+  const response = await fetch(url.toString(), {
     headers,
     method: "DELETE"
-  }).then((res) => res.json()) as Promise<TResGetCrpById>
-  return result
+  });
+  if (response.ok) {
+    return true
+  } else {
+    const error = await response.text()
+    throw new Error(`Request failed with status ${response.status} and error ${error}`)
+  }
 }

@@ -19,6 +19,8 @@ const ConvertToArtemisEnum = {
             'Member',
             'Corporate Representative',
             'Nominator',
+            'Authorized Person',
+            'Beneficial Owner',
         ];
         const roles = appointments.reduce((a, b) => {
             try {
@@ -85,7 +87,7 @@ const ConvertToArtemisEnum = {
             case "Corporate Representative":
             case "Authorized Person":
                 // it should be other, and "other" in artemis can add free text role
-                return memberRole
+                return "AUTHORIZED PERSON"
             default: {
                 throw new Error("Role is unknown")
             }
@@ -123,7 +125,7 @@ const ConvertToArtemisEnum = {
         unit?: string;
         postalCode?: string;
     }) => {
-        return `${address.blockHouse} ${address.streetName}${address.buildingName ? (`, ${address.buildingName}`) : ''} #${address.level}-${address.unit} ${address.postalCode || ""} Singapore`
+        return `${address.blockHouse} ${address.streetName}${address.buildingName ? (`, ${address.buildingName}`) : ''} #${address.level || ""}-${address.unit || ""} ${address.postalCode || ""} Singapore`
     },
 }
 
