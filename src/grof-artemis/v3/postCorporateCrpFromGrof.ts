@@ -21,13 +21,17 @@ export default async function postCorporateCrpFromGrof(args: {
     path: {
         customerId: string
     }
+    additional?: Parameters<typeof ConvertToRequest.toSingleCorporateCrp>['0']['additional'],
+    customFn?: Parameters<typeof ConvertToRequest.toSingleCorporateCrp>['0']['customFn']
 }) {
     const { member } = args.grof.application.company
 
     return postCorporateCrp({
         auth: args.auth,
         req: ConvertToRequest.toSingleCorporateCrp({
-            member: member
+            member: member,
+            additional: args.additional,
+            customFn: args.customFn
         }),
         path: {
             customerId: args.path.customerId

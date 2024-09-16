@@ -21,13 +21,15 @@ export default async function postIndividualCrpFromGrof(args: {
     path: {
         customerId: string
     }
-    additional?: Parameters<typeof ConvertToRequest.toSingleIndividualCrp>['0']['additional']
+    additional?: Parameters<typeof ConvertToRequest.toSingleIndividualCrp>['0']['additional'],
+    customFn?: Parameters<typeof ConvertToRequest.toSingleIndividualCrp>['0']['customFn']
 }) {
     return postIndividualCrp({
         auth: args.auth,
         req: ConvertToRequest.toSingleIndividualCrp({
             member: args.grof.application.company.members,
-            additional: args.additional
+            additional: args.additional,
+            customFn: args.customFn
         }),
         path: {
             customerId: args.path.customerId
