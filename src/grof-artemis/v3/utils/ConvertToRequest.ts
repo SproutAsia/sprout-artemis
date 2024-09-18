@@ -1,4 +1,6 @@
 
+import { get } from "lodash"
+
 import { TReqPostCustomerCorporate } from "../../../artemis/v3/api/customer/_post/corporate/TReqPostCustomerCorporate.v3"
 import { TReqPostCorporateCrp } from "../../../artemis/v3/api/customer/{customer_id}/crp/_post/corporate/TReqPostCorporateCrp.v3"
 import { TReqPostIndividualCrp } from "../../../artemis/v3/api/customer/{customer_id}/crp/_post/individual/TReqPostIndividualCrp.v3"
@@ -21,7 +23,6 @@ const ConvertToRequest = {
         }
     }) {
         // handle missing mandatory
-        if (!args.application.company.riskProfileAssessment.countryOfOperations) throw new Error(ErrorForConvert.enum["Country of operations cannot be empty"])
         if (!args.application.company.companyName) throw new Error(ErrorForConvert.enum["Company name cannot be empty"])
         if (!args.application.company.legalDetails.companyType) throw new Error(ErrorForConvert.enum["Entity type cannot be empty"])
         // artemis use full name of industry code instead of just code so that's why we use description
@@ -31,11 +32,26 @@ const ConvertToRequest = {
         if (!args.application.company.riskProfileAssessment.paymentModes) throw new Error(ErrorForConvert.enum["Payment mode cannot be empty"])
         if (!args.application.company.riskProfileAssessment.productServiceComplexity) throw new Error(ErrorForConvert.enum["Product service complexity cannot be empty"])
 
+        let countryOfOperation = []
+        if (get(args, 'application.company.riskProfileAssessment.countryOfOperations')) {
+            args.application.company.riskProfileAssessment.countryOfOperations.forEach((c) => {
+                countryOfOperation.push(
+                    args.customFn?.parseCountry?.(c.toUpperCase()) ||
+                    c.toUpperCase()
+                )
+            })
+        }
+        if (get(args, 'application.company.addresses.principalPlaceOfBusiness.country')) {
+            countryOfOperation.push(
+                args.customFn?.parseCountry?.(args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()) ||
+                args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
+            )
+        }
+        countryOfOperation = Array.from(new Set(countryOfOperation))
+        if (!countryOfOperation.length) throw new Error(ErrorForConvert.enum["Country of operations cannot be empty"])
+
         // new if no service
         const isNewIncorp = Boolean(args.application.services.incorporation)
-
-        // convert country of operations
-        const countryOfOperations = args.application.company.riskProfileAssessment.countryOfOperations.map((c) => ConvertToArtemisEnum.country(c.toUpperCase()))
 
         return {
             type: "CORPORATE",
@@ -44,7 +60,7 @@ const ConvertToRequest = {
                 process.env.ARTEMIS_DOMAIN_ID
             ],
             other: {
-                entityType: ConvertToArtemisEnum.entityType(args.application.company.legalDetails.companyType, args.application.company.addresses.registeredAddress.country),
+                entityType: args.application.company.legalDetails.companyType,
                 corporateWebsite: "",
                 fatfjurisdiction: "",
                 industry: ConvertToArtemisEnum.ssic(args.application.company.ssic.primary.code),
@@ -63,7 +79,7 @@ const ConvertToRequest = {
                 alias: args.application.company.legalDetails.entityName ? [args.application.company.legalDetails.entityName] : undefined,
                 formerName: args.application.company.legalDetails.historyName ? [args.application.company.legalDetails.historyName] : [],
                 countryOfIncorporation: args.customFn?.parseCountry?.(args.application.company.addresses.registeredAddress.country) || ConvertToArtemisEnum.shortCountry(args.application.company.addresses.registeredAddress.country),
-                countryOfOperation: countryOfOperations,
+                countryOfOperation,
                 address: Formatter.toGrofAddress({
                     country: args.application.company.addresses.registeredAddress.country,
                     blockHouse: args.application.company.addresses.registeredAddress.blockHouse,
@@ -191,11 +207,18 @@ const ConvertToRequest = {
         if (!member.companyDetails.legalDetails.entityType) throw new Error(ErrorForConvertToCorporate.enum['Entity type cannot be empty'])
         if (!member.companyDetails.companyName) throw new Error(ErrorForConvertToCorporate.enum['Company name cannot be empty'])
 
+        let countryOfOperation = []
+        if (get(member, 'companyDetails.addresses.principalPlaceOfBusiness.country')) {
+            countryOfOperation.push(args.customFn?.parseCountry?.(member.companyDetails.addresses.principalPlaceOfBusiness.country))
+        }
+        countryOfOperation = Array.from(new Set(countryOfOperation))
+        if (!countryOfOperation.length) throw new Error(ErrorForConvert.enum["Country of operations cannot be empty"])
+
         const mandatory = {
             type: "CORPORATE",
             roles: roles,
             other: {
-                entityType: ConvertToArtemisEnum.entityType(member.companyDetails.legalDetails.entityType, member.companyDetails.addresses.registeredAddress.country),
+                entityType: member.companyDetails.legalDetails.entityType,
                 bankAccountNumber: [],
                 ownershipStructureLayer: member.companyDetails.riskProfileAssessment.ownershipStructureLayers,
                 status: "CURRENT",
@@ -218,7 +241,7 @@ const ConvertToRequest = {
                     member.companyDetails.companyName
                 ],
                 countryOfIncorporation: args.customFn?.parseCountry?.(member.companyDetails.legalDetails.countryOfRegisteredBusiness) || ConvertToArtemisEnum.shortCountry(member.companyDetails.legalDetails.countryOfRegisteredBusiness),
-                countryOfOperation: member.companyDetails.riskProfileAssessment.countryOfOperations.map((c) => c.toUpperCase()),
+                countryOfOperation,
                 dateOfIncorporation: member.companyDetails.legalDetails.registrationDate,
                 email: [],
                 phone: [],

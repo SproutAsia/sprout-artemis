@@ -313,6 +313,19 @@ export interface CompanyDetails {
             buildingName?: string
             level?: string
             unit?: string
+        },
+        principalPlaceOfBusiness: {
+            addressLine1?: string
+            addressLine2?: string
+            city?: string
+            state?: string
+            postalCode?: string
+            country?: string
+            blockHouse?: string
+            streetName?: string
+            buildingName?: string
+            level?: string
+            unit?: string
         }
     }
 }
