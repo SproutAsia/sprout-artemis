@@ -28,8 +28,6 @@ export default async function postCorporateCustomer(args: {
         method: "POST",
         body: JSON.stringify(args.req),
         headers
-    }).then(async (res) => {
-        return res.json()
-    })
+    }).then((res) => res.json())
     return result as TResPostCustomerCorporate
 }

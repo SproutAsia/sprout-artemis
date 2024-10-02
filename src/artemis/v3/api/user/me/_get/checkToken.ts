@@ -16,7 +16,10 @@ export default async function checkToken(args: {
     const result = await fetch(url.toString(), {
         headers
     })
+    const isActive = result.status !== 401
+    const user = await result.json()
     return {
-        isActive: result.status !== 401
+        isActive,
+        user
     }
 }

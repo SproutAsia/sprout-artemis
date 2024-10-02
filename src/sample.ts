@@ -1,3 +1,6 @@
+/**
+ * able to submit customer to artemis
+ */
 export const SampleFullApp = {
     "status": "OK",
     "code": "00",
@@ -287,13 +290,14 @@ export const SampleFullApp = {
         "company": {
             "legalDetails": {
                 "nextFyeYear": 2025,
-                "fyeDate": "07/05"
+                "fyeDate": "07/05",
+                "companyType": "EXEMPT PRIVATE COMPANY LIMITED BY SHARES"
             },
             "riskProfileAssessment": {
                 "countryOfOperations": [
-                    "United States"
+                    "SINGAPORE"
                 ],
-                "paymentModes": [],
+                "paymentModes": ["CASH"],
                 "transactionCountries": [
                     "US",
                     "SG"
@@ -311,7 +315,12 @@ export const SampleFullApp = {
                     "numberOfTransactionMonthly": "Above 100",
                     "transactionsValueMonthly": "Above $200,000",
                     "natureOfOutflow": "Error voluptatem ven"
-                }
+                },
+                // ARTEMIS REQUIREMENT
+                "onboardingMode": "FACE-TO-FACE",
+                "ownershipStructureLayers": "1",
+                "productServiceComplexity": "SIMPLE",
+                "sourceOfFunds": "",
             },
             "niumExclusive": {
                 "niumProductType": [

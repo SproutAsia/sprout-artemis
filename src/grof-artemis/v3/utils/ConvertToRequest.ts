@@ -13,6 +13,7 @@ import Formatter from "./Formatter"
 const ConvertToRequest = {
     toCorporateCustomer(args: {
         application: TGrofApplication
+        assigneeId: string
         additional?: {
             referenceId?: string
             additionalInformation?: string
@@ -23,6 +24,8 @@ const ConvertToRequest = {
         }
     }) {
         // handle missing mandatory
+        if (!args.assigneeId) throw new Error(ErrorForConvert.enum["Assignee ID cannot be empty"])
+
         if (!args.application.company.companyName) throw new Error(ErrorForConvert.enum["Company name cannot be empty"])
         if (!args.application.company.legalDetails.companyType) throw new Error(ErrorForConvert.enum["Entity type cannot be empty"])
         // artemis use full name of industry code instead of just code so that's why we use description
@@ -55,7 +58,7 @@ const ConvertToRequest = {
 
         return {
             type: "CORPORATE",
-            assigneeId: process.env.ARTEMIS_USER_ID,
+            assigneeId: args.assigneeId,
             domainId: [
                 process.env.ARTEMIS_DOMAIN_ID
             ],
@@ -218,7 +221,7 @@ const ConvertToRequest = {
             type: "CORPORATE",
             roles: roles,
             other: {
-                entityType: member.companyDetails.legalDetails.entityType,
+                entityType: member.companyDetails.legalDetails.companyType,
                 bankAccountNumber: [],
                 ownershipStructureLayer: member.companyDetails.riskProfileAssessment.ownershipStructureLayers,
                 status: "CURRENT",
