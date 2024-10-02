@@ -17,9 +17,15 @@ export default async function checkToken(args: {
         headers
     })
     const isActive = result.status !== 401
-    const user = await result.json()
+    if (isActive) {
+        const user = await result.json()
+        return {
+            isActive,
+            user
+        }
+    }
     return {
         isActive,
-        user
+        user: null
     }
 }

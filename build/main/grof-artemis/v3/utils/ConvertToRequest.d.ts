@@ -5,6 +5,7 @@ import { TGrofApplication } from "../../../grof/types/TGrofApplication";
 declare const ConvertToRequest: {
     toCorporateCustomer(args: {
         application: TGrofApplication;
+        assigneeId: string;
         additional?: {
             referenceId?: string;
             additionalInformation?: string;

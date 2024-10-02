@@ -6,5 +6,9 @@ export default function checkToken(args: {
         token: string;
     };
 }): Promise<{
+    isActive: true;
+    user: unknown;
+} | {
     isActive: boolean;
+    user: any;
 }>;
