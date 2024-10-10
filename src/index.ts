@@ -1,5 +1,6 @@
 /* eslint-disable import/order */
 import postLogin from "./artemis/v3/api/authentication/login/_post/postLogin";
+import deleteComment from "./artemis/v3/api/comment/_delete/deleteComment";
 import getComment from "./artemis/v3/api/comment/_get/getComment";
 import postComment from "./artemis/v3/api/comment/_post/postComment";
 import getCrpProfile from "./artemis/v3/api/customer/profile/{customerType}/{customerId}/_get/getCrpProfile";
@@ -58,6 +59,7 @@ const ArtemisGrofService = {
     checkToken,
     getComment,
     postComment,
+    deleteComment,
     ConvertToRequest,
     ConvertToArtemisEnum
 }
