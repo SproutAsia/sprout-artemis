@@ -7,7 +7,7 @@ export interface TReqPostIndividualCrp {
      */
     type: string
     roles: TRequestRoleCrp[]
-    active: true
+    active: false
     particular: Particular
     /**
      * @example "18001181212C"

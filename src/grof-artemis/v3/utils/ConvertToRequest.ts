@@ -270,7 +270,7 @@ const ConvertToRequest = {
         args.customFn?.customerId?.(
           member.personDetails.personalDetails.idDocument.idNumber
         ) || member.personDetails.personalDetails.idDocument.idNumber,
-      active: true,
+      active: false, // individual crp value must be false
     } as TReqPostIndividualCrp;
 
     // if (member.personDetails.contactDetails?.email)
