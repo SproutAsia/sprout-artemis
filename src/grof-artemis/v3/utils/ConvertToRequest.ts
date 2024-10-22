@@ -85,7 +85,7 @@ const ConvertToRequest = {
       );
 
     // new if no service
-    const isNewIncorp = Boolean(args.application.services.incorporation);
+    const isIncorporated = !Boolean(args.application.services.incorporation);
 
     return {
       type: 'CORPORATE',
@@ -115,7 +115,7 @@ const ConvertToRequest = {
         additionalInformation: args.additional?.additionalInformation || '',
       },
       particular: {
-        incorporated: args.application.services.corpSec || false,
+        incorporated: isIncorporated,
         name: args.application.company.companyName,
         alias: args.application.company.legalDetails.entityName
           ? [args.application.company.legalDetails.entityName]
@@ -148,14 +148,14 @@ const ConvertToRequest = {
           addressLine2:
             args.application.company.addresses.registeredAddress.addressLine2,
         }),
-        dateOfIncorporation: isNewIncorp
-          ? undefined
-          : args.application.company.legalDetails.registrationDate,
+        dateOfIncorporation: isIncorporated
+          ? args.application.company.legalDetails.registrationDate
+          : undefined,
         email: [],
         imonumber: '',
-        incorporateNumber: isNewIncorp
-          ? ''
-          : args.application.company.legalDetails.uen,
+        incorporateNumber: isIncorporated
+          ? args.application.company.legalDetails.uen
+          : '',
       },
       profileReferenceId:
         args.customFn?.customerId?.(args.application.company.companyName) ||
