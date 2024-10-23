@@ -29,6 +29,7 @@ import postCorporateCustomerFromGrof from "./grof-artemis/v3/postCorporateCustom
 import postIndividualCrpFromGrof from "./grof-artemis/v3/postIndividualCrpFromGrof";
 import ConvertToArtemisEnum from "./grof-artemis/v3/utils/ConvertEnum";
 import ConvertToRequest from "./grof-artemis/v3/utils/ConvertToRequest";
+import getUsers from "./artemis/v3/api/user/_get/getUsers";
 
 const ArtemisGrofService = {
     checkEnv,
@@ -61,7 +62,8 @@ const ArtemisGrofService = {
     postComment,
     deleteComment,
     ConvertToRequest,
-    ConvertToArtemisEnum
+    ConvertToArtemisEnum,
+    getUsers
 }
 
 export default ArtemisGrofService
