@@ -14,6 +14,7 @@ import postCorporateCrpFromGrof from "./grof-artemis/v3/postCorporateCrpFromGrof
 import postCorporateCustomerFromGrof from "./grof-artemis/v3/postCorporateCustomer.v3";
 import postIndividualCrpFromGrof from "./grof-artemis/v3/postIndividualCrpFromGrof";
 import postIndividualCustomerFromGrof from "./grof-artemis/v3/postIndividualCustomer.v3";
+import getUsers from "./artemis/v3/api/user/_get/getUsers";
 
 const ArtemisGrofService = {
     checkEnv,
@@ -30,7 +31,8 @@ const ArtemisGrofService = {
     getCrpProfile,
     removeHit: putRemoveHit,
     getRiskReport,
-    postApproval
+    postApproval,
+    getUsers
 }
 
 export default ArtemisGrofService
