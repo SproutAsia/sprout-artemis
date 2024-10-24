@@ -14,10 +14,9 @@ export interface TResGetUsers {
 
 export interface Content {
     user: User
-    roles: any[],
-    permissions: any[]
+    roles: Role[],
+    permissions: string[]
 }
-
 export interface User {
     id: number
     createdAt: string
@@ -27,14 +26,14 @@ export interface User {
     email: string
     firstName: string
     lastName: string
-    avatar: any
-    colorCode: any
-    address: any
-    bio: any
+    avatar: string
+    colorCode: string
+    address: string
+    bio: string
     phone: string
     role: string
     locked: boolean
-    lastAccessed: any
+    lastAccessed: string
     enabledTwoFactorAuth: boolean
     verified: boolean
 }
@@ -82,4 +81,15 @@ export interface Sort2 {
     sorted: boolean
     unsorted: boolean
     empty: boolean
+}
+
+export interface Role {
+    id: number
+    createdAt: string,
+    updatedAt: string,
+    createdBy: CreatedBy,
+    updatedBy: UpdatedBy,
+    name: string,
+    domainId: string,
+    permissions: string[]
 }
