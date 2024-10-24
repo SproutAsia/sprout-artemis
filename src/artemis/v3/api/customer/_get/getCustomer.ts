@@ -30,8 +30,6 @@ export default async function getCustomer(args: {
     if (args.filter.riskRating) url.searchParams.append("riskRatingList", args.filter.riskRating)
     if (args.filter.searchString) url.searchParams.append("searchString", args.filter.searchString)
 
-    console.log(">>> URL", url.toString())
-
     try {
         const result = await fetch(url.toString(), {
             headers
