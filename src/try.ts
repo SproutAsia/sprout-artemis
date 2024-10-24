@@ -1,13 +1,10 @@
 import dotenv from 'dotenv'
 
-import { Member } from "./grof/types/TGrofApplication"
-import { SampleCorporateMember } from "./test/sample"
 
 import ArtemisGrofService from "."
 
 dotenv.config()
 
-const sample = (SampleCorporateMember as unknown) as Member
 ArtemisGrofService.getCrpProfile({
     auth: {
         token: process.env.ARTEMIS_TOKEN,
