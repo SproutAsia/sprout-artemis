@@ -102,7 +102,7 @@ export interface Other {
     entityType?: string
     corporateWebsite?: string
     fatfjurisdiction?: boolean
-    variableCapitalCompany: any
+    variableCapitalCompany?: any
     ownershipStructureLayer?: string
 }
 

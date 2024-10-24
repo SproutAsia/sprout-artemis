@@ -14,8 +14,8 @@ export interface TResPostCustomerCorporate {
     profileReferenceId: string
     particular: Particular
     other: Other
-    vendorName: any
-    vendorEntityGuid: any
+    vendorName?: any
+    vendorEntityGuid?: any
     lastRiskAssessment: any
     status: string
     riskRating: string
@@ -36,8 +36,8 @@ export interface Particular {
     email: any
     dateOfIncorporation: any
     dateOfIncorporationExpiry: any
-    vendorName: any
-    vendorEntityGuid: any
+    vendorName?: any
+    vendorEntityGuid?: any
     imonumber: any
 }
 

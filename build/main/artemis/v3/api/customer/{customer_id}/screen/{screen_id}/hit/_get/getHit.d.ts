@@ -1,3 +1,4 @@
+import { TResHit } from "./TResHit";
 /**
  * get hit of customer
  * @description Individual Workflow - STEP 1 : create customer
@@ -18,4 +19,4 @@ export default function getHit(args: {
         screeningType: "ARTEMISCAN" | "INTERNET_SEARCH" | "TR";
         screeningSessionId: string;
     };
-}): Promise<any>;
+}): Promise<TResHit>;

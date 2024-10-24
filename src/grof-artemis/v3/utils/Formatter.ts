@@ -13,16 +13,14 @@ const Formatter = {
         addressLine2?: string
     }) {
         if (args.country === "SG") {
-            const formattedAddress = [
-                ConvertToArtemisEnum.shortCountry(args.country),
-                args.blockHouse,
-                args.streetName,
-                args.buildingName,
-                args.level,
-                args.unit,
-                args.postalCode
-            ].join(", ")
-            return [formattedAddress]
+            return [ConvertToArtemisEnum.toSingaporeAddress({
+                blockHouse: args.blockHouse,
+                streetName: args.streetName,
+                buildingName: args.buildingName,
+                level: args.level,
+                unit: args.unit,
+                postalCode: args.postalCode
+            })]
         } else {
             const addressLine = []
             if (args.addressLine1) addressLine.push(args.addressLine1)

@@ -5,9 +5,14 @@ import { TGrofApplication } from "../../../grof/types/TGrofApplication";
 declare const ConvertToRequest: {
     toCorporateCustomer(args: {
         application: TGrofApplication;
+        assigneeId: string;
         additional?: {
             referenceId?: string;
             additionalInformation?: string;
+        };
+        customFn?: {
+            parseCountry?: (country: string) => string;
+            customerId?: (customerId: string) => string;
         };
     }): TReqPostCustomerCorporate;
     toSingleIndividualCrp(args: {
@@ -17,6 +22,10 @@ declare const ConvertToRequest: {
             otherSourceOfFunds?: string;
             formerName?: string[];
         };
+        customFn?: {
+            parseCountry?: (country: string) => string;
+            customerId?: (customerId: string) => string;
+        };
     }): TReqPostIndividualCrp;
     toSingleCorporateCrp(args: {
         member: TGrofApplication['company']['members'][0];
@@ -24,6 +33,10 @@ declare const ConvertToRequest: {
             additionalInformation?: string;
             formerName?: string[];
             otherSourceOfFunds?: string;
+        };
+        customFn?: {
+            parseCountry?: (country: string) => string;
+            customerId?: (customerId: string) => string;
         };
     }): TReqPostCorporateCrp;
 };

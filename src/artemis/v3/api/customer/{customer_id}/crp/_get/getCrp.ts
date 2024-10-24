@@ -18,14 +18,10 @@ export default async function getCrp(args: {
 }) {
     const headers = ArtemisHeader()
     headers.append("authorization", "Bearer " + args.auth.token)
-    const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId)
+    const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/crp")
 
-    try {
-        const result = await fetch(url.toString(), {
-            headers
-        }).then((res) => res.json())
-        return result as TResGetCrp
-    } catch (e) {
-        return e
-    }
+    const result = await fetch(url.toString(), {
+        headers
+    }).then((res) => res.json())
+    return result as TResGetCrp
 }

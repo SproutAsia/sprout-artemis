@@ -104,13 +104,16 @@ export interface Documents {
 }
 export interface LegalDetails {
     uen: string;
-    entityName: string;
+    entityName?: string;
     entityStatus?: string;
     registrationDate?: TMongoDate;
     businessConstitution?: string;
     companyType?: string;
     countryOfRegisteredBusiness?: string;
-    entityType: string;
+    /**
+     * @deprecated we should use companyType instead
+     */
+    entityType?: string;
     historyName?: string;
     listedExchange?: string;
     fyeDate?: string;
@@ -277,11 +280,24 @@ export interface CompanyDetails {
         issuedDate?: string;
         issuanceCountry?: string;
     }[];
-    companyName: string;
+    companyName?: string;
     legalDetails: MemberLegalDetails;
     riskProfileAssessment?: MemberRiskProfileAssessment;
     addresses: {
         registeredAddress: {
+            addressLine1?: string;
+            addressLine2?: string;
+            city?: string;
+            state?: string;
+            postalCode?: string;
+            country?: string;
+            blockHouse?: string;
+            streetName?: string;
+            buildingName?: string;
+            level?: string;
+            unit?: string;
+        };
+        principalPlaceOfBusiness: {
             addressLine1?: string;
             addressLine2?: string;
             city?: string;
@@ -361,6 +377,8 @@ export interface PersonDetails {
         isAcceptDirectorCriteria?: string;
         isMultipleNationalities?: string;
         nationalities?: string[];
+        sourceOfFunds?: string;
+        otherSourceOfFunds?: string;
     };
 }
 export interface BusinessAddress {

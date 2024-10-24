@@ -8,7 +8,9 @@ const ErrorForConvert = ArrayUtils.toAdvancedEnum([
     "Ownership structure layer cannot be empty",
     "Onboarding mode cannot be empty",
     "Entity type cannot be empty",
-    "Industry code cannot be empty"
+    "Industry code cannot be empty",
+    "Ssic description cannot be empty",
+    "Assignee ID cannot be empty"
 ])
 
 export const ErrorForConvertToIndividual = ArrayUtils.toAdvancedEnum([

@@ -49,7 +49,9 @@
   ],
   "exclude": [
     "node_modules/**",
-    "src/test/**"
+    "src/test/**",
+    "src/try.ts",
+    "src/sample.ts",
   ],
   "compileOnSave": false
 }

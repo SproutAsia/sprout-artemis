@@ -1,5 +1,5 @@
 /**
- * post customer
+ * trigger start screening
  */
 export default function postScreen(args: {
     auth: {
@@ -12,4 +12,4 @@ export default function postScreen(args: {
     path: {
         customerId: string;
     };
-}): Promise<any>;
+}): Promise<boolean>;

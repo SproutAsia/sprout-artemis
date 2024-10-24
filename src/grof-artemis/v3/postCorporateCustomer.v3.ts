@@ -13,8 +13,10 @@ export default async function postCorporateCustomerFromGrof(args: {
     }
     grof: {
         application: TGrofApplication
-    }
-    additional?: Parameters<typeof convertToRequest.toCorporateCustomer>[0]['additional']
+    },
+    assigneeId: string,
+    additional?: Parameters<typeof convertToRequest.toCorporateCustomer>[0]['additional'],
+    customFn?: Parameters<typeof convertToRequest.toCorporateCustomer>[0]['customFn']
 }) {
     const { grof } = args
 
@@ -22,7 +24,9 @@ export default async function postCorporateCustomerFromGrof(args: {
         auth: args.auth,
         req: convertToRequest.toCorporateCustomer({
             application: grof.application,
-            additional: args.additional
+            additional: args.additional,
+            customFn: args.customFn,
+            assigneeId: args.assigneeId
         })
     })
 }

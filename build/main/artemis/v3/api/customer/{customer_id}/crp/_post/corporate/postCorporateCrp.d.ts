@@ -1,3 +1,4 @@
+import { TResPostCustomerCorporate } from "../../../../_post/corporate/TResPostCustomerCorporate.v3";
 import { TReqPostCorporateCrp } from "./TReqPostCorporateCrp.v3";
 /**
  * post customer
@@ -12,4 +13,4 @@ export default function postCorporateCrp(args: {
     path: {
         customerId: string;
     };
-}): Promise<any>;
+}): Promise<TResPostCustomerCorporate>;

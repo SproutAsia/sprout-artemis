@@ -1,9 +1,7 @@
-import dotenv from 'dotenv'
 
 
-import ArtemisGrofService from "."
+import ArtemisGrofService from '.';
 
-dotenv.config()
 
 ArtemisGrofService.getCrpProfile({
     auth: {
@@ -14,6 +12,4 @@ ArtemisGrofService.getCrpProfile({
         customerId: "18",
         searchString: "kim"
     }
-}).then((res) => {
-    console.log(">>> RES", JSON.stringify(res, null, 2))
 })

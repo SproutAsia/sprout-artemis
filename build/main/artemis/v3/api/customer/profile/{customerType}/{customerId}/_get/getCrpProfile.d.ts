@@ -1,8 +1,6 @@
 import { TResGetCrpProfile } from "./TResGetCrpProfile";
 /**
- * post customer
- * @description Individual Workflow - STEP 1 : create customer
- * @description Corporate Workflow - STEP 1 : create customer
+ * GET crp profile
  */
 export default function getCrpProfile(args: {
     auth: {

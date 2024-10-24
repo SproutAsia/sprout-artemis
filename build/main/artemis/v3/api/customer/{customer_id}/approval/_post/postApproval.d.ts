@@ -1,4 +1,5 @@
 import { TReqApproval } from "./TReqApproval";
+import { TResApproval } from "./TResApproval";
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer
@@ -12,4 +13,4 @@ export default function postApproval(args: {
         customerId: string;
     };
     body: TReqApproval;
-}): Promise<any>;
+}): Promise<TResApproval>;

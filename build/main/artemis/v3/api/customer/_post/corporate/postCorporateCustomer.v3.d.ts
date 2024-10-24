@@ -1,4 +1,5 @@
 import { TReqPostCustomerCorporate } from "./TReqPostCustomerCorporate.v3";
+import { TResPostCustomerCorporate } from "./TResPostCustomerCorporate.v3";
 /**
  * post customer
  * @description Individual Workflow - STEP 1 : create customer
@@ -9,4 +10,4 @@ export default function postCorporateCustomer(args: {
         token: string;
     };
     req: TReqPostCustomerCorporate;
-}): Promise<any>;
+}): Promise<TResPostCustomerCorporate>;

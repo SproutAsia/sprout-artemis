@@ -1,7 +1,7 @@
 .idea/*
 .nyc_output
 # -- build is not ignored because we will use it as library
-# build
+build
 build/tsconfig.tsbuildinfo
 node_modules
 test

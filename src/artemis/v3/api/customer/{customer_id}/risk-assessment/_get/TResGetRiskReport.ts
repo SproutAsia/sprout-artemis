@@ -1,141 +1,87 @@
 export interface TResGetRiskReport {
-    count: number
-    next: any
-    prev: any
-    results: Result[]
-}
-
-export interface Result {
     id: number
-    createdBy: CreatedBy
-    updatedBy: UpdatedBy
-    riskJson: RiskJson
-    isOutdated: boolean
-    latestApprovalStatus: LatestApprovalStatus
     createdAt: string
     updatedAt: string
+    createdBy: CreatedBy
+    updatedBy: UpdatedBy
+    risk: Risk
     riskRating: string
-    outdated: boolean
-    customer: number
+    overrideRiskRating: any
+    riskScore: number
+    approvalStatus: any
+    customerId: number
+    message: any
 }
 
 export interface CreatedBy {
-    id: string
-    name: string
+    id: number
+    firstName: string
+    lastName: string
     email: string
-    oauthId: string
-    isActive: boolean
-    mfaEnabled: boolean
+    fullName: string
+    rawFirstName: string
+    rawLastName: string
+    deleted: number
+    role: string
 }
 
 export interface UpdatedBy {
-    id: string
-    name: string
+    id: number
+    firstName: string
+    lastName: string
     email: string
-    oauthId: string
-    isActive: boolean
-    mfaEnabled: boolean
+    fullName: string
+    rawFirstName: string
+    rawLastName: string
+    deleted: number
+    role: string
 }
 
-export interface RiskJson {
+export interface Risk {
     comments: Comments
-    settings: Settings
-    riskScore: number
-    riskRating: string
-    componentScore: ComponentScore
+    component_score: ComponentScore
+    message: any
+    risk_rating: string
+    risk_score: number
+    weight_settings: WeightSettings
 }
 
 export interface Comments {
-    "18602": any[]
-    "18603": any[]
-}
-
-export interface Settings {
-    weight: Weight
-    highRiskThreshold: number
-    mediumRiskThreshold: number
-}
-
-export interface Weight {
-    CORPORATE: Corporate
-    INDIVIDUAL: Individual
-}
-
-export interface Corporate {
-    cpi: number
-    fsi: number
-    fatf: number
-    oecd: number
-    fatca: number
-    industry: number
-    screening: number
-    entityType: number
-    paymentModes: number
-    primaryWeight: number
-    onboardingMode: number
-    ownershipLayer: number
-    sourceOfFunds: number
-    productComplexity: number
-}
-
-export interface Individual {
-    cpi: number
-    fsi: number
-    fatf: number
-    oecd: number
-    fatca: number
-    industry: number
-    screening: number
-    occupation: number
-    paymentModes: number
-    primaryWeight: number
-    onboardingMode: number
-    sourceOfFunds: number
-    productComplexity: number
+    "28": string[]
+    "29": any[]
 }
 
 export interface ComponentScore {
     cpi: number
-    fsi: number
-    fatf: number
-    oecd: number
+    entity_type: number
     fatca: number
+    fatf: number
+    fsi: number
+    individual_shareholding: number
     industry: number
+    oecd: number
+    onboarding_mode: number
+    ownership_layer: number
+    payment_modes: number
+    premium_amount: number
+    product_complexity: number
     screening: number
-    entityType: number
-    paymentModes: number
-    onboardingMode: number
-    ownershipLayer: number
-    sourceOfFunds: number
-    productComplexity: number
+    source_of_funds: number
 }
 
-export interface LatestApprovalStatus {
-    id: number
-    createdBy: CreatedBy2
-    updatedBy: UpdatedBy2
-    createdAt: string
-    updatedAt: string
-    overrideRisk: string
-    approvalStatus: string
-    riskReport: number
-    notifyPerson: any
-}
-
-export interface CreatedBy2 {
-    id: string
-    name: string
-    email: string
-    oauthId: string
-    isActive: boolean
-    mfaEnabled: boolean
-}
-
-export interface UpdatedBy2 {
-    id: string
-    name: string
-    email: string
-    oauthId: string
-    isActive: boolean
-    mfaEnabled: boolean
+export interface WeightSettings {
+    cpi: number
+    entity_type: number
+    fatca: number
+    fatf: number
+    fsi: number
+    individual_shareholding: number
+    industry: number
+    oecd: number
+    onboarding_mode: number
+    ownership_layer: number
+    payment_modes: number
+    primary_weight: number
+    product_complexity: number
+    screening: number
 }

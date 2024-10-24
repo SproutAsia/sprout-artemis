@@ -1,117 +1,80 @@
 {
-    "count": 1,
-    "next": null,
-    "prev": null,
-    "results": [
-        {
-            "id": 33785,
-            "createdBy": {
-                "id": "79dc4da7-e585-453b-aeab-8de055725104",
-                "name": "Rega",
-                "email": "rega.hruzty@sproutasia.com",
-                "oauthId": "79dc4da7-e585-453b-aeab-8de055725104",
-                "isActive": true,
-                "mfaEnabled": false
-            },
-            "updatedBy": {
-                "id": "79dc4da7-e585-453b-aeab-8de055725104",
-                "name": "Rega",
-                "email": "rega.hruzty@sproutasia.com",
-                "oauthId": "79dc4da7-e585-453b-aeab-8de055725104",
-                "isActive": true,
-                "mfaEnabled": false
-            },
-            "riskJson": {
-                "comments": {
-                    "18602": [],
-                    "18603": []
-                },
-                "settings": {
-                    "weight": {
-                        "CORPORATE": {
-                            "cpi": 15,
-                            "fsi": 2.5,
-                            "fatf": 15,
-                            "oecd": 10,
-                            "fatca": 2.5,
-                            "industry": 5,
-                            "screening": 30,
-                            "entityType": 0,
-                            "paymentModes": 5,
-                            "primaryWeight": 50,
-                            "onboardingMode": 5,
-                            "ownershipLayer": 5,
-                            "sourceOfFunds": 0,
-                            "productComplexity": 5
-                        },
-                        "INDIVIDUAL": {
-                            "cpi": 15,
-                            "fsi": 2.5,
-                            "fatf": 15,
-                            "oecd": 10,
-                            "fatca": 2.5,
-                            "industry": 5,
-                            "screening": 30,
-                            "occupation": 5,
-                            "paymentModes": 5,
-                            "primaryWeight": 50,
-                            "onboardingMode": 5,
-                            "sourceOfFunds": 0,
-                            "productComplexity": 5
-                        }
-                    },
-                    "highRiskThreshold": 40,
-                    "mediumRiskThreshold": 70
-                },
-                "riskScore": 80.20499999999998,
-                "riskRating": "LOW",
-                "componentScore": {
-                    "cpi": 8.775,
-                    "fsi": 0.8333333333333335,
-                    "fatf": 12.68,
-                    "oecd": 10.0,
-                    "fatca": 1.25,
-                    "industry": 3.3333333333333335,
-                    "screening": 30.0,
-                    "entityType": 0.0,
-                    "paymentModes": 5.0,
-                    "onboardingMode": 1.6666666666666667,
-                    "ownershipLayer": 1.6666666666666667,
-                    "sourceOfFunds": 0.0,
-                    "productComplexity": 5.0
-                }
-            },
-            "isOutdated": false,
-            "latestApprovalStatus": {
-                "id": 18416,
-                "createdBy": {
-                    "id": "79dc4da7-e585-453b-aeab-8de055725104",
-                    "name": "Rega",
-                    "email": "rega.hruzty@sproutasia.com",
-                    "oauthId": "79dc4da7-e585-453b-aeab-8de055725104",
-                    "isActive": true,
-                    "mfaEnabled": false
-                },
-                "updatedBy": {
-                    "id": "79dc4da7-e585-453b-aeab-8de055725104",
-                    "name": "Rega",
-                    "email": "rega.hruzty@sproutasia.com",
-                    "oauthId": "79dc4da7-e585-453b-aeab-8de055725104",
-                    "isActive": true,
-                    "mfaEnabled": false
-                },
-                "createdAt": "2024-05-24T12:36:47.089622+08:00",
-                "updatedAt": "2024-05-24T12:36:47.089643+08:00",
-                "overrideRisk": "",
-                "approvalStatus": "CLEARED",
-                "riskReport": 33785,
-                "notifyPerson": null
-            },
-            "createdAt": "2024-05-24T12:36:47.016596+08:00",
-            "updatedAt": "2024-05-24T12:36:47.016618+08:00",
-            "riskRating": "",
-            "outdated": false,
-            "customer": 46820
+    "id": 4,
+    "createdAt": "2024-07-04T16:37:16.253+00:00",
+    "updatedAt": "2024-07-05T13:13:17.621+00:00",
+    "createdBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "updatedBy": {
+        "id": 1691,
+        "firstName": "RICO",
+        "lastName": "Arisandy",
+        "email": "arisandy.rico@grof.co",
+        "fullName": "RICO Arisandy",
+        "rawFirstName": "RICO",
+        "rawLastName": "Arisandy",
+        "deleted": 0,
+        "role": "USER"
+    },
+    "risk": {
+        "comments": {
+            "28": [
+                "Marked as Politically Exposed Person.",
+                "Marked as Sanction related person/entity.",
+                "Adverse media found.",
+                "Name found in Own Restricted List."
+            ],
+            "29": []
+        },
+        "component_score": {
+            "cpi": 15.0,
+            "entity_type": 0.0,
+            "fatca": 0.0,
+            "fatf": 12.0625,
+            "fsi": 1.2500000000000002,
+            "individual_shareholding": 0.0,
+            "industry": 2.5,
+            "oecd": 6.666666666666668,
+            "onboarding_mode": 0.0,
+            "ownership_layer": 0.8333333333333334,
+            "payment_modes": 3.3333333333333335,
+            "premium_amount": 0.0,
+            "product_complexity": 5.0,
+            "screening": 12.5,
+            "source_of_funds": 0.0
+        },
+        "message": null,
+        "risk_rating": "HIGH",
+        "risk_score": 59.145832,
+        "weight_settings": {
+            "cpi": 15,
+            "entity_type": 5,
+            "fatca": 2.5,
+            "fatf": 15,
+            "fsi": 2.5,
+            "individual_shareholding": 5,
+            "industry": 2.5,
+            "oecd": 10,
+            "onboarding_mode": 5,
+            "ownership_layer": 2.5,
+            "payment_modes": 5,
+            "primary_weight": 50,
+            "product_complexity": 5,
+            "screening": 25
         }
-    ]
+    },
+    "riskRating": "HIGH",
+    "overrideRiskRating": null,
+    "riskScore": 59.15,
+    "approvalStatus": null,
+    "customerId": 28,
+    "message": null
 }
