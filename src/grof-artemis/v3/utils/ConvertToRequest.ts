@@ -117,9 +117,13 @@ const ConvertToRequest = {
       particular: {
         incorporated: isIncorporated,
         name: args.application.company.companyName,
-        alias: args.application.company.legalDetails.entityName
-          ? [args.application.company.legalDetails.entityName]
-          : undefined,
+        alias: 
+        // not necessary to map alias name
+        // https://sproutasiacom-my.sharepoint.com/:fl:/g/personal/caiyu_low_grof_co/EZdgJdxXULtAgZn_H8IFfN8BoAtZpvxa3NcP-5yTZc2-og?e=9YHtik&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0Q1MWQwMWNhOS0zZGY5LTQ5YTYtOTI1OC0wYmQxYTM3NjYwNzUlMjZzZXElM0QxMTAzMyZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
+        // args.application.company.legalDetails.entityName
+        //   ? [args.application.company.legalDetails.entityName]
+        //   : 
+          undefined,
         formerName: args.application.company.legalDetails.historyName
           ? [args.application.company.legalDetails.historyName]
           : [],
