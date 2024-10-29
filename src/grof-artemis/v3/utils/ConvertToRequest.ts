@@ -164,7 +164,8 @@ const ConvertToRequest = {
       profileReferenceId:
         args.customFn?.customerId?.(args.application.company.companyName) ||
         args.application.company.companyName,
-      referenceId: args.application.company.legalDetails.uen,
+      referenceId: args.customFn?.customerId?.(args.application.company.legalDetails.uen) ||
+      args.application.company.legalDetails.uen,
       active: true,
     } as TReqPostCustomerCorporate;
   },
