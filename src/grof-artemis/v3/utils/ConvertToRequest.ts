@@ -166,7 +166,7 @@ const ConvertToRequest = {
         args.application.company.companyName,
       referenceId: args.customFn?.customerId?.(args.application.company.legalDetails.uen) ||
       args.application.company.legalDetails.uen,
-      active: true,
+      active: isIncorporated ? true : false,
     } as TReqPostCustomerCorporate;
   },
   toSingleIndividualCrp(args: {
