@@ -64,9 +64,9 @@ const ConvertToArtemisEnum = {
     },
     companySourceOfFund: (source: string) => {
         switch (source) {
-            case "Business income": return "BUSINESS REVENUE";
-            case "Investment income": return "INVESTMENT GAIN";
-            case "Debt financing": return "LOAN";
+            case "Business Revenue": return "BUSINESS REVENUE";
+            case "Investment Gain": return "INVESTMENT GAIN";
+            case "Loan": return "LOAN";
             // case "Shareholder capital": return "shareholder capital"; // TODO it's not exist in Artemis
             case "Others. Please specify": return "OTHERS";
             default: return "OTHERS";
