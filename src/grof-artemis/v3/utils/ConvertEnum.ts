@@ -54,7 +54,7 @@ const ConvertToArtemisEnum = {
 
         switch (source) {
             case "Salary": return "SALARY";
-            case "Investment Revenue": return "INVESTMENT REVENUE";
+            case "Investment Revenue": return "INVESTMENT GAIN";
             case "Business Revenue": return "BUSINESS REVENUE";
             case "Investment Gain": return "INVESTMENT GAIN";
             case "Loan": return "LOAN";
