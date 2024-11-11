@@ -15,6 +15,9 @@ export default async function getScreenSummary(args: {
     headers.append("authorization", "Bearer " + args.auth.token)
     const url = new URL(process.env.ARTEMIS_API + "/customer/" + args.path.customerId + "/screen/summary")
 
+    url.searchParams.append("page", "0")
+    url.searchParams.append("size", "1000")
+
     const result = await fetch(url.toString(), {
         headers
     }).then((res) => res.ok ? res.json() : res.text())
