@@ -372,7 +372,7 @@ const ConvertToRequest = {
       type: 'CORPORATE',
       roles: roles,
       other: {
-        entityType: member.companyDetails.legalDetails.companyType,
+        entityType: ConvertToArtemisEnum.entityType(member.companyDetails.legalDetails.companyType),
         bankAccountNumber: [],
         ownershipStructureLayer:
           member.companyDetails.riskProfileAssessment.ownershipStructureLayers,

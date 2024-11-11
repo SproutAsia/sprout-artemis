@@ -94,12 +94,15 @@ const ConvertToArtemisEnum = {
         }
     },
     /**
-     * @deprecated condition when country is SG was removed
      * @param entityType - is companyType in grof
      */
-    entityType: (entityType: string, country: string) => {
-        // if (country !== "SG") return "FOREIGN ENTITY NOT REGISTERED WITH ACRA"
-        return entityType
+    entityType: (entityType: string) => {
+        switch (entityType) {
+            case 'FOREIGN ENTITY NOT REGISTERED WITH ACRA':
+            return 'FOREIGN COMPANY'
+            default: 
+            return entityType
+        }
     },
     /**
      * @deprecated we should use enum from system variable instead
