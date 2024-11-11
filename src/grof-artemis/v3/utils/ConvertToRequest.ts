@@ -343,7 +343,7 @@ const ConvertToRequest = {
       throw new Error(
         ErrorForConvertToCorporate.enum['Country of operation cannot be empty']
       );
-    if (!member.companyDetails.legalDetails.entityType)
+    if (!member.companyDetails.legalDetails.companyType)
       throw new Error(
         ErrorForConvertToCorporate.enum['Entity type cannot be empty']
       );
