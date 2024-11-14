@@ -147,23 +147,26 @@ const ConvertToRequest = {
             args.application.company.addresses.registeredAddress.country
           ),
         countryOfOperation,
-        address: Formatter.toGrofAddress({
-          country: args.application.company.addresses.registeredAddress.country,
-          blockHouse:
-            args.application.company.addresses.registeredAddress.blockHouse,
-          buildingName:
-            args.application.company.addresses.registeredAddress.buildingName,
-          level: args.application.company.addresses.registeredAddress.level,
-          postalCode:
-            args.application.company.addresses.registeredAddress.postalCode,
-          streetName:
-            args.application.company.addresses.registeredAddress.streetName,
-          unit: args.application.company.addresses.registeredAddress.unit,
-          addressLine1:
-            args.application.company.addresses.registeredAddress.addressLine1,
-          addressLine2:
-            args.application.company.addresses.registeredAddress.addressLine2,
-        }),
+        // no need to send address anymore
+        // https://sproutasiacom-my.sharepoint.com/:fl:/r/personal/caiyu_low_grof_co/Documents/Microsoft%20Teams%20Chat%20Files/Svc%20x%20engr%20tracker.loop?d=wdc256097505740bb8199ff1fc2057cdf&csf=1&web=1&e=NxlLFg&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0QzMGExOWI3Zi05MTllLTQ1ZTUtYmJhNS1hMDQ1ZDE1MGQ5ZmUlMjZzZXElM0QyMDc2NyZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
+        // https://gro-engineer.atlassian.net/browse/G10-3397
+        // address: Formatter.toGrofAddress({
+        //   country: args.application.company.addresses.registeredAddress.country,
+        //   blockHouse:
+        //     args.application.company.addresses.registeredAddress.blockHouse,
+        //   buildingName:
+        //     args.application.company.addresses.registeredAddress.buildingName,
+        //   level: args.application.company.addresses.registeredAddress.level,
+        //   postalCode:
+        //     args.application.company.addresses.registeredAddress.postalCode,
+        //   streetName:
+        //     args.application.company.addresses.registeredAddress.streetName,
+        //   unit: args.application.company.addresses.registeredAddress.unit,
+        //   addressLine1:
+        //     args.application.company.addresses.registeredAddress.addressLine1,
+        //   addressLine2:
+        //     args.application.company.addresses.registeredAddress.addressLine2,
+        // }),
         dateOfIncorporation: isIncorporated
           ? args.application.company.legalDetails.registrationDate
           : undefined,
