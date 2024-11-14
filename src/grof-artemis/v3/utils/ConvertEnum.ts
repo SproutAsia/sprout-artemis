@@ -56,8 +56,12 @@ const ConvertToArtemisEnum = {
             case "Salary": return "SALARY";
             case "Investment Revenue": return "INVESTMENT GAIN";
             case "Business Revenue": return "BUSINESS REVENUE";
+            case "Business Income": return "BUSINESS REVENUE";
             case "Investment Gain": return "INVESTMENT GAIN";
+            case "Investment Income": return "INVESTMENT GAIN";
+            case "Shareholder Capital": return "INVESTMENT GAIN";
             case "Loan": return "LOAN";
+            case "Debt Financing": return "LOAN";
             case "Others, please specify": return "OTHERS";
             default: return null
         }
@@ -100,6 +104,8 @@ const ConvertToArtemisEnum = {
         switch (entityType) {
             case 'FOREIGN ENTITY NOT REGISTERED WITH ACRA':
             return 'FOREIGN COMPANY'
+            case 'EXEMPT PRIVATE COMPANY':
+            return 'EXEMPT PRIVATE COMPANY LIMITED BY SHARES'
             default: 
             return entityType
         }
