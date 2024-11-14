@@ -365,6 +365,15 @@ const ConvertToRequest = {
         )
       );
     }
+    if (
+      get(member, 'companyDetails.legalDetails.countryOfRegisteredBusiness')
+    ) {
+      countryOfOperation.push(
+        args.customFn?.parseCountry?.(
+          member.companyDetails.legalDetails.countryOfRegisteredBusiness
+        )
+      );
+    }
     countryOfOperation = Array.from(new Set(countryOfOperation));
     if (!countryOfOperation.length)
       throw new Error(
