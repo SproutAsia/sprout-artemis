@@ -8,9 +8,8 @@ import { TGrofApplication } from '../../../grof/types/TGrofApplication';
 import ConvertToArtemisEnum from './ConvertEnum';
 import ErrorForConvert, {
   ErrorForConvertToCorporate,
-  ErrorForConvertToIndividual,
+  ErrorForConvertToIndividual
 } from './ErrorForConvert.enum';
-import Formatter from './Formatter';
 
 const ConvertToRequest = {
   toCorporateCustomer(args: {
@@ -87,7 +86,7 @@ const ConvertToRequest = {
         args.customFn?.parseCountry?.(
           args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
         ) ||
-          args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
+        args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
       );
     }
     countryOfOperation = Array.from(new Set(countryOfOperation));
@@ -97,7 +96,7 @@ const ConvertToRequest = {
       );
 
     // new if no service
-    const isIncorporated = !Boolean(args.application.services.incorporation);
+    const isIncorporated = !args.application.services.incorporation;
 
     return {
       type: 'CORPORATE',
@@ -129,12 +128,12 @@ const ConvertToRequest = {
       particular: {
         incorporated: isIncorporated,
         name: args.application.company.companyName,
-        alias: 
-        // not necessary to map alias name
-        // https://sproutasiacom-my.sharepoint.com/:fl:/g/personal/caiyu_low_grof_co/EZdgJdxXULtAgZn_H8IFfN8BoAtZpvxa3NcP-5yTZc2-og?e=9YHtik&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0Q1MWQwMWNhOS0zZGY5LTQ5YTYtOTI1OC0wYmQxYTM3NjYwNzUlMjZzZXElM0QxMTAzMyZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
-        // args.application.company.legalDetails.entityName
-        //   ? [args.application.company.legalDetails.entityName]
-        //   : 
+        alias:
+          // not necessary to map alias name
+          // https://sproutasiacom-my.sharepoint.com/:fl:/g/personal/caiyu_low_grof_co/EZdgJdxXULtAgZn_H8IFfN8BoAtZpvxa3NcP-5yTZc2-og?e=9YHtik&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0Q1MWQwMWNhOS0zZGY5LTQ5YTYtOTI1OC0wYmQxYTM3NjYwNzUlMjZzZXElM0QxMTAzMyZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
+          // args.application.company.legalDetails.entityName
+          //   ? [args.application.company.legalDetails.entityName]
+          //   : 
           undefined,
         formerName: args.application.company.legalDetails.historyName
           ? [args.application.company.legalDetails.historyName]
@@ -180,7 +179,7 @@ const ConvertToRequest = {
         args.customFn?.customerId?.(args.application.company.companyName) ||
         args.application.company.companyName,
       referenceId: isIncorporated ? args.customFn?.customerId?.(args.application.company.legalDetails.uen) ||
-      args.application.company.legalDetails.uen : args.customFn?.customerId?.(args.application.company.companyName) ||
+        args.application.company.legalDetails.uen : args.customFn?.customerId?.(args.application.company.companyName) ||
       args.application.company.companyName,
       // use company.isActiveCustomer for mapping
       // https://sproutasiacom-my.sharepoint.com/:fl:/r/personal/caiyu_low_grof_co/Documents/Microsoft%20Teams%20Chat%20Files/Svc%20x%20engr%20tracker.loop?d=wdc256097505740bb8199ff1fc2057cdf&csf=1&web=1&e=TrSXn9&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0RiYjhmMGExMS01ZjVkLTQ3OTEtODEwMy0yZmYzN2JiYTVlYzIlMjZzZXElM0QxNjUwOSZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
@@ -256,7 +255,7 @@ const ConvertToRequest = {
         //   streetName: member.personDetails.address.streetName,
         //   unit: member.personDetails.address.unit,
         // }),
-        alias: member.personDetails.personalDetails.alias,
+        alias: member.personDetails.personalDetails?.alias?.filter((alias) => alias) || [],
         email: [],
         phone: [],
         formerName: args.additional?.formerName || [],
@@ -284,9 +283,9 @@ const ConvertToRequest = {
           args.customFn?.parseCountry?.(
             member.personDetails.personalDetails.nationality
           ) ||
-            ConvertToArtemisEnum.shortCountry(
-              member.personDetails.personalDetails.nationality
-            ),
+          ConvertToArtemisEnum.shortCountry(
+            member.personDetails.personalDetails.nationality
+          ),
         ],
         countryOfResidence:
           args.customFn?.parseCountry?.(member.personDetails.address.country) ||
@@ -339,7 +338,7 @@ const ConvertToRequest = {
     if (!member.companyDetails.legalDetails.countryOfRegisteredBusiness)
       throw new Error(
         ErrorForConvertToCorporate.enum[
-          'Country of incorporation cannot be empty'
+        'Country of incorporation cannot be empty'
         ]
       );
     if (!member.companyDetails.riskProfileAssessment.countryOfOperations)
