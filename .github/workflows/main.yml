@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
           
       - name: Install dependencies and build 🔧
-        run: yarn build
+        run: yarn install && yarn build
         
       - name: Publish package on NPM 📦
         run: npm run deploy-library
