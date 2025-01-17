@@ -8,7 +8,7 @@ import { TGrofApplication } from '../../../grof/types/TGrofApplication';
 import ConvertToArtemisEnum from './ConvertEnum';
 import ErrorForConvert, {
   ErrorForConvertToCorporate,
-  ErrorForConvertToIndividual
+  ErrorForConvertToIndividual,
 } from './ErrorForConvert.enum';
 
 const ConvertToRequest = {
@@ -54,7 +54,11 @@ const ConvertToRequest = {
 
     let countryOfOperation = [];
     if (
-      get(args, 'application.company.riskProfileAssessment.countryOfOperations', [])
+      get(
+        args,
+        'application.company.riskProfileAssessment.countryOfOperations',
+        []
+      )
     ) {
       args.application.company.riskProfileAssessment.countryOfOperations.forEach(
         (c) => {
@@ -66,7 +70,11 @@ const ConvertToRequest = {
     }
     // Nadia request transactionCountries to be mapped to countryOfOperation
     if (
-      get(args, 'application.company.riskProfileAssessment.transactionCountries', [])
+      get(
+        args,
+        'application.company.riskProfileAssessment.transactionCountries',
+        []
+      )
     ) {
       args.application.company.riskProfileAssessment.transactionCountries.forEach(
         (c) => {
@@ -86,7 +94,7 @@ const ConvertToRequest = {
         args.customFn?.parseCountry?.(
           args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
         ) ||
-        args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
+          args.application.company.addresses.principalPlaceOfBusiness.country.toUpperCase()
       );
     }
     countryOfOperation = Array.from(new Set(countryOfOperation));
@@ -133,7 +141,7 @@ const ConvertToRequest = {
           // https://sproutasiacom-my.sharepoint.com/:fl:/g/personal/caiyu_low_grof_co/EZdgJdxXULtAgZn_H8IFfN8BoAtZpvxa3NcP-5yTZc2-og?e=9YHtik&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0Q1MWQwMWNhOS0zZGY5LTQ5YTYtOTI1OC0wYmQxYTM3NjYwNzUlMjZzZXElM0QxMTAzMyZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
           // args.application.company.legalDetails.entityName
           //   ? [args.application.company.legalDetails.entityName]
-          //   : 
+          //   :
           undefined,
         formerName: args.application.company.legalDetails.historyName
           ? [args.application.company.legalDetails.historyName]
@@ -178,12 +186,15 @@ const ConvertToRequest = {
       profileReferenceId:
         args.customFn?.customerId?.(args.application.company.companyName) ||
         args.application.company.companyName,
-      referenceId: isIncorporated ? args.customFn?.customerId?.(args.application.company.legalDetails.uen) ||
-        args.application.company.legalDetails.uen : args.customFn?.customerId?.(args.application.company.companyName) ||
-      args.application.company.companyName,
+      referenceId: isIncorporated
+        ? args.customFn?.customerId?.(
+            args.application.company.legalDetails.uen
+          ) || args.application.company.legalDetails.uen
+        : args.customFn?.customerId?.(args.application.company.companyName) ||
+          args.application.company.companyName,
       // use company.isActiveCustomer for mapping
       // https://sproutasiacom-my.sharepoint.com/:fl:/r/personal/caiyu_low_grof_co/Documents/Microsoft%20Teams%20Chat%20Files/Svc%20x%20engr%20tracker.loop?d=wdc256097505740bb8199ff1fc2057cdf&csf=1&web=1&e=TrSXn9&nav=cz0lMkZwZXJzb25hbCUyRmNhaXl1X2xvd19ncm9mX2NvJmQ9YiUyMW5JSDkzaW1NMmtDSGdMb2RnemtqZ3NYUk1hTzZrc1JKa28zbTlPTEQzeGg0a004SDB5MGRRWmtyWlhqRHgyaEwmZj0wMVREQTY2UDRYTUFTNVlWMlFYTkFJREdQN0Q3QkFLN0c3JmM9JTJGJTNGbWluaWZpZWQlM0RiYjhmMGExMS01ZjVkLTQ3OTEtODEwMy0yZmYzN2JiYTVlYzIlMjZzZXElM0QxNjUwOSZhPUxvb3BBcHAmcD0lNDBmbHVpZHglMkZsb29wLXBhZ2UtY29udGFpbmVy
-      active: args.application.company.isActiveCustomer
+      active: args.application.company.isActiveCustomer,
     } as TReqPostCustomerCorporate;
   },
   toSingleIndividualCrp(args: {
@@ -255,7 +266,10 @@ const ConvertToRequest = {
         //   streetName: member.personDetails.address.streetName,
         //   unit: member.personDetails.address.unit,
         // }),
-        alias: member.personDetails.personalDetails?.alias?.filter((alias) => alias) || [],
+        alias:
+          member.personDetails.personalDetails?.alias?.filter(
+            (alias) => alias
+          ) || [],
         email: [],
         phone: [],
         formerName: args.additional?.formerName || [],
@@ -283,9 +297,9 @@ const ConvertToRequest = {
           args.customFn?.parseCountry?.(
             member.personDetails.personalDetails.nationality
           ) ||
-          ConvertToArtemisEnum.shortCountry(
-            member.personDetails.personalDetails.nationality
-          ),
+            ConvertToArtemisEnum.shortCountry(
+              member.personDetails.personalDetails.nationality
+            ),
         ],
         countryOfResidence:
           args.customFn?.parseCountry?.(member.personDetails.address.country) ||
@@ -338,7 +352,7 @@ const ConvertToRequest = {
     if (!member.companyDetails.legalDetails.countryOfRegisteredBusiness)
       throw new Error(
         ErrorForConvertToCorporate.enum[
-        'Country of incorporation cannot be empty'
+          'Country of incorporation cannot be empty'
         ]
       );
     if (!member.companyDetails.riskProfileAssessment.countryOfOperations)
@@ -383,7 +397,9 @@ const ConvertToRequest = {
       type: 'CORPORATE',
       roles: roles,
       other: {
-        entityType: ConvertToArtemisEnum.entityType(member.companyDetails.legalDetails.companyType),
+        entityType: ConvertToArtemisEnum.entityType(
+          member.companyDetails.legalDetails.companyType
+        ),
         bankAccountNumber: [],
         ownershipStructureLayer:
           member.companyDetails.riskProfileAssessment.ownershipStructureLayers,
@@ -415,7 +431,8 @@ const ConvertToRequest = {
         //   addressLine2:
         //     member.companyDetails.addresses.registeredAddress.addressLine2,
         // }),
-        alias: [member.companyDetails.companyName],
+        /** NOTE: Removed the alias name because it is not necessary */
+        alias: [],
         countryOfIncorporation:
           args.customFn?.parseCountry?.(
             member.companyDetails.legalDetails.countryOfRegisteredBusiness
