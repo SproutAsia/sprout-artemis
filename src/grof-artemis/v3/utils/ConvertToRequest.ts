@@ -214,7 +214,29 @@ const ConvertToRequest = {
     // handle missing mandatory
     if (!member.personDetails.personalDetails.fullName)
       throw new Error(ErrorForConvertToIndividual.enum['Name cannot be empty']);
-    if (!member.personDetails.personalDetails.nationality)
+    const nationalities: string[] = [];
+    if (member.personDetails.personalDetails.nationality) {
+      nationalities.push(
+        args.customFn?.parseCountry?.(
+          member.personDetails.personalDetails.nationality
+        )
+      );
+    }
+    if (
+      Array.isArray(
+        member.personDetails?.riskProfileAssessment?.nationalities
+      ) &&
+      member.personDetails?.riskProfileAssessment?.isMultipleNationalities
+    ) {
+      member.personDetails?.riskProfileAssessment?.nationalities.forEach(
+        (n) => {
+          const country = args.customFn?.parseCountry?.(n);
+          if (country && !nationalities.includes(country))
+            nationalities.push(args.customFn?.parseCountry?.(n));
+        }
+      );
+    }
+    if (!nationalities.length)
       throw new Error(
         ErrorForConvertToIndividual.enum['Nationality cannot be empty']
       );
@@ -293,14 +315,7 @@ const ConvertToRequest = {
           member.personDetails.personalDetails.idDocument.dateOfIssuance,
         identityNumber:
           member.personDetails.personalDetails.idDocument.idNumber,
-        nationality: [
-          args.customFn?.parseCountry?.(
-            member.personDetails.personalDetails.nationality
-          ) ||
-            ConvertToArtemisEnum.shortCountry(
-              member.personDetails.personalDetails.nationality
-            ),
-        ],
+        nationality: nationalities,
         countryOfResidence:
           args.customFn?.parseCountry?.(member.personDetails.address.country) ||
           ConvertToArtemisEnum.shortCountry(

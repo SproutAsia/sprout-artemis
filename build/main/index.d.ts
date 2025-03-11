@@ -1,4 +1,5 @@
 import postLogin from "./artemis/v3/api/authentication/login/_post/postLogin";
+import deleteComment from "./artemis/v3/api/comment/_delete/deleteComment";
 import getComment from "./artemis/v3/api/comment/_get/getComment";
 import postComment from "./artemis/v3/api/comment/_post/postComment";
 import getCrpProfile from "./artemis/v3/api/customer/profile/{customerType}/{customerId}/_get/getCrpProfile";
@@ -25,6 +26,7 @@ import checkEnv from "./grof-artemis/v3/checkEnv";
 import postCorporateCrpFromGrof from "./grof-artemis/v3/postCorporateCrpFromGrof";
 import postCorporateCustomerFromGrof from "./grof-artemis/v3/postCorporateCustomer.v3";
 import postIndividualCrpFromGrof from "./grof-artemis/v3/postIndividualCrpFromGrof";
+import getUsers from "./artemis/v3/api/user/_get/getUsers";
 declare const ArtemisGrofService: {
     checkEnv: typeof checkEnv;
     postLogin: typeof postLogin;
@@ -54,6 +56,7 @@ declare const ArtemisGrofService: {
     checkToken: typeof checkToken;
     getComment: typeof getComment;
     postComment: typeof postComment;
+    deleteComment: typeof deleteComment;
     ConvertToRequest: {
         toCorporateCustomer(args: {
             application: import("./grof/types/TGrofApplication").TGrofApplication;
@@ -97,11 +100,11 @@ declare const ArtemisGrofService: {
         country: (country: string) => string;
         onboarding: (args: string) => string;
         appointmentToRole: (appointments: any[]) => any;
-        documentType: (type: string) => "INTERNATIONAL PASSPORT" | "NATIONAL ID";
-        sourceOfFund: (source?: string) => "SALARY" | "INVESTMENT REVENUE" | "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
+        documentType: (type: string) => "NATIONAL ID" | "INTERNATIONAL PASSPORT";
+        sourceOfFund: (source?: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "SALARY" | "OTHERS";
         companySourceOfFund: (source: string) => "BUSINESS REVENUE" | "INVESTMENT GAIN" | "LOAN" | "OTHERS";
-        role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "NOMINEE/TRUSTEE" | "ULTIMATE BENEFICIAL OWNER" | "AUTHORIZED PERSON";
-        entityType: (entityType: string, country: string) => string;
+        role: (memberRole: string) => "DIRECTOR" | "DIRECTOR (NOMINEE)" | "SHAREHOLDER" | "ULTIMATE BENEFICIAL OWNER" | "NOMINEE/TRUSTEE" | "AUTHORIZED PERSON";
+        entityType: (entityType: string) => string;
         shortCountry: (country: string) => string;
         toSingaporeAddress: (address: {
             blockHouse?: string;
@@ -112,5 +115,6 @@ declare const ArtemisGrofService: {
             postalCode?: string;
         }) => string;
     };
+    getUsers: typeof getUsers;
 };
 export default ArtemisGrofService;
